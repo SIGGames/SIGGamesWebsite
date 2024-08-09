@@ -1,23 +1,27 @@
-/* Importa la tipografia Montserrat des de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-/* Estils generals per al cos de la pàgina */
+/* General Styles */
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #F1F2F2; /* Blanc suau */
-  color: #333132; /* Negre suau */
+  background-color: #F1F2F2;
+  color: #333132;
 }
 
-/* Header i Navegació */
+/* Header */
 header {
-  background-color: #684B9F; /* Morat principal */
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #684B9F;
+  padding: 15px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+header:hover {
+  background-color: #684B9F;
 }
 
 nav {
@@ -34,186 +38,188 @@ nav {
 .logo {
   max-width: 80px;
   height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.logo-link:hover .logo {
+  transform: rotate(360deg); /* Animació al passar per sobre */
 }
 
 nav ul {
-  list-style-type: none;
+  list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   gap: 20px;
 }
 
-nav ul li {
-  margin: 0;
-}
-
 nav ul li a {
-  color: white;
+  color: #F1F2F2;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #cdcdcd;
+  color: #c5c3c0; /* Color groc per al hover */
+  transform: scale(1.1);
 }
 
-/* Contenidor principal */
+/* Content Container */
 .container {
   max-width: 1200px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #F1F2F2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Títols */
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Titles */
 h1, h2, h3 {
-  color: #684B9F; /* Morat principal */
+  color: #684B9F;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 30px;
   font-weight: 700;
 }
 
-/* Botons */
+/* Buttons */
 button {
-  background-color: #684B9F; /* Morat principal */
-  color: white;
+  background-color: #684B9F;
+  color: #F1F2F2;
   border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-  background-color: #543781; /* Morat fosc per al hover */
+  background-color: #543781;
+  transform: translateY(-3px);
 }
 
-/* Enllaços */
+/* Links */
 a {
-  color: #684B9F; /* Morat principal */
+  color: #684B9F;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 a:hover {
-  color: #dedcd2; /* Groc suau per al hover */
+  color: #e4e3e2;
+  transform: scale(1.1);
 }
 
-/* Enllaç actiu */
+/* Active Link */
 .active {
   font-weight: bold;
   text-decoration: underline;
 }
 
-/* Secció Hero */
+/* Hero Section */
 .hero {
-  position: relative;
   text-align: center;
-  color: white;
-  background-color: #684B9F; /* Morat principal */
-  padding: 80px 20px;
+  color: #F1F2F2;
+  background-color: #684B9F;
+  padding: 100px 20px;
   animation: fadeIn 1s ease-in-out;
-}
-
-.hero img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #F1F2F2; /* Blanc suau */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  margin-bottom: 40px;
 }
 
 .hero-text h1 {
-  font-size: 4rem;
+  font-size: 4.5rem;
   margin: 0;
-  color: #F1F2F2; /* Blanc suau */
   animation: slideInFromLeft 1.5s ease-in-out;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .hero-text p {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   animation: slideInFromRight 1.5s ease-in-out;
 }
 
-/* Descripcions i Contingut */
+/* Description and Content Sections */
 .description, .content-section {
   text-align: center;
-  padding: 2rem;
-  background-color: #684B9F; /* Morat principal */
-  color: white;
-  border-radius: 10px;
-  margin: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 60px 20px;
+  background-color: #684B9F;
+  color: #F1F2F2;
+  border-radius: 12px;
+  margin: 40px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .description:hover, .content-section:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .description h2, .content-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  margin-bottom: 25px;
   font-weight: 700;
 }
 
 .description p, .content-section p {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 1.4rem;
+  line-height: 1.8;
 }
 
-/* Secció de Jocs */
+/* Games Section */
 .games-section {
-  padding: 2rem;
-  background-color: #F1F2F2; /* Blanc suau */
-  border-radius: 10px;
-  margin: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 60px 20px;
+  background-color: #F1F2F2;
+  border-radius: 12px;
+  margin: 40px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.games-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .games-section h2 {
   text-align: center;
-  font-size: 2.5rem;
-  color: #684B9F; /* Morat principal */
-  margin-bottom: 2rem;
+  font-size: 2.8rem;
+  color: #684B9F;
+  margin-bottom: 35px;
   font-weight: 700;
 }
 
 .game-card {
   display: flex;
   align-items: center;
-  background-color: white;
-  border-radius: 10px;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #F1F2F2;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .game-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .game-image {
   width: 150px;
   height: 150px;
   object-fit: cover;
-  border-right: 5px solid #684B9F; /* Morat principal */
+  border-right: 5px solid #684B9F;
 }
 
 .game-info {
@@ -224,26 +230,29 @@ a:hover {
 .game-info h3 {
   margin: 0;
   font-size: 1.8rem;
-  color: #684B9F; /* Morat principal */
+  color: #684B9F;
   font-weight: 700;
 }
 
 .game-info p {
   margin: 0.5rem 0 0;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
-/* Footer */
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 20px;
-  background-color: #333132; /* Negre suau */
-  color: #F1F2F2; /* Blanc suau */
-  margin-top: 20px;
+  padding: 25px;
+  background-color: #F1F2F2;
+  margin-top: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
 }
 
-/* Animacions */
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
