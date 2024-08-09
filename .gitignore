@@ -6,6 +6,13 @@
 /out-tsc
 /bazel-out
 
+# User specific bazel settings
+.bazelrc.user
+/integration/bazel/bazel-*
+
+# User specific ng-dev settings
+.ng-dev.user*
+
 # Node
 /node_modules
 npm-debug.log
@@ -19,6 +26,7 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
+pubspec.lock
 
 # Visual Studio Code
 .vscode/*
@@ -29,7 +37,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
+/.angular/
 .sass-cache/
 /connect.lock
 /coverage
@@ -40,3 +48,40 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+*.log
+
+# CircleCI temporary file for cache key computation.
+# See `save_month_to_file` in `.circleci/config.yml`.
+month.txt
+
+# Include when developing application packages.
+.devcontainer/*
+!.devcontainer/README.md
+!.devcontainer/recommended-devcontainer.json
+!.devcontainer/recommended-Dockerfile
+*.swo
+*.swp
+modules/.settings
+modules/.vscode
+.vimrc
+.nvimrc
+
+# Don't check in secret files
+*secret.js
+
+# build-analytics
+.build-analytics
+
+# rollup-test output
+/modules/rollup-test/dist/
+
+.notes.md
+baseline.json
+
+# Husky
+.husky/_
+
+# Ignore AIO files, useful when changing branches
+aio/node_modules
+aio/out-tsc
