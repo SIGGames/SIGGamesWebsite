@@ -241,11 +241,15 @@ a:hover {
 }
 
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 25px;
   background-color: #F1F2F2;
   margin-top: 40px;
 }
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
