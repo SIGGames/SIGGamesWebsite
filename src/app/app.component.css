@@ -1,0 +1,265 @@
+/* Importa la tipografia Montserrat des de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Estils generals per al cos de la pàgina */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F1F2F2; /* Blanc suau */
+  color: #333132; /* Negre suau */
+}
+
+/* Header i Navegació */
+header {
+  background-color: #684B9F; /* Morat principal */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-width: 80px;
+  height: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #cdcdcd;
+}
+
+/* Contenidor principal */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Títols */
+h1, h2, h3 {
+  color: #684B9F; /* Morat principal */
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* Botons */
+button {
+  background-color: #684B9F; /* Morat principal */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #543781; /* Morat fosc per al hover */
+}
+
+/* Enllaços */
+a {
+  color: #684B9F; /* Morat principal */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #dedcd2; /* Groc suau per al hover */
+}
+
+/* Enllaç actiu */
+.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Secció Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  background-color: #684B9F; /* Morat principal */
+  padding: 80px 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #F1F2F2; /* Blanc suau */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin: 0;
+  color: #F1F2F2; /* Blanc suau */
+  animation: slideInFromLeft 1.5s ease-in-out;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  animation: slideInFromRight 1.5s ease-in-out;
+}
+
+/* Descripcions i Contingut */
+.description, .content-section {
+  text-align: center;
+  padding: 2rem;
+  background-color: #684B9F; /* Morat principal */
+  color: white;
+  border-radius: 10px;
+  margin: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.description:hover, .content-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.description h2, .content-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.description p, .content-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Secció de Jocs */
+.games-section {
+  padding: 2rem;
+  background-color: #F1F2F2; /* Blanc suau */
+  border-radius: 10px;
+  margin: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.games-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #684B9F; /* Morat principal */
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.game-card {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.game-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-right: 5px solid #684B9F; /* Morat principal */
+}
+
+.game-info {
+  padding: 1rem;
+  flex: 1;
+}
+
+.game-info h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #684B9F; /* Morat principal */
+  font-weight: 700;
+}
+
+.game-info p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333132; /* Negre suau */
+  color: #F1F2F2; /* Blanc suau */
+  margin-top: 20px;
+}
+
+/* Animacions */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInFromLeft {
+  from { opacity: 0; transform: translateX(-100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}

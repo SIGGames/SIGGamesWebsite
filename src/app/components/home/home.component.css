@@ -1,0 +1,210 @@
+/* Importa la tipografia Montserrat des de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Estils generals per al cos de la pàgina */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F1F2F2; /* Blanc suau */
+  color: #333132; /* Negre suau */
+}
+
+/* Header i Navegació */
+header {
+  background-color: #333132; /* Negre suau per diferenciar del Hero */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fixat a la part superior */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-width: 80px;
+  height: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #dcdad2;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #684B9F; /* Morat principal */
+  color: white;
+  padding: 50px 20px; /* Més espai per compensar el header fixat */
+  text-align: center;
+  margin-top: 60px; /* Compensa l'altura del header fixat */
+  animation: fadeIn 1s ease-in-out;
+  width: 100%; /* Ocupa tot l'ample de la pantalla */
+  box-sizing: border-box;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: slideInFromLeft 1.5s ease-in-out;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  animation: slideInFromRight 1.5s ease-in-out;
+}
+
+/* Secció de Sobre Nosaltres */
+.about {
+  background-color: white;
+  padding: 50px 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 900px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.about:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about h2 {
+  color: #684B9F; /* Morat principal */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333132; /* Negre suau */
+}
+
+/* Secció de Jocs */
+.games-section {
+  padding: 50px 20px;
+  background-color: #F1F2F2; /* Blanc suau */
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1.4s ease-in-out;
+}
+
+.games-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #684B9F; /* Morat principal */
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.game-card {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: fadeInUp 1.6s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.game-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-right: 5px solid #684B9F; /* Morat principal */
+}
+
+.game-info {
+  padding: 20px;
+  flex: 1;
+}
+
+.game-info h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #684B9F; /* Morat principal */
+  font-weight: 700;
+}
+
+.game-info p {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333132; /* Negre suau */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333132; /* Negre suau */
+  color: #F1F2F2; /* Blanc suau */
+  margin-top: 20px;
+}
+
+/* Animacions */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInFromLeft {
+  from { opacity: 0; transform: translateX(-100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
