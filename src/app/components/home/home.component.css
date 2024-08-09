@@ -95,7 +95,8 @@ nav ul li a:hover {
   border-radius: 12px;
   margin: 20px auto;
   max-width: 1000px;
-  animation: fadeInUp 1.2s ease-in-out;
+  animation: fadeInUp 1.6s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about:hover {
