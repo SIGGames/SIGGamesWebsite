@@ -1,30 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-:root {
-  --primary-color: #684B9F;
-  --secondary-color: #333132;
-  --light-color: #F1F2F2;
-  --hover-color: #cdcdcd;
-  --white-color: #ffffff;
-}
-
 /* General Styles */
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--light-color);
-  color: var(--secondary-color);
+  background-color: #F1F2F2;
+  color: #333132;
 }
 
 /* Header */
 header {
-  background-color: var(--primary-color);
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #684B9F;
+  padding: 15px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+header:hover {
+  background-color: #684B9F;
 }
 
 nav {
@@ -41,7 +38,12 @@ nav {
 .logo {
   max-width: 80px;
   height: auto;
-  border-radius: 50%; /* Logo rodó */
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.logo-link:hover .logo {
+  transform: rotate(360deg); /* Animació al passar per sobre */
 }
 
 nav ul {
@@ -53,60 +55,69 @@ nav ul {
 }
 
 nav ul li a {
-  color: var(--white-color);
+  color: #F1F2F2;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: var(--hover-color);
+  color: #c5c3c0; /* Color groc per al hover */
+  transform: scale(1.1);
 }
 
 /* Content Container */
 .container {
   max-width: 1200px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background-color: var(--white-color);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #F1F2F2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Titles */
 h1, h2, h3 {
-  color: var(--primary-color);
+  color: #684B9F;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 30px;
   font-weight: 700;
 }
 
 /* Buttons */
 button {
-  background-color: var(--primary-color);
-  color: var(--white-color);
+  background-color: #684B9F;
+  color: #F1F2F2;
   border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
   background-color: #543781;
+  transform: translateY(-3px);
 }
 
 /* Links */
 a {
-  color: var(--primary-color);
+  color: #684B9F;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 a:hover {
-  color: var(--hover-color);
+  color: #e4e3e2;
+  transform: scale(1.1);
 }
 
 /* Active Link */
@@ -118,89 +129,97 @@ a:hover {
 /* Hero Section */
 .hero {
   text-align: center;
-  color: var(--white-color);
-  background-color: var(--primary-color);
-  padding: 80px 20px;
+  color: #F1F2F2;
+  background-color: #684B9F;
+  padding: 100px 20px;
   animation: fadeIn 1s ease-in-out;
+  margin-bottom: 40px;
 }
 
 .hero-text h1 {
-  font-size: 4rem;
+  font-size: 4.5rem;
   margin: 0;
   animation: slideInFromLeft 1.5s ease-in-out;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .hero-text p {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   animation: slideInFromRight 1.5s ease-in-out;
 }
 
 /* Description and Content Sections */
 .description, .content-section {
   text-align: center;
-  padding: 2rem;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  border-radius: 10px;
-  margin: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 60px 20px;
+  background-color: #684B9F;
+  color: #F1F2F2;
+  border-radius: 12px;
+  margin: 40px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .description:hover, .content-section:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .description h2, .content-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  margin-bottom: 25px;
   font-weight: 700;
 }
 
 .description p, .content-section p {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 1.4rem;
+  line-height: 1.8;
 }
 
 /* Games Section */
 .games-section {
-  padding: 2rem;
-  background-color: var(--light-color);
-  border-radius: 10px;
-  margin: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 60px 20px;
+  background-color: #F1F2F2;
+  border-radius: 12px;
+  margin: 40px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.games-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .games-section h2 {
   text-align: center;
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 2rem;
+  font-size: 2.8rem;
+  color: #684B9F;
+  margin-bottom: 35px;
   font-weight: 700;
 }
 
 .game-card {
   display: flex;
   align-items: center;
-  background-color: var(--white-color);
-  border-radius: 10px;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #F1F2F2;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .game-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .game-image {
   width: 150px;
   height: 150px;
   object-fit: cover;
-  border-right: 5px solid var(--primary-color);
+  border-right: 5px solid #684B9F;
 }
 
 .game-info {
@@ -211,25 +230,22 @@ a:hover {
 .game-info h3 {
   margin: 0;
   font-size: 1.8rem;
-  color: var(--primary-color);
+  color: #684B9F;
   font-weight: 700;
 }
 
 .game-info p {
   margin: 0.5rem 0 0;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
-/* Footer */
 footer {
   text-align: center;
-  padding: 20px;
-  background-color: var(--secondary-color);
-  color: var(--light-color);
-  margin-top: 20px;
+  padding: 25px;
+  background-color: #F1F2F2;
+  margin-top: 40px;
 }
-
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
