@@ -248,6 +248,8 @@ footer {
   padding: 25px;
   background-color: #F1F2F2;
   margin-top: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
 }
 
 /* Animations */
