@@ -1,6 +1,10 @@
 @import url('https://fonts.cdnfonts.com/css/cocon');
 
 /* General Styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0 !important;
