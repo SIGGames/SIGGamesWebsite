@@ -179,6 +179,42 @@ nav ul li a:hover {
   color: #333132;
 }
 
+.games-section .game-card {
+  margin-bottom: 30px;
+}
+
+/* Section */
+
+.section {
+  padding: 40px 20px;
+  background-color: #F1F2F2;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1.4s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #684B9F;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.section p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #333132;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
