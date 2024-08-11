@@ -53,7 +53,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #b9b8b7; /* Color groc per al hover */
+  color: #b9b8b7;
   transform: scale(1.1);
 }
 
