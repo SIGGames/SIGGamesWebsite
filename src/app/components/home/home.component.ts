@@ -14,4 +14,18 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.appName = this.appService.getAppName();
   }
+
+  scrollToNextSection() {
+    const nextSection = document.querySelector('.section');
+    if (nextSection) {
+      const offset = 180;
+      const elementPosition = nextSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
 }
