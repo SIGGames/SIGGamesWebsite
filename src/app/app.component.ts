@@ -12,9 +12,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class AppComponent {
   // Configurations
-  private readonly showCustomFocusTitle: boolean = true;
   private readonly customFocusTitleSeconds: number = 2;
-  private readonly persistAltTitleOnBlur: boolean = true;
 
   // Titles
   private readonly originalTitle: string;
@@ -28,21 +26,18 @@ export class AppComponent {
 
   @HostListener('window:blur', [])
   onWindowBlur() {
-    if (this.persistAltTitleOnBlur) {
-      this.titleService.setTitle(this.altTitle);
-    }
+    this.titleService.setTitle(this.altTitle);
+    setTimeout(() => {
+      this.titleService.setTitle(this.originalTitle);
+    }, this.customFocusTitleSeconds * 1000);
   }
 
   @HostListener('window:focus', [])
   onWindowFocus() {
-    if (this.showCustomFocusTitle) {
-      this.titleService.setTitle(this.focusTitle);
-      setTimeout(() => {
-        this.titleService.setTitle(this.originalTitle);
-      }, this.customFocusTitleSeconds * 1000);
-    } else {
+    this.titleService.setTitle(this.focusTitle);
+    setTimeout(() => {
       this.titleService.setTitle(this.originalTitle);
-    }
+    }, this.customFocusTitleSeconds * 1000);
   }
 
   getAppName(): string {
