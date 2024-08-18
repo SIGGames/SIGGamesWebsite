@@ -48,4 +48,8 @@ export class AppComponent {
   getAppName(): string {
     return this.appService.getAppName();
   }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
