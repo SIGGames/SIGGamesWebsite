@@ -8,16 +8,11 @@ import { Title } from '@angular/platform-browser';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  // Configurations
-  private readonly customFocusTitleSeconds: number = 2;
-
   // Titles
   private readonly originalTitle: string;
-  private readonly altTitle: string = 'SIG Games :(';
-  private readonly focusTitle: string = 'SIG Games :)';
 
   // Logos
   private readonly originalLogo: string = 'assets/logo.png';
@@ -30,20 +25,20 @@ export class AppComponent {
 
   @HostListener('window:blur', [])
   onWindowBlur() {
-    this.titleService.setTitle(this.altTitle);
-    this.changeLogo(this.originalLogo);
-    setTimeout(() => {
-      this.titleService.setTitle(this.originalTitle);
-    }, this.customFocusTitleSeconds * 1000);
+    this.chaneLogoIcon(this.altLogo);
   }
 
   @HostListener('window:focus', [])
   onWindowFocus() {
-    this.titleService.setTitle(this.focusTitle);
-    this.changeLogo(this.altLogo);
-    setTimeout(() => {
-      this.titleService.setTitle(this.originalTitle);
-    }, this.customFocusTitleSeconds * 1000);
+    this.chaneLogoIcon(this.originalLogo);
+  }
+
+  private chaneLogoIcon(iconUrl: string) {
+    const link: HTMLLinkElement | null =
+      document.querySelector("link[rel~='icon']");
+    if (link) {
+      link.href = iconUrl;
+    }
   }
 
   getAppName(): string {
@@ -52,12 +47,5 @@ export class AppComponent {
 
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  private changeLogo(logoUrl: string) {
-    const logoElement = document.querySelector('.logo') as HTMLImageElement;
-    if (logoElement) {
-      logoElement.src = logoUrl;
-    }
   }
 }
