@@ -25,14 +25,18 @@ nav {
 }
 
 .logo {
+  position: absolute;
   max-width: 80px;
-  height: auto;
+  top: 10px;
+  left: 20px;
   border-radius: 50%;
+  border: 5px solid #333132;
   transition: transform 0.3s ease;
 }
 
 .logo-link:hover .logo {
-  transform: rotate(-45deg);
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
 }
 
 nav ul {

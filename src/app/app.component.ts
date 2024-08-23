@@ -19,6 +19,10 @@ export class AppComponent {
   private readonly altTitle: string = 'SIG Games :(';
   private readonly focusTitle: string = 'SIG Games :)';
 
+  // Logos
+  private readonly originalLogo: string = 'assets/logo.png';
+  private readonly altLogo: string = 'assets/logo-transparent-purple.png';
+
   constructor(private appService: AppService, private titleService: Title) {
     this.originalTitle = this.appService.getAppName();
     this.titleService.setTitle(this.originalTitle);
@@ -27,6 +31,7 @@ export class AppComponent {
   @HostListener('window:blur', [])
   onWindowBlur() {
     this.titleService.setTitle(this.altTitle);
+    this.changeLogo(this.originalLogo);
     setTimeout(() => {
       this.titleService.setTitle(this.originalTitle);
     }, this.customFocusTitleSeconds * 1000);
@@ -35,6 +40,7 @@ export class AppComponent {
   @HostListener('window:focus', [])
   onWindowFocus() {
     this.titleService.setTitle(this.focusTitle);
+    this.changeLogo(this.altLogo);
     setTimeout(() => {
       this.titleService.setTitle(this.originalTitle);
     }, this.customFocusTitleSeconds * 1000);
@@ -46,5 +52,12 @@ export class AppComponent {
 
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  private changeLogo(logoUrl: string) {
+    const logoElement = document.querySelector('.logo') as HTMLImageElement;
+    if (logoElement) {
+      logoElement.src = logoUrl;
+    }
   }
 }
