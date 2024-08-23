@@ -30,7 +30,7 @@ nav {
   top: 10px;
   left: 20px;
   border-radius: 50%;
-  border: 5px solid #333132;
+  border: 1px solid gray;
   transition: transform 0.3s ease;
 }
 
