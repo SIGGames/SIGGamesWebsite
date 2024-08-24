@@ -6,7 +6,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <i class="fas fa-chevron-down down-arrow" (click)="scrollToNextSection()"></i>
+    <i
+      class="fas fa-chevron-down down-arrow"
+      (click)="scrollToNextSection()"
+    ></i>
   </section>
 </div>
 
@@ -17,9 +20,9 @@
       <div class="card-content">
         <h3>Qui som</h3>
         <p>
-          A {{ appName }}, ens dediquem a crear experiències de joc úniques. Som un
-          petit equip apassionat per l'art de desenvolupar videojocs que emocionin i
-          captivin els jugadors.
+          A {{ appName }}, ens dediquem a crear experiències de joc úniques. Som
+          un petit equip apassionat per l'art de desenvolupar videojocs que
+          emocionin i captivin els jugadors.
         </p>
       </div>
     </div>
@@ -46,8 +49,8 @@
       <div class="card-content">
         <h3>Últimes Notícies</h3>
         <p>
-          Descobreix les últimes notícies, actualitzacions i darreres tendències del
-          món dels videojocs directament dels nostres desenvolupadors i
+          Descobreix les últimes notícies, actualitzacions i darreres tendències
+          del món dels videojocs directament dels nostres desenvolupadors i
           col·laboradors.
         </p>
       </div>
@@ -69,26 +72,26 @@
 
   <section id="contact" class="section contact-section">
     <h2>Contacte</h2>
-    <form class="contact-form">
+    <form (ngSubmit)="sendEmail(contactForm)" #contactForm="ngForm">
       <div class="form-group">
         <div class="form-field">
           <label for="firstName">Nom<span id="red-star">*</span></label>
-          <input type="text" id="firstName" name="firstName" required />
+          <input type="text" id="firstName" name="firstName" ngModel required />
         </div>
         <div class="form-field">
           <label for="lastName">Cognoms</label>
-          <input type="text" id="lastName" name="lastName" />
+          <input type="text" id="lastName" name="lastName" ngModel />
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email<span id="red-star">*</span></label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" ngModel required />
       </div>
       <div class="form-group">
         <label for="message">Escriu un missatge</label>
-        <textarea id="message" name="message" rows="4"></textarea>
+        <textarea id="message" name="message" rows="4" ngModel></textarea>
       </div>
-      <button type="submit">Enviar</button>
+      <button type="submit" [disabled]="!contactForm.valid">Enviar</button>
     </form>
 
     <div class="social-icons">
@@ -156,39 +159,39 @@
     </a>
     <a href="https://discord.gg/XAQUEgqP7x" target="_blank">
       <img
-      src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-round-color-icon.png"
-      alt="Discord"
-      title="SIG Games · Discord"
-      width="32"
-      height="32"
+        src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-round-color-icon.png"
+        alt="Discord"
+        title="SIG Games · Discord"
+        width="32"
+        height="32"
       />
     </a>
     <a href="https://www.linkedin.com/company/siggames" target="_blank">
       <img
-      src="https://cdn-icons-png.flaticon.com/512/4494/4494497.png"
-      alt="LinkedIn"
-      title="SIG Games · LinkedIn"
-      width="32"
-      height="32"
+        src="https://cdn-icons-png.flaticon.com/512/4494/4494497.png"
+        alt="LinkedIn"
+        title="SIG Games · LinkedIn"
+        width="32"
+        height="32"
       />
     </a>
     <a href="https://www.instagram.com/siggames.official" target="_blank">
       <img
-      src="https://cdn-icons-png.flaticon.com/512/4494/4494488.png"
-      alt="Instagram"
-      title="SIG Games · Instagram"
-      width="32"
-      height="32"
+        src="https://cdn-icons-png.flaticon.com/512/4494/4494488.png"
+        alt="Instagram"
+        title="SIG Games · Instagram"
+        width="32"
+        height="32"
       />
     </a>
     <a href="https://www.tiktok.com/@siggames.official" target="_blank">
       <img
-      src="https://static.vecteezy.com/system/resources/previews/020/964/382/large_2x/tiktok-circle-icon-for-web-design-free-png.png"
-      alt="TikTok"
-      title="SIG Games · TikTok"
-      width="32"
-      height="32"
+        src="https://static.vecteezy.com/system/resources/previews/020/964/382/large_2x/tiktok-circle-icon-for-web-design-free-png.png"
+        alt="TikTok"
+        title="SIG Games · TikTok"
+        width="32"
+        height="32"
       />
     </a>
   </div>
-  </footer>
+</footer>
