@@ -187,13 +187,6 @@ nav ul li a:hover {
   border-radius: 8px;
 }
 
-.contact-section h2 {
-  font-size: 3rem;
-  text-align: left;
-  color: #684B9F;
-  margin-bottom: 30px;
-}
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -215,6 +208,13 @@ label {
   color: #333;
   display: block;
   margin-bottom: 8px;
+}
+
+#red-star {
+  color: #FF0000;
+  font-weight: bold;
+  margin-left: 2px;
+  font-size: 1.2rem;
 }
 
 input,

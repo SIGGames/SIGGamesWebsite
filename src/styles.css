@@ -4,6 +4,7 @@
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
 body {
@@ -19,6 +20,7 @@ h1, h2 {
 }
 
 footer {
+  scroll-snap-align: none;
   display: flex;
   justify-content: center;
   align-items: center;
