@@ -3,6 +3,8 @@
 /* General Styles */
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
 body {
@@ -18,6 +20,7 @@ h1, h2 {
 }
 
 footer {
+  scroll-snap-align: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,4 +30,12 @@ footer {
   margin-top: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   letter-spacing: 1px;
+}
+
+footer a {
+  margin-right: 10px;
+}
+
+footer a:last-child {
+  margin-right: 0;
 }

@@ -8,16 +8,15 @@ import { Title } from '@angular/platform-browser';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  // Configurations
-  private readonly customFocusTitleSeconds: number = 2;
-
   // Titles
   private readonly originalTitle: string;
-  private readonly altTitle: string = 'SIG Games :(';
-  private readonly focusTitle: string = 'SIG Games :)';
+
+  // Logos
+  private readonly originalLogo: string = 'assets/logo.png';
+  private readonly altLogo: string = 'assets/logo-transparent-purple.png';
 
   constructor(private appService: AppService, private titleService: Title) {
     this.originalTitle = this.appService.getAppName();
@@ -26,18 +25,20 @@ export class AppComponent {
 
   @HostListener('window:blur', [])
   onWindowBlur() {
-    this.titleService.setTitle(this.altTitle);
-    setTimeout(() => {
-      this.titleService.setTitle(this.originalTitle);
-    }, this.customFocusTitleSeconds * 1000);
+    this.chaneLogoIcon(this.altLogo);
   }
 
   @HostListener('window:focus', [])
   onWindowFocus() {
-    this.titleService.setTitle(this.focusTitle);
-    setTimeout(() => {
-      this.titleService.setTitle(this.originalTitle);
-    }, this.customFocusTitleSeconds * 1000);
+    this.chaneLogoIcon(this.originalLogo);
+  }
+
+  private chaneLogoIcon(iconUrl: string) {
+    const link: HTMLLinkElement | null =
+      document.querySelector("link[rel~='icon']");
+    if (link) {
+      link.href = iconUrl;
+    }
   }
 
   getAppName(): string {

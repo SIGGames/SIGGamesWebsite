@@ -1,91 +1,194 @@
 <div id="home" class="hero">
-  <h1>{{ appName }}</h1>
-  <h2>Desenvolupadora de videojocs indie.</h2>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <i class="fas fa-chevron-down down-arrow" (click)="scrollToNextSection()"></i>
+  <section>
+    <h1>{{ appName }}</h1>
+    <h2>Desenvolupadora de videojocs indie.</h2>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <i class="fas fa-chevron-down down-arrow" (click)="scrollToNextSection()"></i>
+  </section>
 </div>
 
 <div class="content">
-  <section id="about" class="section about">
+  <section id="about" class="section">
     <h2>Sobre nosaltres</h2>
-    <p>A {{ appName }}, ens dediquem a crear experiències de joc úniques. Som un petit equip apassionat per l'art de desenvolupar videojocs que emocionin i captivin els jugadors.</p>
-  </section>
-
-  <section id="games" class="section games-section">
-    <h2>Els nostres jocs</h2>
-    <div class="game-card">
-      <img src="assets/paco-monkey.png" alt="PacoMonkey" class="game-image">
-      <div class="game-info">
-        <h3>PacoMonkey</h3>
-        <p>Un joc de plataformes 2D amb art pixelat, on controles en Paco, un mico intrèpid en la seva aventura per recollir plàtans i evitar obstacles.</p>
+    <div class="card-element">
+      <div class="card-content">
+        <h3>Qui som</h3>
+        <p>
+          A {{ appName }}, ens dediquem a crear experiències de joc úniques. Som un
+          petit equip apassionat per l'art de desenvolupar videojocs que emocionin i
+          captivin els jugadors.
+        </p>
       </div>
     </div>
   </section>
 
-  <section id="blog" class="section blog-section">
-    <h2>El nostre Blog</h2>
-    <p>Descobreix les últimes notícies, actualitzacions i darreres tendències del món dels videojocs directament dels nostres desenvolupadors i col·laboradors.</p>
+  <section id="games" class="section">
+    <h2>Els nostres jocs</h2>
+    <div class="card-element">
+      <div class="card-content">
+        <h3>PacoMonkey</h3>
+        <img src="assets/paco-monkey.png" alt="PacoMonkey" />
+        <p>
+          Un joc de plataformes 2D amb art pixelat, on controles en Paco, un
+          mico intrèpid en la seva aventura per recollir plàtans i evitar
+          obstacles.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section id="team" class="section team-section">
+  <section id="blog" class="section">
+    <h2>El nostre Blog</h2>
+    <div class="card-element">
+      <div class="card-content">
+        <h3>Últimes Notícies</h3>
+        <p>
+          Descobreix les últimes notícies, actualitzacions i darreres tendències del
+          món dels videojocs directament dels nostres desenvolupadors i
+          col·laboradors.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="section">
     <h2>El nostre Equip</h2>
-    <p>Conoceix els creatius darrere dels nostres videojocs. Un equip de desenvolupadors talentosos, dissenyadors gràfics i especialistes en jugabilitat que porten la innovació al cor del joc.</p>
+    <div class="card-element">
+      <div class="card-content">
+        <p>
+          Conoceix els creatius darrere dels nostres videojocs. Un equip de
+          desenvolupadors talentosos, dissenyadors gràfics i especialistes en
+          jugabilitat que porten la innovació al cor del joc.
+        </p>
+      </div>
+    </div>
   </section>
 
   <section id="contact" class="section contact-section">
-    <h2>Contacta'ns</h2>
-    <p>Tens preguntes? Vols saber més sobre els nostres jocs o tens alguna consulta de suport? No dubtis a contactar-nos a través dels següents mitjans.</p>
+    <h2>Contacte</h2>
+    <form class="contact-form">
+      <div class="form-group">
+        <div class="form-field">
+          <label for="firstName">Nom<span id="red-star">*</span></label>
+          <input type="text" id="firstName" name="firstName" required />
+        </div>
+        <div class="form-field">
+          <label for="lastName">Cognoms</label>
+          <input type="text" id="lastName" name="lastName" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email<span id="red-star">*</span></label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Escriu un missatge</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div class="social-icons">
+      <a href="mailto:contact@siggames.cat" target="_blank">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Circle-icons-mail.svg/1024px-Circle-icons-mail.svg.png"
+          alt="Email"
+          title="SIG Games · Email"
+          width="32"
+          height="32"
+        />
+      </a>
+      <a href="https://www.instagram.com/siggames.official" target="_blank">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/4494/4494488.png"
+          alt="Instagram"
+          title="SIG Games · Instagram"
+          width="32"
+          height="32"
+        />
+      </a>
+      <a href="https://www.tiktok.com/@siggames.official" target="_blank">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/020/964/382/large_2x/tiktok-circle-icon-for-web-design-free-png.png"
+          alt="TikTok"
+          title="SIG Games · TikTok"
+          width="32"
+          height="32"
+        />
+      </a>
+      <a href="https://discord.gg/XAQUEgqP7x" target="_blank">
+        <img
+          src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-round-color-icon.png"
+          alt="Discord"
+          title="SIG Games · Discord"
+          width="32"
+          height="32"
+        />
+      </a>
+      <a href="https://www.linkedin.com/company/siggames" target="_blank">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/4494/4494497.png"
+          alt="LinkedIn"
+          title="SIG Games · LinkedIn"
+          width="32"
+          height="32"
+        />
+      </a>
+    </div>
   </section>
 </div>
 
 <footer>
   &copy; 2024 {{ appName }}. Tots els drets reservats.
 
-  <div style="margin-left: 20px;" align="center">
-    <div style="display:table;max-width:251px">
-    <table align="center" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="width:32px!important;height:32px!important;display:inline-block;border-collapse:collapse;table-layout:fixed;border-spacing:0;vertical-align:top;margin-right:10px">
-      <tbody><tr style="vertical-align:top"><td align="center" valign="middle" style="word-break:break-word;border-collapse:collapse!important;vertical-align:top">
-        <a href="mailto:contact@siggames.cat" title="Email" target="_blank">
-          <img src="https://cdn.tools.unlayer.com/social/icons/circle-black/email.png" alt="Email" title="Email" width="32" style="outline:none;text-decoration:none;clear:both;display:block!important;border:none;height:auto;float:none;max-width:32px!important" class="CToWUd" data-bit="iit">
-        </a>
-      </td></tr>
-    </tbody></table>
-    <table align="center" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="width:32px!important;height:32px!important;display:inline-block;border-collapse:collapse;table-layout:fixed;border-spacing:0;vertical-align:top;margin-right:10px">
-      <tbody><tr style="vertical-align:top"><td align="center" valign="middle" style="word-break:break-word;border-collapse:collapse!important;vertical-align:top">
-        <a href="https://www.instagram.com/siggames.official/" title="Instagram" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.instagram.com/siggames.official/&amp;source=gmail&amp;ust=1723318905436000&amp;usg=AOvVaw0QV5H-JhG7jA-ZyAbobkGZ">
-          <img src="https://cdn.tools.unlayer.com/social/icons/circle-black/instagram.png" alt="Instagram" title="Instagram" eidth="32" style="outline:none;text-decoration:none;clear:both;display:block!important;border:none;height:auto;float:none;max-width:32px!important" class="CToWUd" data-bit="iit">
-        </a>
-      </td></tr>
-    </tbody></table>
-    <table align="center" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="width:32px!important;height:32px!important;display:inline-block;border-collapse:collapse;table-layout:fixed;border-spacing:0;vertical-align:top;margin-right:10px">
-      <tbody><tr style="vertical-align:top"><td align="center" valign="middle" style="word-break:break-word;border-collapse:collapse!important;vertical-align:top">
-        <a href="https://www.tiktok.com/@siggames.official?_t=8oM1Fga77Wy&amp;_r=1" title="TikTok" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.tiktok.com/@siggames.official?_t%3D8oM1Fga77Wy%26_r%3D1&amp;source=gmail&amp;ust=1723318905436000&amp;usg=AOvVaw0UKOMCBgkEnwZP9RP7p_uE">
-          <img src="https://cdn.tools.unlayer.com/social/icons/circle-black/tiktok.png" alt="TikTok" title="TikTok" width="32" style="outline:none;text-decoration:none;clear:both;display:block!important;border:none;height:auto;float:none;max-width:32px!important" class="CToWUd" data-bit="iit">
-        </a>
-      </td></tr>
-    </tbody></table>
-    <table align="center" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="width:32px!important;height:32px!important;display:inline-block;border-collapse:collapse;table-layout:fixed;border-spacing:0;vertical-align:top;margin-right:10px">
-      <tbody><tr style="vertical-align:top"><td align="center" valign="middle" style="word-break:break-word;border-collapse:collapse!important;vertical-align:top">
-        <a href="https://discord.gg/XAQUEgqP7x" title="Discord" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://discord.gg/XAQUEgqP7x&amp;source=gmail&amp;ust=1723318905436000&amp;usg=AOvVaw1nWu4E2xFpNLBIjEHNu1Dt">
-          <img src="https://cdn.tools.unlayer.com/social/icons/circle-black/discord.png" alt="Discord" title="Discord" width="32" style="outline:none;text-decoration:none;clear:both;display:block!important;border:none;height:auto;float:none;max-width:32px!important" class="CToWUd" data-bit="iit">
-        </a>
-      </td></tr>
-    </tbody></table>
-    <table align="center" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="width:32px!important;height:32px!important;display:inline-block;border-collapse:collapse;table-layout:fixed;border-spacing:0;vertical-align:top;margin-right:10px">
-      <tbody><tr style="vertical-align:top"><td align="center" valign="middle" style="word-break:break-word;border-collapse:collapse!important;vertical-align:top">
-        <a href="https://github.com/SIGGames" title="GitHub" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://github.com/SIGGames&amp;source=gmail&amp;ust=1723318905437000&amp;usg=AOvVaw3cQxMhsp8PjsQ2o0TjfV0Y">
-          <img src="https://cdn.tools.unlayer.com/social/icons/circle-black/github.png" alt="GitHub" title="GitHub" width="32" style="outline:none;text-decoration:none;clear:both;display:block!important;border:none;height:auto;float:none;max-width:32px!important" class="CToWUd" data-bit="iit">
-          <i class="fa-brands fa-github"></i>
-        </a>
-      </td></tr>
-    </tbody></table>
-    <table align="center" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="width:32px!important;height:32px!important;display:inline-block;border-collapse:collapse;table-layout:fixed;border-spacing:0;vertical-align:top;margin-right:0px">
-      <tbody><tr style="vertical-align:top"><td align="center" valign="middle" style="word-break:break-word;border-collapse:collapse!important;vertical-align:top">
-        <a href="https://www.linkedin.com/company/siggames/" title="LinkedIn" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.linkedin.com/company/siggames/&amp;source=gmail&amp;ust=1723318905437000&amp;usg=AOvVaw2hcp6jpe84PqejuBHG-kzy">
-          <img src="https://cdn.tools.unlayer.com/social/icons/circle-black/linkedin.png" alt="LinkedIn" title="LinkedIn" width="32" style="outline:none;text-decoration:none;clear:both;display:block!important;border:none;height:auto;float:none;max-width:32px!important" class="CToWUd" data-bit="iit">
-        </a>
-      </td></tr>
-    </tbody></table>
+  <div style="margin-left: 20px" align="center">
+    <a href="mailto:contact@siggames.cat" target="_blank">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Circle-icons-mail.svg/1024px-Circle-icons-mail.svg.png"
+        alt="Email"
+        title="SIG Games · Email"
+        width="32"
+        height="32"
+      />
+    </a>
+    <a href="https://discord.gg/XAQUEgqP7x" target="_blank">
+      <img
+      src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-round-color-icon.png"
+      alt="Discord"
+      title="SIG Games · Discord"
+      width="32"
+      height="32"
+      />
+    </a>
+    <a href="https://www.linkedin.com/company/siggames" target="_blank">
+      <img
+      src="https://cdn-icons-png.flaticon.com/512/4494/4494497.png"
+      alt="LinkedIn"
+      title="SIG Games · LinkedIn"
+      width="32"
+      height="32"
+      />
+    </a>
+    <a href="https://www.instagram.com/siggames.official" target="_blank">
+      <img
+      src="https://cdn-icons-png.flaticon.com/512/4494/4494488.png"
+      alt="Instagram"
+      title="SIG Games · Instagram"
+      width="32"
+      height="32"
+      />
+    </a>
+    <a href="https://www.tiktok.com/@siggames.official" target="_blank">
+      <img
+      src="https://static.vecteezy.com/system/resources/previews/020/964/382/large_2x/tiktok-circle-icon-for-web-design-free-png.png"
+      alt="TikTok"
+      title="SIG Games · TikTok"
+      width="32"
+      height="32"
+      />
+    </a>
   </div>
-</div>
-</footer>
+  </footer>
