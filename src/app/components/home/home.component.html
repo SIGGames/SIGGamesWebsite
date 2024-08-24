@@ -91,7 +91,7 @@
         <label for="message">Escriu un missatge</label>
         <textarea id="message" name="message" rows="4" ngModel></textarea>
       </div>
-      <button type="submit" [disabled]="!contactForm.valid">Enviar</button>
+      <button type="submit" [disabled]="!contactForm.valid || isSendBtnDisabled ">Enviar</button>
     </form>
 
     <div class="social-icons">

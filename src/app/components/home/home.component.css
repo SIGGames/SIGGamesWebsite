@@ -253,6 +253,12 @@ button[type="submit"]:hover {
   background-color: #563e8b;
 }
 
+button[type="submit"]:disabled {
+  background-color: #cccccc;
+  color: black;
+  cursor: not-allowed;
+}
+
 .social-icons {
   margin-top: 30px;
   display: flex;

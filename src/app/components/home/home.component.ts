@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   appName: string = '';
+  isSendBtnDisabled: boolean = false;
 
   // Email Config
   private emailServiceId: string = 'service_0wg0538';
@@ -39,21 +40,25 @@ export class HomeComponent implements OnInit {
     }
   }
   sendEmail(form: NgForm) {
+    this.isSendBtnDisabled = true;
     if (form.valid) {
-      emailjs.send(this.emailServiceId, this.emailTemplateId, {
+      /* emailjs.send(this.emailServiceId, this.emailTemplateId, {
         firstName: form.value.firstName,
         lastName: form.value.lastName,
         email: form.value.email,
         message: form.value.message
-      }, this.emailUserId)
+      }, this.emailUserId)*/
+      emailjs.sendForm('', '', '', '')
+      // Remove this mock and uncomment the above line
       .then((response: EmailJSResponseStatus) => {
         this.sendNotification(`El correu s'ha enviat correctament`);
         form.resetForm();
       }, (error) => {
         this.sendNotification(`No s'ha pogut enviar el correu correctament`);
       });
-      this.router.navigate(['/']);
     }
+    this.router.navigate(['/']);
+    this.isSendBtnDisabled = false;
   }
 
   sendNotification(msg: string) {
