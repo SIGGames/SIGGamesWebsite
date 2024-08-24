@@ -1,7 +1,15 @@
 /* General styles */
 
+html, body {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  height: 100%;
+  overflow-y: scroll;
+}
+
 section {
   scroll-snap-align: start;
+  min-height: 100vh;
 }
 
 #home {
@@ -18,10 +26,6 @@ section {
 
 #home h1 {
   font-size: 6rem;
-}
-
-#hope h2 {
-  font-size: 3rem;
 }
 
 nav {
@@ -96,7 +100,7 @@ nav ul li a:hover {
 }
 
 .section h2 {
-  font-size: 3vw;
+  font-size: 4vw;
   color: #684B9F;
   font-weight: 700;
   margin: 20px 5vw 0 0;
