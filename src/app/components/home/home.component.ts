@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
 
   sendEmail(form: NgForm) {
     if (form.valid) {
-      emailjs.send('service_05l0za8', 'template_vff6j8p', {
+      emailjs.send('service_0wg0538', 'template_vff6j8p', {
         firstName: form.value.firstName,
         lastName: form.value.lastName,
         email: form.value.email,
