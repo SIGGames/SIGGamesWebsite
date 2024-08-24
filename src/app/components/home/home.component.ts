@@ -16,9 +16,10 @@ export class HomeComponent implements OnInit {
   isSendBtnDisabled: boolean = false;
 
   // Email Config
-  private emailServiceId: string = 'service_0wg0538';
-  private emailTemplateId: string = 'template_vff6j8p';
-  private emailUserId: string = 'mzm-0jmzxq72JQMlu';
+  private readonly emailServiceId: string = 'service_0wg0538';
+  private readonly emailTemplateId: string = 'template_vff6j8p';
+  private readonly emailUserId: string = 'mzm-0jmzxq72JQMlu';
+  private readonly EMAIL_TIMEOUT: number = 5 * 60 * 1000; // 5 minutes
 
   constructor(private appService: AppService, private router: Router) { }
 
@@ -53,6 +54,7 @@ export class HomeComponent implements OnInit {
       .then((response: EmailJSResponseStatus) => {
         this.sendNotification(`El correu s'ha enviat correctament`);
         form.resetForm();
+        this.setLastEmailSentTime();
       }, (error) => {
         this.sendNotification(`No s'ha pogut enviar el correu correctament`);
       });
@@ -63,5 +65,18 @@ export class HomeComponent implements OnInit {
 
   sendNotification(msg: string) {
     alert(msg);
+  }
+
+  private setLastEmailSentTime() {
+    localStorage.setItem('lastEmailSentTime', new Date().toISOString());
+  }
+
+  public isUserRecentSentEmail(): boolean {
+    const lastEmailSentTime = localStorage.getItem('lastEmailSentTime');
+    if (lastEmailSentTime) {
+      const elapsedTime = Date.now() - parseInt(lastEmailSentTime, 10);
+      return elapsedTime < this.EMAIL_TIMEOUT;
+    }
+    return false;
   }
 }
