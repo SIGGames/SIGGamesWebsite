@@ -30,22 +30,6 @@ nav {
   justify-content: space-between;
 }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  max-width: 80px;
-  height: auto;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-
-.logo-link:hover .logo {
-  transform: rotate(360deg);
-}
-
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -118,6 +102,7 @@ nav ul li a:hover {
   margin: 20px 5vw 0 0;
   position: absolute;
   top: 20px;
+  opacity: 1;
   left: 5vw;
 }
 
