@@ -102,8 +102,8 @@ nav ul li a:hover {
 
 /* Section Fullscreen */
 .section {
+  position: relative;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -112,11 +112,31 @@ nav ul li a:hover {
 }
 
 .section h2 {
-  text-align: center;
-  font-size: 3.5rem;
+  font-size: 3vw;
   color: #684B9F;
   font-weight: 700;
-  margin-bottom: 40px;
+  margin: 20px 5vw 0 0;
+  position: absolute;
+  top: 20px;
+  left: 5vw;
+}
+
+@media (max-width: 768px) {
+  .section h2 {
+    font-size: 5vw;
+    left: 3vw;
+    top: 15px;
+    margin: 15px 3vw 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section h2 {
+    font-size: 6vw;
+    left: 2vw;
+    top: 10px;
+    margin: 10px 2vw 0 0;
+  }
 }
 
 /* Card Elements */
