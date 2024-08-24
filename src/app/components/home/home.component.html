@@ -1,31 +1,36 @@
 <div id="home" class="hero">
   <section>
-  <h1>{{ appName }}</h1>
-  <h2>Desenvolupadora de videojocs indie.</h2>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-  />
-  <i class="fas fa-chevron-down down-arrow" (click)="scrollToNextSection()"></i>
+    <h1>{{ appName }}</h1>
+    <h2>Desenvolupadora de videojocs indie.</h2>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <i class="fas fa-chevron-down down-arrow" (click)="scrollToNextSection()"></i>
   </section>
 </div>
 
 <div class="content">
-  <section id="about" class="section about">
+  <section id="about" class="section">
     <h2>Sobre nosaltres</h2>
-    <p>
-      A {{ appName }}, ens dediquem a crear experiències de joc úniques. Som un
-      petit equip apassionat per l'art de desenvolupar videojocs que emocionin i
-      captivin els jugadors.
-    </p>
+    <div class="card-element">
+      <div class="card-content">
+        <h3>Qui som</h3>
+        <p>
+          A {{ appName }}, ens dediquem a crear experiències de joc úniques. Som un
+          petit equip apassionat per l'art de desenvolupar videojocs que emocionin i
+          captivin els jugadors.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section id="games" class="section games-section">
+  <section id="games" class="section">
     <h2>Els nostres jocs</h2>
-    <div class="game-card">
-      <img src="assets/paco-monkey.png" alt="PacoMonkey" class="game-image" />
-      <div class="game-info">
+    <div class="card-element">
+      <div class="card-content">
         <h3>PacoMonkey</h3>
+        <img src="assets/paco-monkey.png" alt="PacoMonkey" />
         <p>
           Un joc de plataformes 2D amb art pixelat, on controles en Paco, un
           mico intrèpid en la seva aventura per recollir plàtans i evitar
@@ -35,31 +40,46 @@
     </div>
   </section>
 
-  <section id="blog" class="section blog-section">
+  <section id="blog" class="section">
     <h2>El nostre Blog</h2>
-    <p>
-      Descobreix les últimes notícies, actualitzacions i darreres tendències del
-      món dels videojocs directament dels nostres desenvolupadors i
-      col·laboradors.
-    </p>
+    <div class="card-element">
+      <div class="card-content">
+        <h3>Últimes Notícies</h3>
+        <p>
+          Descobreix les últimes notícies, actualitzacions i darreres tendències del
+          món dels videojocs directament dels nostres desenvolupadors i
+          col·laboradors.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section id="team" class="section team-section">
+  <section id="team" class="section">
     <h2>El nostre Equip</h2>
-    <p>
-      Conoceix els creatius darrere dels nostres videojocs. Un equip de
-      desenvolupadors talentosos, dissenyadors gràfics i especialistes en
-      jugabilitat que porten la innovació al cor del joc.
-    </p>
+    <div class="card-element">
+      <div class="card-content">
+        <h3>Els Nostres Creatius</h3>
+        <p>
+          Conoceix els creatius darrere dels nostres videojocs. Un equip de
+          desenvolupadors talentosos, dissenyadors gràfics i especialistes en
+          jugabilitat que porten la innovació al cor del joc.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section id="contact" class="section contact-section">
+  <section id="contact" class="section">
     <h2>Contacta'ns</h2>
-    <p>
-      Tens preguntes? Vols saber més sobre els nostres jocs o tens alguna
-      consulta de suport? No dubtis a contactar-nos a través dels següents
-      mitjans.
-    </p>
+    <div class="card-element">
+      <div class="card-content">
+        <h3>Consulta'ns</h3>
+        <p>
+          Tens preguntes? Vols saber més sobre els nostres jocs o tens alguna
+          consulta de suport? No dubtis a contactar-nos a través dels següents
+          mitjans.
+        </p>
+      </div>
+    </div>
   </section>
 </div>
 
