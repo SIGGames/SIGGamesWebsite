@@ -41,26 +41,25 @@ export class HomeComponent implements OnInit {
     }
   }
   sendEmail(form: NgForm) {
-    this.isSendBtnDisabled = true;
-    if (form.valid) {
-      /* emailjs.send(this.emailServiceId, this.emailTemplateId, {
+    if (form.valid && !this.isUserRecentSentEmail()) {
+      emailjs.send(this.emailServiceId, this.emailTemplateId, {
         firstName: form.value.firstName,
         lastName: form.value.lastName,
         email: form.value.email,
         message: form.value.message
-      }, this.emailUserId)*/
-      emailjs.sendForm('', '', '', '')
-      // Remove this mock and uncomment the above line
+      }, this.emailUserId)
       .then((response: EmailJSResponseStatus) => {
         this.sendNotification(`El correu s'ha enviat correctament`);
         form.resetForm();
         this.setLastEmailSentTime();
+        this.disableSendButton();
       }, (error) => {
         this.sendNotification(`No s'ha pogut enviar el correu correctament`);
       });
+      this.router.navigate(['/']);
+    } else {
+      this.sendNotification(`Has d'esperar ${this.EMAIL_TIMEOUT / 1000} segons abans de tornar a enviar un correu`);
     }
-    this.router.navigate(['/']);
-    this.isSendBtnDisabled = false;
   }
 
   sendNotification(msg: string) {
@@ -71,12 +70,29 @@ export class HomeComponent implements OnInit {
     localStorage.setItem('lastEmailSentTime', new Date().toISOString());
   }
 
+  private getLastEmailSentTime(): string | null {
+    return localStorage.getItem('lastEmailSentTime');
+  }
+
   public isUserRecentSentEmail(): boolean {
-    const lastEmailSentTime = localStorage.getItem('lastEmailSentTime');
+    const lastEmailSentTime = this.getLastEmailSentTime();
     if (lastEmailSentTime) {
       const elapsedTime = Date.now() - parseInt(lastEmailSentTime, 10);
       return elapsedTime < this.EMAIL_TIMEOUT;
     }
     return false;
+  }
+
+  private disableSendButton() {
+    this.isSendBtnDisabled = true;
+    setTimeout(() => {
+      this.isSendBtnDisabled = false;
+    }, this.EMAIL_TIMEOUT);
+  }
+
+  private checkEmailTimeout() {
+    if (this.isUserRecentSentEmail()) {
+      this.disableSendButton();
+    }
   }
 }
