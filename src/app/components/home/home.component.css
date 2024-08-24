@@ -1,5 +1,9 @@
 /* General styles */
 
+section {
+  scroll-snap-align: start;
+}
+
 #home {
   display: flex;
   flex-direction: column;
@@ -197,11 +201,12 @@ nav ul li a:hover {
 /* Section */
 
 .section {
-  padding: 40px 20px;
+  padding: 60px 20px;
   background-color: #F1F2F2;
   border-radius: 12px;
   margin: 40px auto;
   max-width: 1000px;
+  height: 100vh;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   animation: fadeInUp 1.4s ease-in-out;
   transition: transform 0.3s ease, box-shadow 0.3s ease;

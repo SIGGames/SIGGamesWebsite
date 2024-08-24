@@ -3,6 +3,7 @@
 /* General Styles */
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 body {
