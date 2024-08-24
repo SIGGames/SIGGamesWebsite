@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../../app.service';
+import { FormsModule, NgForm } from '@angular/forms';
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  standalone: true,
+  imports: [FormsModule],
 })
 export class HomeComponent implements OnInit {
   appName: string = '';
@@ -25,6 +29,23 @@ export class HomeComponent implements OnInit {
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
+      });
+    }
+  }
+
+  sendEmail(form: NgForm) {
+    if (form.valid) {
+      emailjs.send('service_05l0za8', 'template_vff6j8p', {
+        firstName: form.value.firstName,
+        lastName: form.value.lastName,
+        email: form.value.email,
+        message: form.value.message
+      }, 'mzm-0jmzxq72JQMlu')
+      .then((response: EmailJSResponseStatus) => {
+        console.log('Email sent successfully!', response.status, response.text);
+        form.resetForm();
+      }, (error) => {
+        console.error('Failed to send email. Error:', error);
       });
     }
   }
