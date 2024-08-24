@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.appName = this.appService.getAppName();
+    this.checkEmailTimeout();
   }
 
   scrollToNextSection() {
@@ -40,25 +41,28 @@ export class HomeComponent implements OnInit {
       });
     }
   }
+
   sendEmail(form: NgForm) {
-    if (form.valid && !this.isUserRecentSentEmail()) {
-      emailjs.send(this.emailServiceId, this.emailTemplateId, {
-        firstName: form.value.firstName,
-        lastName: form.value.lastName,
-        email: form.value.email,
-        message: form.value.message
-      }, this.emailUserId)
-      .then((response: EmailJSResponseStatus) => {
-        this.sendNotification(`El correu s'ha enviat correctament`);
-        form.resetForm();
-        this.setLastEmailSentTime();
+    if (form.valid) {
+      if (!this.isUserRecentSentEmail()) {
+        emailjs.send(this.emailServiceId, this.emailTemplateId, {
+          firstName: form.value.firstName,
+          lastName: form.value.lastName,
+          email: form.value.email,
+          message: form.value.message
+        }, this.emailUserId)
+        .then((response: EmailJSResponseStatus) => {
+          this.sendNotification(`El correu s'ha enviat correctament`);
+          form.resetForm();
+          this.setLastEmailSentTime();
+        }, (error) => {
+          this.sendNotification(`No s'ha pogut enviar el correu correctament`);
+        });
+        this.router.navigate(['/']);
+      } else {
+        this.sendNotification(`Has d'esperar ${this.EMAIL_TIMEOUT / 1000} segons abans de tornar a enviar un correu`);
         this.disableSendButton();
-      }, (error) => {
-        this.sendNotification(`No s'ha pogut enviar el correu correctament`);
-      });
-      this.router.navigate(['/']);
-    } else {
-      this.sendNotification(`Has d'esperar ${this.EMAIL_TIMEOUT / 1000} segons abans de tornar a enviar un correu`);
+      }
     }
   }
 
@@ -67,7 +71,7 @@ export class HomeComponent implements OnInit {
   }
 
   private setLastEmailSentTime() {
-    localStorage.setItem('lastEmailSentTime', new Date().toISOString());
+    localStorage.setItem('lastEmailSentTime', Date.now().toString());
   }
 
   private getLastEmailSentTime(): string | null {
