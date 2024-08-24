@@ -226,6 +226,14 @@ nav ul li a:hover {
   color: #333132;
 }
 
+footer a {
+  margin-right: 10px;
+}
+
+footer a:last-child {
+  margin-right: 0;
+}
+
 .down-arrow {
   position: absolute;
   bottom: 20px;
