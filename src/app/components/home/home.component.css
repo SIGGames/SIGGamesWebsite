@@ -107,7 +107,7 @@ nav ul li a:hover {
   position: absolute;
   top: 20px;
   opacity: 1;
-  left: 5vw;
+  left: 6vw;
 }
 
 @media (max-width: 768px) {
@@ -134,6 +134,7 @@ nav ul li a:hover {
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  width: 90%;
   animation: fadeInUp 1.6s ease-in-out;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: 30px;
