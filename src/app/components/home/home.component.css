@@ -187,6 +187,12 @@ nav ul li a:hover {
   border-radius: 8px;
 }
 
+.contact-section h2 {
+  margin: 20px 5vw 0 0;
+  position: absolute;
+  top: 20px;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
