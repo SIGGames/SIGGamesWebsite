@@ -29,3 +29,11 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   letter-spacing: 1px;
 }
+
+footer a {
+  margin-right: 10px;
+}
+
+footer a:last-child {
+  margin-right: 0;
+}
