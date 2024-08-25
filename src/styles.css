@@ -1,39 +1,131 @@
-@import url('https://fonts.cdnfonts.com/css/cocon');
+@import url("https://fonts.cdnfonts.com/css/cocon");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Variables CSS */
+:root {
+  --primary-bg-color: #f1f2f2;
+  --primary-text-color: #333132;
+  --default-icon-bg-color: white;
+  --default-icon-size: 64px;
+  --default-icon-padding: 1em;
+  --default-border-radius: 50%;
+  --default-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
 
 /* General Styles */
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0 !important;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
   padding: 0;
-  background-color: #F1F2F2;
-  color: #333132;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-h1, h2 {
-  font-family: 'cocon', 'Montserrat', sans-serif;
+h1,
+h2 {
+  font-family: "cocon", "Montserrat", sans-serif;
 }
 
+/* Footer Styles */
 footer {
-  scroll-snap-align: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  flex-direction: column;
   padding: 25px;
-  background-color: #F1F2F2;
-  margin-top: 40px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: var(--primary-bg-color);
   letter-spacing: 1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  box-sizing: border-box;
+  scroll-snap-align: end;
 }
 
-footer a {
-  margin-right: 10px;
+.socials-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.icon-link {
+  background-color: var(--default-icon-bg-color);
+  padding: var(--default-icon-padding);
+  border-radius: var(--default-border-radius);
+  height: var(--default-icon-size);
+  width: var(--default-icon-size);
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--default-box-shadow);
+  position: relative;
+  overflow: hidden;
+  transition: background-color 200ms ease-in-out;
+}
+
+.icon-link img {
+  height: 32px;
+  width: 32px;
+}
+
+.icon-link::before {
+  content: attr(data-social);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%) rotate(25deg);
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 100px;
+  box-shadow: var(--default-box-shadow);
+  opacity: 0;
+  transition: transform 200ms cubic-bezier(0.42, 0, 0.44, 1.68),
+    opacity 200ms cubic-bezier(0.42, 0, 0.44, 1.68);
+}
+
+.icon-link:hover {
+  background-color: var(--accent-color);
+}
+
+.icon-link:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.icon-link::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(25deg);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid var(--accent-color);
+  opacity: 0;
+  transition: transform 200ms cubic-bezier(0.42, 0, 0.44, 1.68),
+    opacity 200ms cubic-bezier(0.42, 0, 0.44, 1.68);
+}
+
+.icon-link:hover::before {
+  top: -65px;
+  transform: translateX(-50%) rotate(0);
+  opacity: 1;
+}
+
+.icon-link:hover::after {
+  bottom: -35px;
+  transform: translateX(-50%) rotate(0);
+  opacity: 1;
 }
 
 footer a:last-child {
