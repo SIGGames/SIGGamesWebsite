@@ -1,21 +1,18 @@
 @import url("https://fonts.cdnfonts.com/css/cocon");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/* Variables CSS */
 :root {
   --primary-bg-color: #f1f2f2;
   --primary-text-color: #333132;
   --default-icon-bg-color: transparent;
   --default-icon-size: 64px;
   --default-icon-padding: 0;
-  --default-border-radius: 50%;
-  --default-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
   --tooltip-bg-color: black;
   --tooltip-text-color: white;
   --tooltip-padding: 4px 8px;
   --tooltip-border-radius: 4px;
   --tooltip-font-size: 0.8rem;
-  --tooltip-offset: 35px;
+  --tooltip-offset: 40px;
   --icon-transition-duration: 0.3s;
   --tooltip-transition-duration: 0.3s;
 }
@@ -39,8 +36,7 @@ body {
   justify-content: space-between;
 }
 
-h1,
-h2 {
+h1, h2 {
   font-family: "cocon", "Montserrat", sans-serif;
 }
 
@@ -67,11 +63,8 @@ footer {
 
 .icon-link {
   background-color: var(--default-icon-bg-color);
-  padding: var(--default-icon-padding);
   height: var(--default-icon-size);
   width: var(--default-icon-size);
-  box-sizing: border-box;
-  flex-shrink: 0;
   display: grid;
   place-items: center;
   position: relative;
@@ -79,8 +72,8 @@ footer {
 }
 
 .icon-link img {
-  height: 32px;
-  width: 32px;
+  height: 100%;
+  width: 100%;
   transition: transform var(--icon-transition-duration) ease;
 }
 
