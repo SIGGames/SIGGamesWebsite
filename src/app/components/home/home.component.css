@@ -259,26 +259,9 @@ button[type="submit"]:disabled {
   cursor: not-allowed;
 }
 
-.social-icons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.social-icons a {
-  text-decoration: none;
-  color: #333;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.social-icons img {
-  display: inline-block;
-  width: 32px;
-  height: 32px;
+/* Reduced height for footer */
+#contact {
+  min-height: 85vh;
 }
 
 /* Animations */

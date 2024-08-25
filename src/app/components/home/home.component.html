@@ -29,7 +29,7 @@
   </section>
 
   <section id="games" class="section">
-    <h2>Els nostres jocs</h2>
+    <h2>Jocs</h2>
     <div class="card-element">
       <div class="card-content">
         <h3>PacoMonkey</h3>
@@ -44,7 +44,7 @@
   </section>
 
   <section id="blog" class="section">
-    <h2>El nostre Blog</h2>
+    <h2>Blog</h2>
     <div class="card-element">
       <div class="card-content">
         <h3>Últimes Notícies</h3>
@@ -58,7 +58,7 @@
   </section>
 
   <section id="team" class="section">
-    <h2>El nostre Equip</h2>
+    <h2>Equip</h2>
     <div class="card-element">
       <div class="card-content">
         <p>
@@ -89,58 +89,11 @@
           <input type="email" id="email" name="email" ngModel required />
         </div>
         <div class="form-group">
-          <label for="message">Escriu un missatge</label>
+          <label for="message">Escriu un missatge<span id="red-star">*</span></label>
           <textarea id="message" name="message" rows="4" ngModel required="Has d'introduir un missatge"></textarea>
         </div>
         <button type="submit" [disabled]="!contactForm.valid || isSendBtnDisabled ">Enviar</button>
       </form>
-    <div class="social-icons">
-      <a href="mailto:contact@siggames.cat" target="_blank">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Circle-icons-mail.svg/1024px-Circle-icons-mail.svg.png"
-          alt="Email"
-          title="SIG Games · Email"
-          width="32"
-          height="32"
-        />
-      </a>
-      <a href="https://www.instagram.com/siggames.official" target="_blank">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4494/4494488.png"
-          alt="Instagram"
-          title="SIG Games · Instagram"
-          width="32"
-          height="32"
-        />
-      </a>
-      <a href="https://www.tiktok.com/@siggames.official" target="_blank">
-        <img
-          src="https://static.vecteezy.com/system/resources/previews/020/964/382/large_2x/tiktok-circle-icon-for-web-design-free-png.png"
-          alt="TikTok"
-          title="SIG Games · TikTok"
-          width="32"
-          height="32"
-        />
-      </a>
-      <a href="https://discord.gg/XAQUEgqP7x" target="_blank">
-        <img
-          src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-round-color-icon.png"
-          alt="Discord"
-          title="SIG Games · Discord"
-          width="32"
-          height="32"
-        />
-      </a>
-      <a href="https://www.linkedin.com/company/siggames" target="_blank">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4494/4494497.png"
-          alt="LinkedIn"
-          title="SIG Games · LinkedIn"
-          width="32"
-          height="32"
-        />
-      </a>
-    </div>
     </div>
   </section>
 </div>
