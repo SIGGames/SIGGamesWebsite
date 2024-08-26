@@ -25,7 +25,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.appName = this.appService.getAppName();
-    this.checkEmailTimeout();
+    if (typeof window !== 'undefined') {
+      this.checkEmailTimeout();
+    }
   }
 
   scrollToNextSection() {
@@ -71,11 +73,16 @@ export class HomeComponent implements OnInit {
   }
 
   private setLastEmailSentTime() {
-    localStorage.setItem('lastEmailSentTime', Date.now().toString());
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem('lastEmailSentTime', Date.now().toString());
+    }
   }
 
   private getLastEmailSentTime(): string | null {
-    return localStorage.getItem('lastEmailSentTime');
+    if (typeof window !== 'undefined' && window.localStorage) {
+      return localStorage.getItem('lastEmailSentTime');
+    }
+    return null;
   }
 
   public isUserRecentSentEmail(): boolean {
