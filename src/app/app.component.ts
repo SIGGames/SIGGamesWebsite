@@ -1,12 +1,13 @@
 import { Component, HostListener } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterModule } from '@angular/router';
 import { AppService } from './app.service';
 import { Title } from '@angular/platform-browser';
+import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -15,8 +16,8 @@ export class AppComponent {
   private readonly originalTitle: string;
 
   // Logos
-  private readonly originalLogo: string = 'assets/logo.png';
-  private readonly altLogo: string = 'assets/logo-transparent-purple.png';
+  private readonly originalLogo: string = 'assets/logo-white.png';
+  private readonly altLogo: string = 'assets/logo-purple.png';
 
   constructor(private appService: AppService, private titleService: Title) {
     this.originalTitle = this.appService.getAppName();
@@ -25,15 +26,15 @@ export class AppComponent {
 
   @HostListener('window:blur', [])
   onWindowBlur() {
-    this.chaneLogoIcon(this.altLogo);
+    this.changeLogoIcon(this.altLogo);
   }
 
   @HostListener('window:focus', [])
   onWindowFocus() {
-    this.chaneLogoIcon(this.originalLogo);
+    this.changeLogoIcon(this.originalLogo);
   }
 
-  private chaneLogoIcon(iconUrl: string) {
+  private changeLogoIcon(iconUrl: string) {
     const link: HTMLLinkElement | null =
       document.querySelector("link[rel~='icon']");
     if (link) {

@@ -99,4 +99,8 @@ export class HomeComponent implements OnInit {
       this.disableSendButton();
     }
   }
+
+  goToGameDetail(gameId: string) {
+    this.router.navigate(['/game', gameId]);
+  }
 }
