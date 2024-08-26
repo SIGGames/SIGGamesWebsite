@@ -1,6 +1,7 @@
 /* General styles */
 
-html, body {
+html,
+body {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   height: 100%;
@@ -47,7 +48,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #F1F2F2;
+  color: #f1f2f2;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;
@@ -101,7 +102,7 @@ nav ul li a:hover {
 
 .section h2 {
   font-size: 4vw;
-  color: #684B9F;
+  color: #684b9f;
   font-weight: 700;
   margin: 20px 5vw 0 0;
   position: absolute;
@@ -148,7 +149,7 @@ nav ul li a:hover {
 .card-element img {
   width: 150px;
   height: auto;
-  border-bottom: 5px solid #684B9F;
+  border-bottom: 5px solid #684b9f;
 }
 
 .card-content {
@@ -158,7 +159,7 @@ nav ul li a:hover {
 
 .card-content h3 {
   font-size: 2rem;
-  color: #684B9F;
+  color: #684b9f;
   font-weight: 700;
   margin-bottom: 15px;
 }
@@ -217,7 +218,7 @@ label {
 }
 
 #red-star {
-  color: #FF0000;
+  color: #ff0000;
   font-weight: bold;
   margin-left: 2px;
   font-size: 1.2rem;
@@ -240,7 +241,7 @@ textarea {
 button[type="submit"] {
   width: 100px;
   padding: 10px;
-  background-color: #684B9F;
+  background-color: #684b9f;
   color: white;
   border: none;
   border-radius: 4px;
@@ -266,33 +267,65 @@ button[type="submit"]:disabled {
 
 /* Animations */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-10px);
   }
+
   60% {
     transform: translateY(-5px);
   }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideInFromLeft {
-  from { opacity: 0; transform: translateX(-100%); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes slideInFromRight {
-  from { opacity: 0; transform: translateX(100%); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
