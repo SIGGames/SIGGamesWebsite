@@ -117,7 +117,7 @@ footer label {
 }
 
 .icon-link:hover::before {
-  transform: translateY(-65px) rotate(0);
+  transform: translateY(-63px) rotate(0);
   opacity: 1;
 }
 
