@@ -244,6 +244,7 @@ textarea {
   box-sizing: border-box;
   transition: border-color 0.3s ease;
   background-color: #f7f7f7;
+  max-height: 433px; /* From here there is a content shift layout issue */
 }
 
 input:focus,
