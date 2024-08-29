@@ -10,11 +10,14 @@ body {
   -ms-overflow-style: none;
   display: none;
   scrollbar-width: none;
+  margin: 0;
+  padding: 0;
 }
 
 section {
   scroll-snap-align: start;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 #home {
@@ -23,7 +26,6 @@ section {
   align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
-  padding: 0 20px;
   text-align: center;
   box-sizing: border-box;
   padding-top: 10vh;
@@ -93,7 +95,7 @@ nav ul li a:hover {
   animation: slideInFromRight 1.5s ease-in-out;
 }
 
-/* Section Fullscreen */
+/* Section */
 .section {
   position: relative;
   display: flex;
