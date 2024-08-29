@@ -119,28 +119,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  color: #F1F2F2;
-  background-color: #684B9F;
-  padding: 100px 20px;
-  animation: fadeIn 1s ease-in-out;
-  margin-bottom: 40px;
-}
-
-.hero-text h1 {
-  font-size: 4.5rem;
-  margin: 0;
-  animation: slideInFromLeft 1.5s ease-in-out;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-}
-
-.hero-text p {
-  font-size: 1.8rem;
-  animation: slideInFromRight 1.5s ease-in-out;
-}
-
 /* Description and Content Sections */
 .description, .content-section {
   text-align: center;

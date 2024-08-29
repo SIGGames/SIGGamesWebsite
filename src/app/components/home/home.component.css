@@ -66,12 +66,11 @@ nav ul li a:hover {
   transform: scale(1.1);
 }
 
-/* Hero Section */
-.hero {
+/* Homne Section */
+.home {
   color: #333132;
   padding: 50px 20px;
   text-align: center;
-  margin-top: 10px;
   animation: fadeIn 1s ease-in-out;
   width: 100%;
   box-sizing: border-box;
@@ -79,20 +78,19 @@ nav ul li a:hover {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.95;
+  margin-top: -10vh;
 }
 
-.hero h1 {
-  font-size: 4.5rem;
+.home h1 {
+  font-size: 7.5rem;
   margin-bottom: 20px;
-  animation: slideInFromLeft 1.5s ease-in-out;
   font-weight: 700;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-.hero p {
-  font-size: 1.8rem;
-  margin-bottom: 0;
-  animation: slideInFromRight 1.5s ease-in-out;
+.home h2 {
+  font-size: 2rem;
+  color:rgb(103, 101, 101);
 }
 
 /* Section */
