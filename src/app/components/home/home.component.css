@@ -183,6 +183,11 @@ nav ul li a:hover {
   animation: bounce 4s infinite;
 }
 
+/* Games Section */
+#games .card-element:hover {
+  cursor: pointer;
+}
+
 /* Team Section */
 .team-container {
   display: flex;
