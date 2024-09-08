@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   // Email Config
   private readonly emailServiceId: string = 'service_0wg0538';
-  private readonly emailTemplateId: string = 'template_vff6j8p';
+  private readonly emailTemplateId: string = 'template_0vewupv';
   private readonly emailUserId: string = 'mzm-0jmzxq72JQMlu';
   private readonly EMAIL_TIMEOUT: number = 5 * 60 * 1000; // 5 minutes
 
@@ -48,10 +48,10 @@ export class HomeComponent implements OnInit {
     if (form.valid) {
       if (!this.isUserRecentSentEmail()) {
         emailjs.send(this.emailServiceId, this.emailTemplateId, {
+          subject: form.value.subject,
           firstName: form.value.firstName,
           lastName: form.value.lastName,
           email: form.value.email,
-          subject: form.value.subject,
           date: new Date().toLocaleString(),
           currentYear: new Date().getFullYear(),
           message: form.value.message
