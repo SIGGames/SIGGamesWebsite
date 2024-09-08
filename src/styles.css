@@ -43,7 +43,6 @@ section {
   scroll-snap-align: start;
   min-height: 100vh;
   box-sizing: border-box;
-  scroll-snap-align: start;
 }
 
 h1, h2 {
