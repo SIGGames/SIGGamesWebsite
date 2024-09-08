@@ -62,7 +62,6 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
   box-sizing: border-box;
-  scroll-snap-align: start;
   text-align: center;
   margin-top: auto;
 }

@@ -51,6 +51,8 @@ export class HomeComponent implements OnInit {
           firstName: form.value.firstName,
           lastName: form.value.lastName,
           email: form.value.email,
+          subject: form.value.subject,
+          senderEmail: new Date().toLocaleString(),
           message: form.value.message
         }, this.emailUserId)
         .then((response: EmailJSResponseStatus) => {
