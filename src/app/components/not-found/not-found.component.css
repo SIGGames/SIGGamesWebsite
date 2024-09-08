@@ -18,3 +18,8 @@
   border-radius: 5px;
   font-size: 1.2em;
 }
+
+.not-found-container .btn:hover {
+  background-color: #563e8b;
+  transform: translateY(-2px);
+}

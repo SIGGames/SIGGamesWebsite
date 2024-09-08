@@ -49,4 +49,8 @@ export class AppComponent {
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+  getCurrentYear(): number {
+    return new Date().getFullYear();
+  }
 }
