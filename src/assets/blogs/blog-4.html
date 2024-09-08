@@ -1,0 +1,15 @@
+<h1>Implementació de col·lisions i física en PacoMonkey</h1>
+<p>La física i les col·lisions són una part fonamental de PacoMonkey, ja que determinen com interactuen els objectes i el personatge principal. A Unity, fem servir el motor de física 2D per gestionar aquestes interaccions.</p>
+<h2>Configuració del sistema de col·lisions</h2>
+<p>Per gestionar les col·lisions, hem afegit components de <em>Collider2D</em> als objectes del món del joc. A més, utilitzem <em>Rigidbody2D</em> per aplicar forces i simular la gravetat al nostre personatge principal.</p>
+<h2>Exemple de codi per a les col·lisions</h2>
+<pre>
+<code>
+void OnCollisionEnter2D(Collision2D collision) {
+    if (collision.gameObject.CompareTag("Enemy")) {
+        // Restar vida o reiniciar el nivell
+    }
+}
+</code>
+</pre>
+<p>Amb aquest codi, PacoMonkey pot detectar col·lisions amb enemics i altres objectes del joc, permetent-nos afegir efectes com perdre vida o reiniciar el nivell.</p>

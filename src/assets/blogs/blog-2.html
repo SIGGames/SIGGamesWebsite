@@ -1,0 +1,37 @@
+<h1>Com implementar el moviment del personatge principal a PacoMonkey</h1>
+<p>El moviment del personatge és un dels elements més importants de qualsevol joc 2D. A PacoMonkey, hem dissenyat un sistema de moviment que és suau i responsive per garantir una experiència de joc divertida.</p>
+<h2>El codi de moviment</h2>
+<p>A continuació, es mostra un exemple del codi C# utilitzat per implementar el moviment bàsic del nostre personatge en Unity:</p>
+<pre>
+<code>
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour {
+    public float speed = 5f;
+    public float jumpForce = 10f;
+    private Rigidbody2D rb;
+    private bool isGrounded = true;
+
+    void Start() {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update() {
+        float move = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(move * speed, rb.velocity.y);
+
+        if (Input.GetButtonDown("Jump") && isGrounded) {
+            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            isGrounded = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Ground")) {
+            isGrounded = true;
+        }
+    }
+}
+</code>
+</pre>
+<p>Amb aquest codi, el nostre personatge pot moure's lateralment i saltar. Aquestes són les bases per al moviment de PacoMonkey.</p>

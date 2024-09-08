@@ -45,13 +45,39 @@
 
   <section id="blog" class="section">
     <h2>Blog</h2>
-    <div class="card-element">
+
+    <div class="blog-card" (click)="goToBlogPost('1')">
       <div class="card-content">
-        <h3>Últimes Notícies</h3>
+        <h3>Introducció a PacoMonkey: El teu projecte de joc 2D en Unity</h3>
         <p>
-          Descobreix les últimes notícies, actualitzacions i darreres tendències
-          del món dels videojocs directament dels nostres desenvolupadors i
-          col·laboradors.
+          Descobreix com es va iniciar el projecte PacoMonkey, un joc de plataformes 2D desenvolupat en Unity. Aprofundeix en les motivacions i objectius del projecte.
+        </p>
+      </div>
+    </div>
+
+    <div class="blog-card" (click)="goToBlogPost('2')">
+      <div class="card-content">
+        <h3>Com implementar el moviment del personatge principal a PacoMonkey</h3>
+        <p>
+          Un tutorial detallat sobre com hem implementat el moviment del personatge principal, amb codi d'exemple i bones pràctiques.
+        </p>
+      </div>
+    </div>
+
+    <div class="blog-card" (click)="goToBlogPost('3')">
+      <div class="card-content">
+        <h3>Disseny de nivells a PacoMonkey: Consells i bones pràctiques</h3>
+        <p>
+          Guia de disseny de nivells amb consells per crear nivells atractius i equilibrats per al teu joc 2D.
+        </p>
+      </div>
+    </div>
+
+    <div class="blog-card" (click)="goToBlogPost('4')">
+      <div class="card-content">
+        <h3>Implementació de col·lisions i física en PacoMonkey</h3>
+        <p>
+          Descobreix com hem implementat el sistema de col·lisions i física a PacoMonkey per crear una experiència de joc fluida.
         </p>
       </div>
     </div>

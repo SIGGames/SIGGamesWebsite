@@ -113,4 +113,8 @@ export class HomeComponent implements OnInit {
   goToGameDetail(gameId: string) {
     this.router.navigate(['/game', gameId]);
   }
+
+  goToBlogPost(blogId: string) {
+    this.router.navigate(['/blog', blogId]);
+  }
 }
