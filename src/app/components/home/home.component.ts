@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
           lastName: form.value.lastName,
           email: form.value.email,
           subject: form.value.subject,
-          senderEmail: new Date().toLocaleString(),
+          date: new Date().toLocaleString(),
           message: form.value.message
         }, this.emailUserId)
         .then((response: EmailJSResponseStatus) => {
