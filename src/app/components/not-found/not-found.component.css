@@ -45,33 +45,3 @@ html, body {
   background-color: #563e8b;
   transform: translateY(-2px);
 }
-
-footer {
-  width: 100%;
-  text-align: center;
-  margin-top: auto;
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.socials-container {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.icon-link {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease;
-}
-
-.icon-link img {
-  width: 100%;
-  height: auto;
-}
-
-.icon-link:hover {
-  transform: scale(1.1);
-}
