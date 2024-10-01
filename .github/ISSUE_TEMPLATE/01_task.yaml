@@ -1,0 +1,11 @@
+name: Task creation
+description: Create a new task.
+body:
+  - type: textarea
+    id: task_description
+    attributes:
+      label: Task description
+      description: Detailed description of the task.
+      placeholder: "Describe what needs to be done, any relevant details, and expected outcomes."
+    validations:
+      required: true
