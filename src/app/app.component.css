@@ -1,27 +1,7 @@
-/* Header */
-header {
-  background-color: #684B9F;
-  padding: 10px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
-}
-
-header:hover {
-  background-color: #684B9F;
-}
-
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.logo-link {
-  display: flex;
-  align-items: center;
 }
 
 .logo {
@@ -31,11 +11,6 @@ nav {
   left: 20px;
   border-radius: 50%;
   border: 1px solid gray;
-  transition: transform 0.3s ease;
-}
-
-.logo-link:hover .logo {
-  transform: scale(1.2);
   transition: transform 0.3s ease;
 }
 
