@@ -44,6 +44,7 @@ export class NewsletterComponent implements OnInit {
       })
       .then(content => {
         this.setNewsletterContent(content);
+        this.addClickEventListeners();
       })
       .catch(error => {
         this.redirectNotFound();
@@ -62,6 +63,7 @@ export class NewsletterComponent implements OnInit {
       })
       .then(content => {
         this.setNewsletterContent(content);
+        this.addClickEventListeners();
       })
       .catch(error => {
         this.redirectNotFound();
@@ -71,6 +73,18 @@ export class NewsletterComponent implements OnInit {
   setNewsletterContent(content: string): void {
     const container = this.el.nativeElement.querySelector('#newsletter-container');
     this.renderer.setProperty(container, 'innerHTML', content);
+  }
+
+  addClickEventListeners(): void {
+    const container = this.el.nativeElement.querySelector('#newsletter-container');
+    const links = container.querySelectorAll('a[routerLink]');
+    links.forEach((link: HTMLAnchorElement) => {
+      this.renderer.listen(link, 'click', (event) => {
+        event.preventDefault();
+        const url = link.getAttribute('routerLink');
+        this.router.navigate([url]);
+      });
+    });
   }
 
   redirectNotFound(): void {
