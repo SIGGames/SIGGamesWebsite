@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.cdnfonts.com/css/cocon" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Newsletter DevTeam</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #F1F2F2;
+      font-family: Montserrat, Arial, sans-serif;
+    }
+
+    .email-wrapper {
+      background-color: #F1F2F2;
+      padding-bottom: 15px;
+    }
+
+    .init-divider {
+      background-color: white;
+      padding: 5px;
+      border: 1px solid #F1F2F2;
+    }
+
+    .divider {
+      background-color: #F1F2F2;
+      padding: 5px;
+    }
+
+    .ds {
+      padding: 9px;
+    }
+
+    .email-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #FFFFFF;
+      /*border: 1px solid #dddddd;*/
+      overflow: hidden;
+    }
+
+    .header {
+      background-color: #F1F2F2;
+      color: #684B9F;
+      padding: 20px;
+      text-align: center;
+      font-family: Cocon, Arial, sans-serif;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 3.5em;
+    }
+    .header img {
+      max-width: 100%;
+    }
+
+    .content {
+      padding: 35px;
+      color: #333132;
+      border: 1px solid #F1F2F2;
+    }
+    .content span, strong {
+      font-size: 15px;
+      line-height: 1.75;
+      text-align: justify;
+    }
+    .content span {
+      display: block;
+    }
+
+    .card-title {
+      color: #8298E3;
+      font-weight: bold;
+    }
+    .card-subtitle {
+      font-style: italic;
+      font-size: 13px !important;
+    }
+
+    .email-type {
+      color: #8298E3;
+      font-size: 1.7em !important;
+      font-weight: bold;
+      text-align: center !important;
+      font-family: Cocon, Arial, sans-serif;
+    }
+
+    .mailto {
+      color: #777777 !important;
+      text-decoration: underline !important;
+    }
+    .mailto:hover {
+      color: #333132 !important;
+    }
+
+    .footer {
+      background-color: #F1F2F2;
+      text-align: center;
+      padding: 10px;
+      font-size: 12px;
+      color: #777777;
+    }
+    a {
+      color: #8298E3 !important;
+      text-decoration: none !important;
+    }
+    a:hover {
+      text-decoration: underline !important;
+      color: #8298E3 !important;
+    }
+    a:focus {
+      outline: none !important;
+      background-color: #8298E32A !important;
+    }
+    
+    .isotip {
+      padding-top: 15px;
+      padding-bottom: 10px;
+    }
+    .isotip img {
+      max-width: 100%;
+      height: auto;
+      width: 15%;
+    }
+
+    .contact-icons {
+      padding-bottom: 20px;
+      gap: 15px;
+    }
+
+    table {
+      border-spacing: 0px !important;
+      border-collapse: collapse !important;
+    }
+
+    .table {
+      border: 1px solid #8298E3;
+      width: 100%;
+    }
+    .table-head {
+      padding: 15px;
+      text-align: start;
+      border-bottom: 1px solid #8298E3 !important;
+      border-top: 1px solid #8298E3 !important;
+    }
+    .table-rows {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 13px;
+      padding-bottom: 13px;
+      text-align: start;
+      border-top: 1px solid #C2CDF0;
+      /*border-bottom: 1px solid #CED7F5;*/
+    }
+    .end {
+      text-align:end;
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+
+    code {
+      background-color: #E0E0E0;
+      border-radius: 3px;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    /*
+    li {
+      text-align: start;
+    }
+    */ 
+    .sprint {
+        text-align: center !important;
+        font-size: 1.4em !important;
+        font-weight: bold;
+    }
+    
+    .sprint-date {
+        text-align: center !important;
+        font-size: 1.1em !important;
+        padding-bottom: 20px;
+    }
+
+    tt {
+      font-size: 16px;
+    }
+    ul {
+      list-style-type: disc;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="email-wrapper">
+    <div class="email-container">
+      <div class="init-divider"></div>
+      <!-- Header -->
+      <div class="header">
+        <a href="http://www.siggames.cat" target="_blank"><img alt="SIG Games" title="SIG Games · Web Page" src="https://raw.githubusercontent.com/SIGGames/Resources/main/Logotyping/Digital/PNG/3x/Logotip%20sobre%20blanc%403x.png"></a>
+      </div>
+
+      <!-- Content: Introduction -->
+      <div class="content">
+        <span class="email-type center">Newsletter DevTeam</span>
+        <span class="sprint"></span>
+        <span class="sprint-date">27/07/2024</span><div class="ds"></div>
+
+        <strong>Bona nit,</strong><div class="ds"></div>
+
+        <span>En l'última reunió d'equip <i>Daily Meeting</i> (<i>Sprint</i> 1) del divendres 26 de juliol, s'han comentat temes importants del projecte que cal que es llegeixin detingudament. En aquest correu es fa una recopilació de tot el que s'ha comentat en la reunió i l'estat actual del projecte.</span><div class="ds"></div>
+        
+        <strong>SIG Games</strong>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Aplaçament Sprint 1</span>
+        <span class="card-subtitle">Júlia Nogales - <i>Daily Meeting</i> (26/07/2024)</span><div class="ds"></div>
+
+        <span>Com ja sabeu, la data d'inici del sprint 1 ha estat el 9 de juliol i, inicialment, la data de finalització estava programada pel 23 de juliol per complir amb el que s'havia pactat de 2 setmanes per sprint. Desgraciadament ha resultat ser una aproximació molt poc encertada, ja que no s'han tingut en compte altres tasques més prioritàries de l'equip que ocupaven la major part del temps disponible.</span><div class="ds"></div>
+
+        <span>Per solucionar el problema es va decidir allargar 1 setmana més el sprint, és a dir, fer un sprint de 3 setmanes i també cancel·lar la reunió presencial del dilluns, però ha resultat ser totalment ineficient. Degut a que es va cancel·lar la reunió no es va poder parlar de la prioritat ni del pes de les tasques i l'equip les ha anat posposant. S'han posposat fins al punt de tenir, a dia 26 de juliol, 8 tasques en estat de pendent i 7 en progrés, havent completat només 2 tasques d'aquest sprint.</span><div class="ds"></div>
+
+        <span>Tenint en compte tots els factors esmentats anteriorment, s'ha pres la decisió d'allargar el sprint a 4 setmanes i de modificar per últim cop la data de finalització del sprint a 6 d'agost. Com que és l'últim cop que s'aplaçarà el sprint <u>cal completar totes les tasques assignades</u> (o gairebé totes) <u>abans de la data límit, havent de dedicar hores extra si és necessari</u>.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Documents d'interés PacoMonkey</span>
+        <span class="card-subtitle">Júlia Nogales - <i>Daily Meeting</i> (26/07/2024)</span><div class="ds"></div>
+
+        <span>S'han creat dos documents a l'espai PacoMonkey de Confluence: "<a href="https://siggames-pacomonkey.atlassian.net/wiki/spaces/PacoMonkey/pages/21954570/An+lisi+Videojocs"><img src="https://pf-emoji-service--cdn.us-east-1.prod.public.atl-paas.net/standard/caa27a19-fc09-4452-b2b4-a301552fd69c/64x64/1f50d.png" width="12"> Anàlisi Videojocs</a>" i "<a href="https://siggames-pacomonkey.atlassian.net/wiki/spaces/PacoMonkey/pages/21921794/Idees+PacoMonkey"><img src="https://pf-emoji-service--cdn.us-east-1.prod.public.atl-paas.net/standard/caa27a19-fc09-4452-b2b4-a301552fd69c/64x64/1f4a1.png" width="12"> Idees PacoMonkey</a>".</span><div class="ds"></div>
+
+        <span>En el document "<strong>Anàlisi Videojocs</strong>" es recopilen totes les observacions dels videojocs jugats, analitzats segons els aspectes positius i negatius que es van descobrint mentre es miren <i>gameplays</i> o es juguen. Com més informació es recopila, més fàcil és identificar les característiques que es volen incorporar a PacoMonkey i, més important, les que no. Per aquest motiu és important que tot l'equip dediqui temps a provar i guanyar experiència en els videojocs, per així poder facilitar la pluja d'idees i agilitzar la comunicació entre l'equip de desenvolupament.</span><div class="ds"></div>
+
+        <span>A "<strong>Idees PacoMonkey</strong>" es recullen totes les propostes i idees espontànies que poden sorgir sobre el desenvolupament del videojoc, la narrativa, les mecàniques, entre altres. És molt recomanable que totes les idees, per petites o tontes que semblin, s'anotin en aquest document i es puguin compartir amb l'equip, ja que també ajuda a promoure la pluja d'idees i que d'una idea simple i petita sorgeixi una gran idea per PacoMonkey.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Tasques realitzades</span>
+        <span class="card-subtitle">Júlia Nogales · Abel Pérez · Aniol Serrano - <i>Daily Meeting</i> (26/07/2024 i 17/07/2024)</span><div class="ds"></div>
+
+        <span>El document "<a href="https://siggames-pacomonkey.atlassian.net/wiki/spaces/PacoMonkey/pages/15827063/Project+Blastoff"><img src="https://pf-emoji-service--cdn.us-east-1.prod.public.atl-paas.net/standard/caa27a19-fc09-4452-b2b4-a301552fd69c/64x64/1faa7.png" width="12"> Project Blastoff</a>" de la tasca conjunta s'ha revisat i donat per finalitzat.</span><div class="ds"></div>
+
+        <span>S'ha completat la identitat visual de l'empresa SIGGAMES amb el logotip i isotip corresponent, que es revelarà i presentarà en la pròxima reunió.</span><div class="ds"></div>
+
+        <span>S'ha definit una plantilla per les pull requests (<a href="https://github.com/SIGGames/PacoMonkey/blob/main/.github/PULL_REQUEST_TEMPLATE.md">PULL_REQUEST_TEMPLATE.md</a>) a GitHub. Queda pendent definir la llicència de software del projecte i implementar altres eines que es considerin oportunes per donar per finalitzada la tasca "<a href="https://siggames-pacomonkey.atlassian.net/browse/SIG-37">GitHub</a>".</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Xarxes Socials</span>
+        <span class="card-subtitle">Abel Pérez - <i>Daily Meeting</i> (26/07/2024)</span><div class="ds"></div>
+
+        <span>Finalment s'han creat totes les comptes i perfils públics en les xarxes socials acordades (<a href="https://www.instagram.com/siggames.official/">Instagram</a>, <a href="https://www.tiktok.com/@siggames.official">TikTok</a>, <a href="https://discord.gg/XAQUEgqP7x">Discord</a>, <a href="https://github.com/SIGGames">GitHub</a>, <a href="https://www.linkedin.com/company/siggames/">LinkedIn</a>, <a href="https://gravatar.com/siggamesofficial">Gravatar</a>). Les comptes de TikTok i Instagram s'han creat amb la contrasenya per defecte de l'organització i l'adreça de correu electrònic "<a class="mailto" href="mailto:abel.perez@siggames.cat">abel.perez@siggames.cat</a>", ja que el contingut, la publicació i la gestió de les xarxes socials està a càrrec d'Abel Pérez i no era possible crear-ho amb l'àlies "<a class="mailto" href="mailto:contact@siggames.cat">contact@siggames.cat</a>".</span><div class="ds"></div>
+
+        <span>Ja s'han actualitzat en aquest i futurs correus i en el perfil de Gravatar, però encara cal actualitzar-ho en la resta de plataformes. També queda pendent actualitzar la descripció i l'estètica en tots els perfils de SIGGAMES per poder donar per finalitzada la tasca "<a href="https://siggames-pacomonkey.atlassian.net/browse/SIG-39">Xarxes Socials</a>".</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Freqüència de correus recordatori</span>
+        <span class="card-subtitle">Aniol Serrano - <i>Daily Meeting</i> (17/07/2024)</span><div class="ds"></div>
+
+        <span>Actualment hi ha 3 tipus de correus que s'envien per part de SIGGAMES: recordatori de reunió, recordatori de tasques pendents i newsletter.</span><div class="ds"></div>
+
+        <span>El correu recordatori de tasques s'enviava diàriament a tothom que tingués tasques en estat "Pendent" o "En Progrés", la qual cosa ha acabat sent molt pesat i ha produït l'efecte contrari al desitjat, que els usuaris ignorin les tasques pendents assignades.</span><div class="ds"></div>
+
+        <span>Per tant s'ha acordat reduïr la freqüència d'enviament de correus recordatori de tasques pendents a 3 cops per setmana (dimarts, divendres i diumenge).</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Review Meeting</span>
+        <span class="card-subtitle">Abel Pérez - Daily Meeting (26/07/2024)</span><div class="ds"></div>
+
+        <span>En la reunió presencial del dilluns 29 de juliol és molt important l'assistència de tots els membres, ja que es tractaran temes decisius pel projecte. Aquesta reunió serà una <i>Review Meeting</i>, ja que es revisaran les tasques importants realitzades i s'avaluarà la feina feta, comparant-ho amb els objectius prèviament establerts.</span><div class="ds"></div>
+        
+        <span>L'Abel Pérez presentarà la seva proposta d'identitat d'empresa i proposarà una idea que caldrà debatre amb tot l'equip. També es posarà sobre la taula la forma d'escriure el nom de l'empresa: SIGGAMES, SIGGames o SIGgames?</span><div class="ds"></div>
+        
+        <span>La Júlia Nogales presentarà la seva proposta de mecàniques de moviment per al videojoc i la descripció del món i l'entorn de PacoMonkey.</span><div class="ds"></div>
+
+        <span>Finalment només recordar que s'espera participació activa i una actitud positiva en tota la reunió, que segur que serà de gran ajuda per tot l'equip!</span>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="isotip center">
+          <a href="http://www.siggames.cat" target="_blank"><img alt="SIG Games" title="SIG Games · Web Page" src="https://raw.githubusercontent.com/SIGGames/Resources/main/Document%20Templates/mails/img/siggames-iso.png"></a>
+        </div>
+
+        <table role="presentation" align="center" style="border-collapse: collapse; text-align: center; margin: 0 auto; margin-bottom: 10px;">
+          <tr>
+            <td style="padding: 7px;"><a href="mailto:contact@siggames.cat" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/6244/6244710.png" alt="Email" title="SIG Games · Email" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://discord.gg/XAQUEgqP7x" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670325.png" alt="Discord" title="SIG Games · Discord" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://github.com/SIGGames" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="GitHub" title="SIG Games · GitHub" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://www.linkedin.com/company/siggames" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/4494/4494471.png" alt="LinkedIn" title="SIG Games · LinkedIn" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://www.instagram.com/siggames.official" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670274.png" alt="Instagram" title="SIG Games · Instagram" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://www.tiktok.com/@siggames.official" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670299.png" alt="TikTok" title="SIG Games · TikTok" width="32" style="display: block;"></a></td>
+          </tr>
+        </table>
+
+        <span>Si no vols rebre més correus, clica <a href="#">aquí</a>  per desactivar la subscripció.</span><div></div>
+        <span>Si tens alguna pregunta, envia'ns un missatge a <a class="mailto" href="mailto:contact@siggames.cat">contact@siggames.cat</a>.</span><div></div>
+        <span>&copy; 2024 SIG Games. Tots els drets reservats.</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

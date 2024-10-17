@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.cdnfonts.com/css/cocon" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Newsletter DevTeam</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #F1F2F2;
+      font-family: Montserrat, Arial, sans-serif;
+    }
+
+    .email-wrapper {
+      background-color: #F1F2F2;
+      padding-bottom: 15px;
+    }
+
+    .init-divider {
+      background-color: white;
+      padding: 5px;
+      border: 1px solid #F1F2F2;
+    }
+
+    .divider {
+      background-color: #F1F2F2;
+      padding: 5px;
+    }
+
+    .ds {
+      padding: 9px;
+    }
+
+    .email-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #FFFFFF;
+      /*border: 1px solid #dddddd;*/
+      overflow: hidden;
+    }
+
+    .header {
+      background-color: #F1F2F2;
+      color: #684B9F;
+      padding: 20px;
+      text-align: center;
+      font-family: Cocon, Arial, sans-serif;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 3.5em;
+    }
+    .header img {
+      max-width: 100%;
+    }
+
+    .content {
+      padding: 35px;
+      color: #333132;
+      border: 1px solid #F1F2F2;
+    }
+    .content span, strong {
+      font-size: 15px;
+      line-height: 1.75;
+      text-align: justify;
+    }
+    .content span {
+      display: block;
+    }
+
+    .card-title {
+      color: #8298E3;
+      font-weight: bold;
+    }
+    .card-subtitle {
+      font-style: italic;
+      font-size: 13px !important;
+    }
+
+    .email-type {
+      color: #8298E3;
+      font-size: 1.7em !important;
+      font-weight: bold;
+      text-align: center !important;
+      font-family: Cocon, Arial, sans-serif;
+    }
+
+    .mailto {
+      color: #777777 !important;
+      text-decoration: underline !important;
+    }
+    .mailto:hover {
+      color: #333132 !important;
+    }
+
+    .footer {
+      background-color: #F1F2F2;
+      text-align: center;
+      padding: 10px;
+      font-size: 12px;
+      color: #777777;
+    }
+    a {
+      color: #8298E3 !important;
+      text-decoration: none !important;
+    }
+    a:hover {
+      text-decoration: underline !important;
+      color: #8298E3 !important;
+    }
+    a:focus {
+      outline: none !important;
+      background-color: #8298E32A !important;
+    }
+    
+    .isotip {
+      padding-top: 15px;
+      padding-bottom: 10px;
+    }
+    .isotip img {
+      max-width: 100%;
+      height: auto;
+      width: 15%;
+    }
+
+    .contact-icons {
+      padding-bottom: 20px;
+      gap: 15px;
+    }
+
+    table {
+      border-spacing: 0px !important;
+      border-collapse: collapse !important;
+    }
+
+    .table {
+      border: 1px solid #8298E3;
+      width: 100%;
+    }
+    .table-head {
+      padding: 15px;
+      text-align: start;
+      border-bottom: 1px solid #8298E3 !important;
+      border-top: 1px solid #8298E3 !important;
+    }
+    .table-rows {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 13px;
+      padding-bottom: 13px;
+      text-align: start;
+      border-top: 1px solid #C2CDF0;
+      /*border-bottom: 1px solid #CED7F5;*/
+    }
+    .end {
+      text-align:end;
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+
+    code {
+      background-color: #E0E0E0;
+      border-radius: 3px;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    /*
+    li {
+      text-align: start;
+    }
+    */ 
+    .sprint {
+        text-align: center !important;
+        font-size: 1.4em !important;
+        font-weight: bold;
+    }
+    
+    .sprint-date {
+        text-align: center !important;
+        font-size: 1.1em !important;
+        padding-bottom: 20px;
+    }
+
+    tt {
+      font-size: 16px;
+    }
+
+    .results-row {
+      background-color: #F1F2F2;
+      display: flex;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .res {
+      padding-bottom: 15px !important;
+      padding-top: 15px !important;
+      position: relative;
+      cursor: help;
+    }
+    .results-1 {
+      background-color: #C1E6D5;
+      border: solid 1px white;
+    }
+    .results-1:hover {
+      border: 1px solid #868586;
+      border-radius: 3px;
+    }
+    .results-2 {
+      background-color: #C2CDF0;
+      border: solid 1px white;
+    }
+    .results-2:hover {
+      border: 1px solid #868586;
+      border-radius: 3px;
+    }
+    .results-3 {
+      background-color: #FFC1BC;
+      border: solid 1px white;
+    }
+    .results-3:hover {
+      border: 1px solid #868586;
+      border-radius: 3px;
+    }
+
+    .tooltip {
+      visibility: hidden;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      white-space: nowrap;
+    }
+    .results-1:hover .tooltip, .results-2:hover .tooltip, .results-3:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .legend {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+    }
+    .legend-item:last-child {
+      margin-right: 0;
+    }
+    .legend-color {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-right: 8px;
+      border: 1px solid #777;
+      border-radius: 2px;
+    }
+    .legend-color-1 {
+      background-color: #C1E6D5;
+    }
+    .legend-color-2 {
+      background-color: #C2CDF0;
+    }
+    .legend-color-3 {
+      background-color: #FFC1BC;
+    }
+
+    ul {
+      list-style-type: disc;
+    }
+  </style>
+</head>
+
+
+<body>
+.  <div class="email-wrapper">
+    <div class="email-container">
+      <div class="init-divider"></div>
+      <!-- Header -->
+      <div class="header">
+        <a href="http://www.siggames.cat" target="_blank"><img alt="SIG Games" title="SIG Games · Web Page" src="https://raw.githubusercontent.com/SIGGames/Resources/main/Logotyping/Digital/PNG/3x/Logotip%20sobre%20blanc%403x.png"></a>
+      </div>
+
+      <!-- Content: Introduction -->
+      <div class="content">
+        <span class="email-type center">Newsletter DevTeam</span>
+        <span class="sprint"></span>
+        <span class="sprint-date">31/08/2024</span><div class="ds"></div>
+
+        <strong>Bona nit,</strong><div class="ds"></div>
+
+        <span>En l'última reunió d'equip <i>Follow-up Meeting</i> (<i>Sprint</i> 2) del dilluns 19 d'agost, s'han comentat temes importants per l'avenç del projecte.</span><div class="ds"></div>
+          
+        <span>Com que aquest últim més d'agost no hi ha hagut cap actualització sobre el desenvolupament del videojoc o de l'empresa, en aquest correu es fa una breu recopilació de tot el que s'ha comentat en les reunions anteriors, des del 3 d'agost fins l'actualitat.</span><div class="ds"></div>
+        
+        <strong>SIG Games</strong>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Nom oficial de l'empresa</span>
+        <span class="card-subtitle">Júlia Nogales · Abel Pérez · Aniol Serrano - (29/07/2024 - 12/08/2024)</span><div class="ds"></div>
+
+        <span>La discussió del nom d'empresa (SIGGAMES · SIGGames · SIGgames · SIG Games) ha estat la més difícil de resoldre fins ara.</span><div class="ds"></div>
+        
+        <span>Des del 29 de juliol fins el 12 d'agost ha estat un tema present en totes les reunions però no érem capaços de trobar un punt en comú, així que el 11 d'agost es va decidir posar-ho a votació del públic (amics i família) donant 3 opcions (SIG Games - SIGGames - SIGgames) que s'havien de classificar de millor a pitjor.</span><div class="ds"></div>
+
+        <span>L'enquesta <a title="Nom oficial de l'empresa · Enquesta Microsoft Forms" href="https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__dHm7vVUNEdJWjVDRDBUOVNON0MzNk0zNlU3UDE1Uy4u&Token=f5ed356c18574beebaba02deac0eb281">Nom oficial de l'empresa</a> es va realitzar mitjançant <a href="https://forms.office.com/">Microsoft Forms</a>, va estar oberta 24h i els resultats finals van ser:</span><div class="ds"></div>
+
+        <strong>1. <u>SIG Games</u></strong>
+        <div class="results-row">
+          <div class="results-1 res center" style="width: 50%;"><span class="tooltip">50.0% (9)</span></div>
+          <div class="results-2 res center" style="width: 38.9%;"><span class="tooltip">38.9% (7)</span></div>
+          <div class="results-3 res center" style="width: 11.1%;"><span class="tooltip">11.1% (2)</span></div>
+        </div>
+
+        <strong>2. SIGGames</strong>
+        <div class="results-row">
+          <div class="results-1 res center" style="width: 27.8%;"><span class="tooltip">27.8% (5)</span></div>
+          <div class="results-2 res center" style="width: 33.3%;"><span class="tooltip">33.3% (6)</span></div>
+          <div class="results-3 res center" style="width: 38.9%;"><span class="tooltip">38.9% (7)</span></div>
+        </div>
+
+        <strong>3. SIGgames</strong>
+        <div class="results-row">
+          <div class="results-1 res center" style="width: 22.2%;"><span class="tooltip">22.2% (4)</span></div>
+          <div class="results-2 res center" style="width: 27.8%;"><span class="tooltip">27.8% (5)</span></div>
+          <div class="results-3 res center" style="width: 50%;"><span class="tooltip">50.0% (9)</span></div>
+        </div>
+
+        <table role="presentation" align="center" style="border-collapse: collapse; text-align: center; margin: 0 auto; margin-bottom: 10px;">
+          <tr>
+            <td style="padding: 7px;"><div class="legend-item"><span class="legend-color legend-color-1"></span><span>1a opció</span></div></td>
+            <td style="padding: 7px;"><div class="legend-item"><span class="legend-color legend-color-2"></span><span>2a opció</span></div></td>
+            <td style="padding: 7px;"><div class="legend-item"><span class="legend-color legend-color-3"></span><span>3a opció</span></div></td>
+          </tr>
+        </table>
+
+        <span>Per tant, després d'una clara diferència de vots, el 12 d'agost es va proclamar <strong>SIG Games</strong> com a nom oficial de l'empresa i s'han fet els canvis i actualitzacions pertinents per mantenir la consistència del nom.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Revisió mecàniques de moviment</span>
+        <span class="card-subtitle">Júlia Nogales - <i>Review Meeting</i> (29/07/2024)</span><div class="ds"></div>
+
+        <span>En la presentació d'idees de mecàniques a la reunió del 29 de juliol l'equip va ressaltar alguns aspectes per millorar:</span><div class="ds"></div>
+
+        <span><li>Eliminar la dependència de probabilitats i el factor sort de totes les habilitats ("stealth" i "fear") i substituir-ho, per exemple, per dependència d'elements de l'entorn.</li></span><div class="ds"></div>
+
+        <span><li>Cal una especificació més detallada de les tecles assignades, dels valors numèrics i del que es vol transmetre amb cada animació i mecànica.</li></span><div class="ds"></div>
+
+        <span>Després de recollir tot el <i>feedback</i> de la presentació i corregir el que estava malament, es va redactar el document "<a href="https://siggames-pacomonkey.atlassian.net/wiki/spaces/PacoMonkey/pages/19857409/Mec+niques"><img src="https://pf-emoji-service--cdn.us-east-1.prod.public.atl-paas.net/standard/caa27a19-fc09-4452-b2b4-a301552fd69c/64x64/1f3ae.png" width="12"> Mecàniques</a>", que recull totes les mecàniques, tant de moviment com d'atac, de tots els personatges de PacoMonkey, tot i que actualment només conté les del personatge principal (Paco).</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Revisió identitat visual empresa</span>
+        <span class="card-subtitle">Abel Pérez - <i>Review Meeting</i> (29/07/2024)</span><div class="ds"></div>
+
+        <span>S'ha presentat la proposta d'identitat visual de SIG Games i l'equip ha donat <i>feedback</i>:</span><div class="ds"></div>
+
+        <strong>Punts positius</strong>
+        <span><li>La idea i el significat d'una molla (<i>springboard</i>) dins del logotip.</li></span>
+        <span><li>Les fonts <u>Cocon</u> i <u>Montserrat</u> per títols i text, respectivament.</li></span>
+        <span><li>La paleta de colors i la seva justificació.</li></span>
+
+        <table role="presentation" align="center" style="border-collapse: collapse; text-align: center; margin: 0 auto; margin-bottom: 10px;">
+          <tr>
+            <td style="padding: 7px;"><span style="display:inline-block; width:11px; height:11px; background-color: #F1F1F1; border: 1px solid black; border-radius: 50%;"></span> <code>#F1F2F2</code></td>
+            <td style="padding: 7px;">·</td>
+            <td style="padding: 7px;"><span style="display:inline-block; width:11px; height:11px; background-color: #684B9F; border: 1px solid black; border-radius: 50%;"></span> <code>#684B9F</code></td>
+            <td style="padding: 7px;">·</td>
+            <td style="padding: 7px;"><span style="display:inline-block; width:11px; height:11px; background-color: #333132; border: 1px solid black; border-radius: 50%;"></span> <code>#333132</code></td>
+          </tr>
+        </table>
+
+        <strong>Punts negatius</strong>
+        <span><li>El logotip/isotip transmet més aviat ser una empresa de disseny gràfic, cal·ligrafia o tauletes digitals que una empresa de videojocs.</li></span>
+        <span><li>La quantitat de tirabuixons del logotip dificulten la lectura del nom.</li></span>
+        <span><li>Cal actualitzar el logotip de "SIGgames" a "SIG Games".</li></span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Informació d'interés</span>
+        <span class="card-subtitle">Júlia Nogales - <i>Daily Meeting</i> (03/08/2024)</span><div class="ds"></div>
+
+        <span>S'ha creat i habilitat el fitxer "<a href="https://siggames-pacomonkey.atlassian.net/wiki/spaces/PacoMonkey/pages/25133263/Informaci+d+inter+s"><img src="https://pf-emoji-service--cdn.us-east-1.prod.public.atl-paas.net/standard/caa27a19-fc09-4452-b2b4-a301552fd69c/64x64/1f4da.png" width="12"> Informació d'interés</a>" a l'espai PacoMonkey de Confluence per posar links de vídeos o informació a consultar per cada membre de l'equip.</span><div class="ds"></div>
+
+        <span>Recordeu que també existeixen els fitxers "<a href="https://siggames-pacomonkey.atlassian.net/wiki/spaces/PacoMonkey/pages/21954570/An+lisi+Videojocs"><img src="https://pf-emoji-service--cdn.us-east-1.prod.public.atl-paas.net/standard/caa27a19-fc09-4452-b2b4-a301552fd69c/64x64/1f50d.png" width="12"> Anàlisi Videojocs</a>" i "<a href="https://siggames-pacomonkey.atlassian.net/wiki/spaces/PacoMonkey/pages/21921794/Idees+PacoMonkey"><img src="https://pf-emoji-service--cdn.us-east-1.prod.public.atl-paas.net/standard/caa27a19-fc09-4452-b2b4-a301552fd69c/64x64/1f4a1.png" width="12"> Idees PacoMonkey</a>" per aportar informació o idees sobre videojocs, que són de gran ajuda per al desenvolupament de PacoMonkey.</span><div class="ds"></div>
+
+        <span>A més, cal tenir present que encara podem intentar reciclar idees prèvies al TFG, reprendre discussions i aplicar-les al videojoc. Mentre no s'elimini l'antiga organització de GitHub, podem trobar aquestes idees a <a href="https://github.com/SIGGgames/PacoMonkey/discussions">Discussions · SIGGgames</a>.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Repositori "Resources"</span>
+        <span class="card-subtitle">Aniol Serrano - <i>Daily Meeting</i> (04/08/2024)</span><div class="ds"></div>
+
+        <span>S'ha creat el repositori <a href="https://github.com/SIGGames/Resources">Resources</a> al GitHub de SIG Games per a que l'equip pugui pujar i compartir documents relacionats amb el projecte.</span><div class="ds"></div>
+
+        <span>S'ha habilitat el <i>webhook</i> de GitHub a Discord per a que notifiqui al canal <a href="https://discord.gg/bSXvQ3TVdX">#resources</a> cada cop que es puja o es modifica un arxiu del repositori Resources. També es notificarà mitjançant un altre webhook en el canal <a href="https://discord.gg/3K6BCy44p4">#releases</a> cada cop que es publiqui una nova versió del videojoc PacoMonkey.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Actualització tasques sprint 1</span>
+        <span class="card-subtitle">Júlia Nogales - <i>Daily Meeting</i> (05/08/2024)</span><div class="ds"></div>
+
+        <span>Les tasques del <i>sprint</i> 1 "<a href="https://siggames-pacomonkey.atlassian.net/browse/SIG-43">Composició i càmera</a>" i "<a href="https://siggames-pacomonkey.atlassian.net/browse/SIG-45">Definició UX/UI</a>" assignades a Abel Pérez s'han mogut al Backlog perquè s'han considerat poc prioritàries en aquest moment i es reprendran més endavant.</span><div class="ds"></div>
+
+        <span>Tot i que la tasca "<a href="https://siggames-pacomonkey.atlassian.net/browse/SIG-41">Identitat Visual SIGGAMES</a>" s'ha finalitzat, s'ha creat una tasca nova, "<a href="https://siggames-pacomonkey.atlassian.net/browse/SIG-62">Logo SIG Games</a>", i col·locat al <i>backlog</i> per, en un futur, corregir el logo segons el <i>feedback</i> que es va donar i el canvi de nom de l'empresa quan es pugui/vulgui.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Retrospective Sprint 1</span>
+        <span class="card-subtitle">Júlia Nogales - <i>Retrospective Meeting</i> (05/08/2024)</span><div class="ds"></div>
+
+        <span>Aquest sprint ha estat força caòtic: s'ha posposat la data del sprint 3 cops, ja que inicialment tenia una duració de dues setmanes i ha acabat sent de gairebé 5, i ni tan sols s'han completat totes les tasques creades al principi.</span><div class="ds"></div>
+
+        <strong>Causes:</strong>
+        <ul>
+          <span><li>Poc temps disponible per treballar en el projecte sense comunicar-ho.</li></span>
+          <span><li>Mala aproximació de la duració d'algunes tasques.</li></span>
+          <span><li>No llegir completament la descripció de les tasques i no fer-les del tot bé (possible falta d'interés).</li></span>
+          <span><li>Mala gestió del temps invertit en el projecte:</li></span>
+          <ul style="list-style-type:circle;">
+            <span><li>Es prioritzaven tasques secundàries sense tenir completades les principals.</li></span>
+            <span><li>Es feien massa iteracions sobre una mateixa tasca per corregir petites coses.</li></span>
+          </ul>
+          <span><li>Sovint es discuteix enlloc de debatre, ja que fàcilment es prenen les crítiques a l'àmbit personal.</li></span>
+          <span><li>Es van eliminar reunions per no "perdre temps" que es podria dedicar a treballar en el projecte, però al no haver de reportar progressos a l'equip no s'han tingut present les tasques i s'han deixat per l'últim moment.</li></span>
+        </ul><div class="ds"></div>
+
+        <strong>Solucions proposades:</strong>
+        <ul>
+          <span><li>Reportar el progrés diàriament (per poc que sigui) en un missatge pel grup de WhatsApp de l'equip.</li></span>
+          <span><li>Millorar la comunicació i comprensió, tenint sempre en compte la resta de l'equip.</li></span>
+          <span><li>Implicar-se més en el projecte i complir amb les <i>deadlines</i>.</li></span>
+        </ul><div class="ds"></div>
+
+        <span>També s'han descobert punts forts dels membres de l'equip, com ara l'Abel Pérez, que ha après a aproximar la duració de les tasques i a gestionar-se el temps correctament, sent una persona confiable per autoassignar-se la durada de tasques.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Planning sprint 2</span>
+        <span class="card-subtitle">Júlia Nogales - <i>Planning Meeting</i> (05/08/2024)</span><div class="ds"></div>
+
+        <span>Seguint amb la tendència inicial, aquest nou sprint tindrà una durada de 2 setmanes: del 12 al 26 d'agost.</span><div class="ds"></div>
+
+        <span>Per intentar prevenir els problemes que han sorgit durant el sprint 1, s'ha decidit provar a posar una càrrega més lleugera de tasques i, en cas que s'acabin totes abans de la data límit, demanar-ne més.</span><div class="ds"></div>
+
+        <span>L'objectiu d'aquest sprint és començar amb la implementació del videojoc, per tant s'han assignat issues de crear els <i>tilesets</i> del primer bioma i definir el personatge principal (Paco), entre altres. Tot i que paral·lelament l'Aniol es dedicarà a implementar la pàgina web de l'empresa i al següent sprint començarà amb el videojoc.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Canvi perfil SIG Games GitHub</span>
+        <span class="card-subtitle">Aniol Serrano - <i>Daily Meeting</i> (09/08/2024)</span><div class="ds"></div>
+
+        <span>Vercel havia estat l'opció predilecta per desplegar la pàgina web, però al intentar implementar-ho resulta ser un servei de pagament per tots aquells perfils de GitHub que són organitzacions enlloc de perfils d'usuari.</span><div class="ds"></div>
+
+        <span>S'han intentat buscar alternatives a Vercel però els serveis i facilitats que ofereix pels desenvolupadors són incomparables amb qualsevol altre servei gratuït.</span><div class="ds"></div>
+
+        <span>Per aquest motiu s'ha pres la decisió de migrar el perfil de l'organització SIG Games a un perfil d'usuari, creant-lo amb el correu general de l'empresa i amb una contrasenya compartida amb tot l'equip. Tot i que en principi només caldrà entrar amb aquesta compta quan es necessitin permisos d'administrador, ja que a efectes pràctics per l'equip funcionaria gairebé igual que la prèvia organització.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Compra Aseprite</span>
+        <span class="card-subtitle">Abel Pérez - <i>Daily Meeting</i> (09/08/2024)</span><div class="ds"></div>
+
+        <span>S'ha comprat un <i>software</i> per realitzar les tasques necessàries del departament artístic. Inicialment es pretenia utilitzar un programa <i>open source</i> anomenat "<a href="https://libresprite.github.io/">LibreSprite</a>" per crear els assets en pixel art, però ha resultat tenir més limitacions de les esperades i finalment s'ha decidit comprar la versió oficial "<a href="https://www.aseprite.org/">Aseprite</a>" per 20€ a Humble Bundle & Steam.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Resum despeses d'empresa</span>
+        <span class="card-subtitle">Júlia Nogales - <i>Daily Meeting</i> (09/08/2024)</span><div class="ds"></div>
+
+        <span>Des de que aquest projecte i l'empresa es van crear, aquestes són totes les despeses de SIG Games (ordenades cronològicament). Es pot consultar la factura fent click a la despesa.</span><div class="ds"></div>
+
+        <table class="table">
+          <tr>
+            <th colspan="2" class="table-head">Despeses SIG Games</th>
+          </tr>
+          <tr>
+            <td class="table-rows"><tt><a href="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/SIGGames/Resources/main/Bills/domini-siggamescat_dondominio.pdf">Domini siggames.cat</a></tt></td>
+            <td class="table-rows end"><tt>26,50 €</tt></td>
+          </tr>
+          <tr>
+            <td class="table-rows"><tt><a href="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/SIGGames/Resources/main/Bills/tickets_indiedevday.pdf">Fira IndieDevDay 2024</a></tt></td>
+            <td class="table-rows end"><tt>68,16 €</tt></td>
+          </tr>
+          <tr>
+            <td class="table-rows"><tt><a href="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/SIGGames/Resources/main/Bills/aseprite_humble-bundle.pdf">Software Aseprite</a></tt></td>
+            <td class="table-rows end"><tt>18,33 €</tt></td>
+          </tr>
+          <tr>
+            <th class="table-head">TOTAL</td>
+            <th class="table-head end">112,99 €</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Plantilles arxius empresa</span>
+        <span class="card-subtitle">Júlia Nogales - <i>Daily Meeting</i> (09/08/2024)</span><div class="ds"></div>
+
+        <span>Per mantenir una uniformitat en tots els documents oficials de l'empresa s'ha decidit definir unes plantilles per informes (.doc, .tex), presentacions (.pptx) i correus electrònics (.html). S'ha ficat la tasca al backlog i s'ha decidit que s'incorporarà al sprint quan es tingui temps.</span><div class="ds"></div>
+
+        <span>Com que durant el sprint 2 la Júlia ha acabat les tasques amb força marge de temps, ha decidit assignar-se la tasca i (intentar) acabar-la abans de l'inici del sprint 3.</span><div class="ds"></div>
+
+        <span>Durant el sprint 2 només ha donat temps a definir les plantilles pels correus electrònics
+          (<a href="http://htmlpreview.github.io/?https://raw.githubusercontent.com/SIGGames/Resources/main/Document%20Templates/mails/newsletter-devteam-template.html">newletter-devteam</a>,
+          <a href="http://htmlpreview.github.io/?https://raw.githubusercontent.com/SIGGames/Resources/main/Document%20Templates/mails/meeting-reminder-template.html">meeting-reminder</a>
+          i <a href="http://htmlpreview.github.io/?https://raw.githubusercontent.com/SIGGames/Resources/main/Document%20Templates/mails/tasks-reminder-template.html">tasks-reminder</a>)
+          i estipular les icones (en <i>color-mode</i> i <i>dark-mode</i>) de xarxes socials que s'utilitzaran pels correus i les pàgines web en l'arxiu
+          "<a href="https://github.com/SIGGames/Resources/blob/main/Document%20Templates/mails/contact-icons.md">contact-icons.md</a>".</span><div class="ds"></div>
+
+        <span>Per tant es mou la tasca al backlog i queda pendent crear les plantilles per la resta de documents quan hi hagi més temps.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Prototip pàgina web</span>
+        <span class="card-subtitle">Aniol Serrano - <i>Follow-up Meeting</i> (12/08/2024)</span><div class="ds"></div>
+
+        <span>Tot i que s'ha començat a crear el prototip quan la pàgina web ja estava en progrés, s'ha aturat a temps per a que l'equip pugui donar <i>feedback</i> sobre la idea de la pàgina web sense que el desenvolupador hagi perdut molt temps en implementar una <i>feature</i> que seria eliminada o canviada.</span><div class="ds"></div>
+
+        <strong>Pendent:</strong>
+        <span><li>Form per enviar correu a la secció de contacte.</li></span>
+        <span><li>Press-kit</li></span>
+        <span><li>(Opcional) Sistema <i>log-in</i> d'usuaris pel blog.</li></span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Revisió pàgina web</span>
+        <span class="card-subtitle">Aniol Serrano - <i>Review Meeting</i> (25/08/2024)</span><div class="ds"></div>
+
+        <span>S'ha presentat la proposta implementada de la pàgina web de SIG Games (basada en el prototip) i l'equip ha donat <i>feedback</i>:</span><div class="ds"></div>
+
+        <strong>Canvis </strong>
+        <span><li>Habilitar la web per a que es pugui canviar d'idioma.</li></span>
+        <span><li>Títols de les finestres de pàgines detall s'han d'actualitzar a "SIG Games · [títol-pàgina-detall]".</li></span>
+        <span><li>Eliminar l'animació d'entrada del títol per l'esquerra.</li></span>
+        <span><li>Fer l'icono de la pestanya de l'aplicació en color quan està activa i en monocolor quan l'usuari abandona la pestanya.</li></span>
+        <span><li>Pàgines detall han de tenir el logo per retornar al <i>home</i>, però sense el menú ni el <i>background</i>.</li></span>
+        <span><li>El fons del logo de la pestanya s'ha de canviar a un cercle blanc o un quadrat amb les vores arrodonides.</li></span>
+        <span><li>Ha d'haver una fletxa (similar a la de la 1a pàgina) en cada secció i que faci <i>bounce</i> al fer hover.</li></span>
+        <span><li>La barra de desplaçament ha d'estar oculta. Es substitueix per punts al lateral, fent hover es mostra el títol de la secció i al clicar t'hi trasllada.</li></span>
+        <span><li>Caldria replantejar el disseny (i estructura) per a que no sembli buit.</li></span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Tilemap</span>
+        <span class="card-subtitle">Abel Pérez - <i>Daily Meeting</i> (16/08/2024)</span><div class="ds"></div>
+
+        <span>S'han presentat les tiles dissenyades pel primer bioma (bosc tropical) però no s'adequaven a la idea de com hauria de ser l'entorn, ja que necessita més vegetació.</span><div class="ds"></div>
+        
+        <span>Com que el disseny ha agradat molt encara que no correspongués a l'estètica del bioma, s'ha decidit guardar el <i>tileset</i> per un bioma més àrid com ara el desert o "muntanya rocosa".</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Nou compte de correu</span>
+        <span class="card-subtitle">Júlia Nogales - <i>Daily Meeting</i> (16/08/2024)</span><div class="ds"></div>
+
+        <span>S'han hagut de crear comptes d'usuari per l'empresa en diverses plataformes de xarxes socials i, fins ara, s'havia fet amb el correu "<a href="mailto:abel.perez@siggames.cat" class="mailto">abel.perez@siggames.cat</a>", ja que era la persona responsable de màrqueting. Finalment s'ha decidit crear un nou compte de correu electrònic, "<a class="mailto" href="mailto:siggames@siggames.cat">siggames@siggames.cat</a>", amb una contrasenya compartida entre l'equip per fer tots aquests registres.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Llicència repositori GitHub</span>
+        <span class="card-subtitle">Aniol Serrano - <i>Daily Meeting</i> (23/08/2024)</span><div class="ds"></div>
+
+        <span>Inicialment s'havia proposat la llicència <u>MIT</u> però sense tenir en consideració les condicions de l'empresa pel projecte.</span><div class="ds"></div>
+
+        <div style="border: 1px solid #8298E3; background-color: #dfe6ff38; border-radius: 3px; padding: 15px;">
+          <strong>Condicions per la llicència dels projectes de SIG Games:</strong>
+          <ul>
+            <span><li>Codi públic</li></span>
+            <span><li>Reconeixement de l'obra</li></span>
+            <span><li>Només creadors poden utilitzar l'obra per finalitats comercials</li></span>
+          </ul>
+        </div><div class="ds"></div>
+
+        <span>Seguidament es va escollir la llicència <u>CC-BY-NC-SA</u> (<i>Creative Commons Attribution-NonCommercial-ShareAlike</i>), aquest cop tenint present les condicions de l'empresa. Desgraciadament no es va tenir en compte al escollir-la que la part "NonCommercial" també s'aplica al creador, i l'objectiu final de l'empresa és poder comercialitzar el producte.</span><div class="ds"></div>
+
+        <span>Finalment s'ha aplicat la llicència <u>CC-BY-NC-ND</u> (<i>Creative Commons Attribution-NonCommercial-NoDerivs</i>), que corregeix l'error de l'anterior.</span><div class="ds"></div>
+
+        <span>L'explicació detallada es pot trobar a "<a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/SIGGames/Resources/main/Software/Propostes/SIG_Llicencia.pdf">SIG_Llicencia.pdf</a>".</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Objectiu a "curt" termini</span>
+        <span class="card-subtitle">Júlia Nogales - <i>Daily Meeting</i> (27/08/2024)</span><div class="ds"></div>
+
+        <span>Per tenir una meta clara en ment mentre es completen les tasques cal posar-nos un objectiu a "curt" termini: finalitzar gairebé al 100% (menys temes de post-producció) tota la introducció del videojoc, és a dir, el capítol de la Micca (mare del Paco).</span><div class="ds"></div>
+
+        <span>Aquesta fase caldrà completar-la, com a màxim, en 3 mesos, és a dir, s'hauria de finalitzar la introducció abans del <strong>24 de novembre</strong>.</span><div class="ds"></div>
+
+        <span>S'ha creat una llista de les tasques principals que s'hauran de completar (ordenades per prioritat) per assolir l'objectiu marcat.</span><div class="ds"></div>
+        
+        <hr>
+        <div style="padding: 10px 20px;">
+          <strong>Abel:</strong>
+          <ol>
+            <span><li>Disseny de la Micca</li></span>
+            <span><li>Disseny de l'enemic</li></span>
+            
+            <div style="color: #999999;">
+              <span><li>Disseny del Paco bebé</li></span>
+              <span><li>Disseny <i>tileset</i> pre-atac</li></span>
+              <span><li>Disseny <i>background</i> pre-atac</li></span>
+              <span><li>Disseny <i>tileset</i> atac</li></span>
+              <span><li>Disseny <i>background</i> atac</li></span>
+              <span><li>Disseny UX/UI</li></span>
+              <span><li>Disseny personatges secundaris</li></span>
+              <span><li>Cinemàtica "in-game"</li></span>
+              <span><li>Post-effects: música, FX, veus</li></span>
+              <span><li>Cinemàtica "off-game"</li>
+            </div>
+          </ol>
+        </div>
+        
+        <hr>
+        
+        <div style="padding: 10px 20px;">
+          <strong>Aniol:</strong>
+          <ol>
+            <span class="underline"><li>Configurar escenes Unity</li></span>
+            <span><li>Implementar estructura general mecàniques</li></span>
+            <span><li>Implementar mecàniques moviment i combat de la Micca</li></span>
+            
+            <div style="color: #999999;">
+              <span><li><i>Triggers</i></li></span>
+              <span><li>Implementar UI/UX</li></span>
+              <span><li><i>Procedural Effects</i></li></span>
+            </div>
+          </ol>
+        </div>
+        <hr>
+
+        <div style="padding: 10px 20px;">
+          <strong>Júlia:</strong>
+          <ol>
+            <span class="underline"><li>Definir personatge Micca</li></span>
+            <span><li>Definir mecàniques Micca (moviment i salt, sprint, atacs a melee)</li></span>
+            <span><li>Definir estructura herència de classes de mecàniques</li></span>
+            <span><li>Definir tipus de personatges secundaris (a nivell general les mecàniques)</li></span>
+            <span><li>Definir personatge enemic</li></span>
+            
+            <div style="color: #999999;">
+              <span><li>Definir poblat i estètica de l'entorn</li></span>
+              <span><li>Crear història inicial i storyboard</li></span>
+              <span><li>Definir estructura nivell (+ tutorial)</li></span>
+              <span><li>Definir <i>checkpoints</i> i <i>triggers</i></li></span>
+              <span><li>Definir personatges secundaris (a nivell específic)</li></span>
+              <span><li>UX/UI</li></span>
+              <span><li>Diàlegs</li></span>
+            </div>
+          </ol>
+        </div>
+        <hr>
+        <span style="font-size: small;"><i>Les tasques mostrades en un color més fosc són les que s'han assignat per aquest sprint (sprint 3).</i></span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Comentaris reviews</span>
+        <span class="card-subtitle">Aniol Serrano - <i>Retrospective Meeting</i> (27/08/2024)</span><div class="ds"></div>
+
+        <span>Tots els comentaris que aporta l'equip per donar <i>feedback</i> sobre les tasques realitzades cal que s'anotin a la pròpia tasca de Jira enlloc de simplement comentar-ho o anotar-ho a la <i>newsletter</i>, ja que quan es vol reprendre la tasca no tens la informació a mà i fa que el procés sigui menys eficient.</span>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="isotip center">
+          <a href="http://www.siggames.cat" target="_blank"><img alt="SIG Games" title="SIG Games · Web Page" src="https://raw.githubusercontent.com/SIGGames/Resources/main/Document%20Templates/mails/img/siggames-iso.png"></a>
+        </div>
+
+        <table role="presentation" align="center" style="border-collapse: collapse; text-align: center; margin: 0 auto; margin-bottom: 10px;">
+          <tr>
+            <td style="padding: 7px;"><a href="mailto:contact@siggames.cat" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/6244/6244710.png" alt="Email" title="SIG Games · Email" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://discord.gg/XAQUEgqP7x" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670325.png" alt="Discord" title="SIG Games · Discord" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://github.com/SIGGames" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="GitHub" title="SIG Games · GitHub" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://www.linkedin.com/company/siggames" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/4494/4494471.png" alt="LinkedIn" title="SIG Games · LinkedIn" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://www.instagram.com/siggames.official" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670274.png" alt="Instagram" title="SIG Games · Instagram" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://www.tiktok.com/@siggames.official" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670299.png" alt="TikTok" title="SIG Games · TikTok" width="32" style="display: block;"></a></td>
+          </tr>
+        </table>
+
+        <span>Si no vols rebre més correus, clica <a href="#">aquí</a>  per desactivar la subscripció.</span><div></div>
+        <span>Si tens alguna pregunta, envia'ns un missatge a <a class="mailto" href="mailto:contact@siggames.cat">contact@siggames.cat</a>.</span><div></div>
+        <span>&copy; 2024 SIG Games. Tots els drets reservats.</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

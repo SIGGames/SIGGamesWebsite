@@ -10,8 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class NewsletterComponent implements OnInit {
-  newsletterContent: string = '';
-  newsletterId: string = '';
+  public newsletterContent: string = '';
+  private newsletterId: string = '';
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -28,7 +28,7 @@ export class NewsletterComponent implements OnInit {
 
   loadNewsletterContent(newsletterId: string): void {
     this.newsletterId = newsletterId;
-    const newsletterFile = `/assets/newsletter/newsletter-${newsletterId}.html`;
+    const newsletterFile = `/assets/newsletter/${newsletterId}_newsletter-devteam.html`;
 
     fetch(newsletterFile)
       .then(response => {

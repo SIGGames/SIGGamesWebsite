@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.cdnfonts.com/css/cocon" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Newsletter DevTeam</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #F1F2F2;
+      font-family: Montserrat, Arial, sans-serif;
+    }
+
+    .email-wrapper {
+      background-color: #F1F2F2;
+      padding-bottom: 15px;
+    }
+
+    .init-divider {
+      background-color: white;
+      padding: 5px;
+      border: 1px solid #F1F2F2;
+    }
+
+    .divider {
+      background-color: #F1F2F2;
+      padding: 5px;
+    }
+
+    .ds {
+      padding: 9px;
+    }
+
+    .email-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #FFFFFF;
+      /*border: 1px solid #dddddd;*/
+      overflow: hidden;
+    }
+
+    .header {
+      background-color: #F1F2F2;
+      color: #684B9F;
+      padding: 20px;
+      text-align: center;
+      font-family: Cocon, Arial, sans-serif;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 3.5em;
+    }
+    .header img {
+      max-width: 100%;
+    }
+
+    .content {
+      padding: 35px;
+      color: #333132;
+      border: 1px solid #F1F2F2;
+    }
+    .content span, strong {
+      font-size: 15px;
+      line-height: 1.75;
+      text-align: justify;
+    }
+    .content span {
+      display: block;
+    }
+
+    .card-title {
+      color: #8298E3;
+      font-weight: bold;
+    }
+    .card-subtitle {
+      font-style: italic;
+      font-size: 13px !important;
+    }
+
+    .email-type {
+      color: #8298E3;
+      font-size: 1.7em !important;
+      font-weight: bold;
+      text-align: center !important;
+      font-family: Cocon, Arial, sans-serif;
+    }
+
+    .mailto {
+      color: #777777 !important;
+      text-decoration: underline !important;
+    }
+    .mailto:hover {
+      color: #333132 !important;
+    }
+
+    .footer {
+      background-color: #F1F2F2;
+      text-align: center;
+      padding: 10px;
+      font-size: 12px;
+      color: #777777;
+    }
+    a {
+      color: #8298E3 !important;
+      text-decoration: none !important;
+    }
+    a:hover {
+      text-decoration: underline !important;
+      color: #8298E3 !important;
+    }
+    a:focus {
+      outline: none !important;
+      background-color: #8298E32A !important;
+    }
+    
+    .isotip {
+      padding-top: 15px;
+      padding-bottom: 10px;
+    }
+    .isotip img {
+      max-width: 100%;
+      height: auto;
+      width: 15%;
+    }
+
+    .contact-icons {
+      padding-bottom: 20px;
+      gap: 15px;
+    }
+
+    table {
+      border-spacing: 0px !important;
+      border-collapse: collapse !important;
+    }
+
+    .table {
+      border: 1px solid #8298E3;
+      width: 100%;
+    }
+    .table-head {
+      padding: 15px;
+      text-align: start;
+      border-bottom: 1px solid #8298E3 !important;
+      border-top: 1px solid #8298E3 !important;
+    }
+    .table-rows {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 13px;
+      padding-bottom: 13px;
+      text-align: start;
+      border-top: 1px solid #C2CDF0;
+      /*border-bottom: 1px solid #CED7F5;*/
+    }
+    .end {
+      text-align:end;
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+
+    code {
+      background-color: #E0E0E0;
+      border-radius: 3px;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    /*
+    li {
+      text-align: start;
+    }
+    */ 
+    .sprint {
+        text-align: center !important;
+        font-size: 1.4em !important;
+        font-weight: bold;
+    }
+    
+    .sprint-date {
+        text-align: center !important;
+        font-size: 1.1em !important;
+        padding-bottom: 20px;
+    }
+
+    tt {
+      font-size: 16px;
+    }
+    ul {
+      list-style-type: disc;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="email-wrapper">
+    <div class="email-container">
+      <div class="init-divider"></div>
+      <!-- Header -->
+      <div class="header">
+        <a href="http://www.siggames.cat" target="_blank"><img alt="SIG Games" title="SIG Games · Web Page" src="https://raw.githubusercontent.com/SIGGames/Resources/main/Logotyping/Digital/PNG/3x/Logotip%20sobre%20blanc%403x.png"></a>
+      </div>
+
+      <!-- Content: Introduction -->
+      <div class="content">
+        <span class="email-type center">Newsletter DevTeam</span>
+        <span class="sprint"></span>
+        <span class="sprint-date">14/07/2024</span><div class="ds"></div>
+
+        <strong>Bona nit,</strong><div class="ds"></div>
+
+        <span>En l'última reunió d'equip <i>Daily Meeting</i> (<i>Sprint</i> 1) del dissabte 13 de juliol, s'han pres decisions significatives per l'avenç i la metodologia de treball del projecte. En aquest correu es fa una recopilació de tot el que s'ha comentat en la reunió i l'estat actual del projecte.</span><div class="ds"></div>
+        
+        <strong>SIG Games</strong>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Nou estat de tasca en el flux de treball</span>
+        <span class="card-subtitle">Aniol Serrano - <i>Daily Meeting</i> (13/07/2024)</span><div class="ds"></div>
+
+        <span>Després de moltes propostes d'estats de tasques (<i>En especificació</i>, <i>En revisió d'especificació</i>, <i>Especificada</i>, <i>En desenvolupament</i>, <i>Desenvolupada</i>, <i>En fase de proves</i>, <i>Bloquejada</i>, <i>Finalitzada</i>, <i>Pendent de validar solució</i>) per incorporar en el taulell Kanban de Jira, s'ha acordat que l'únic estat que podria suposar un canvi profitós per l'equip és "Bloquejada", que fins ara s'estava implementant com una etiqueta dins de la tasca.</span><div class="ds"></div>
+
+        <span>Crear aquest nou estat aportarà una forma ràpida i visual de mantenir a l'equip informat del motiu de per què no s'ha començat a treballar en una tasca assignada i d'actuar com a recordatori per totes les persones involucrades que hi ha una tasca que depèn d'ells i no es podrà iniciar fins que no finalitzin la seva.</span><div class="ds"></div>
+
+        <span>Per tant, l'estat final del taulell Kanban serà:</span>
+        <strong><u>Bloquejada</u> → Pendent → En Progrés → En Revisió → Finalitzada</strong>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Llicència de software</span>
+        <span class="card-subtitle">Aniol Serrano - <i>Daily Meeting</i> (13/07/2024)</span><div class="ds"></div>
+
+        <span>S'ha discutit a qui pertany la responsabilitat d'investigar sobre el tipus de llicència que es vol aplicar pel software del projecte al repositori de GitHub. Finalment s'ha acordat que, com que tant el GitHub com el codi del projecte estan a càrrec del departament de programació (Aniol Serrano), també serà responsabilitat d'aquest decidir la llicència del projecte.</span><div class="ds"></div>
+
+        <span>Per decidir-ho cal tenir present els valors i els objectius de l'empresa, com seria buscar la col·laboració amb els jugadors i altres desenvolupadors però alhora ser els propietaris del producte amb la possibilitat de comercialitzar-lo.</span><div class="ds"></div>
+
+        <span>Com que aquesta feina es considera que pertany a la tasca <a href="https://siggames-pacomonkey.atlassian.net/browse/SIG-37?atlOrigin=eyJpIjoiZjBiZTE5ZWMwOGY3NGNkMjkyNTk5NTNhNmMzMWMzNmQiLCJwIjoiaiJ9">GitHub</a>, s'espera que estigui acabada abans de la seva data límit, és a dir, abans del 23 de juliol.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Facilitat d'exportar el videojoc a mòbil</span>
+        <span class="card-subtitle">Aniol Serrano - <i>Daily Meeting</i> (13/07/2024)</span><div class="ds"></div>
+
+        <span>Amb Unity és possible i relativament fàcil exportar el codi d'un videojoc d'ordinador a mòbil, però pel que respecta a l'àmbit visual no és tan fàcil. Existeixen softwares que permeten fer l'adaptació automàtica mitjançant l'eliminació de píxels per adaptar-ho a la mida petita del dispositiu mòbil, però molts cops no funcionen adequadament. Si és el cas, caldrà prendre una decisió: fer l'exportació manual o cancel·lar-la.</span><div class="ds"></div>
+
+        <span>Com que no es podrà saber fins més endavant, s'ha decidit implementar el codi de forma que sigui fàcilment adaptable per un canvi de dispositiu i deixar la decisió d'exportar el videojoc per més endavant, quan es pugui posar a prova.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Recordatori registre temps</span>
+        <span class="card-subtitle">Júlia Nogales - <i>Daily Meeting</i> (13/07/2024)</span><div class="ds"></div>
+
+        <span>Recordar que cal enregistrar el moment en que es comença a treballar en una tasca mitjançant l'eina "Actual start" i el temps invertit en aquesta amb "Seguimiento de tiempo" que ofereix Jira.</span><div class="ds"></div>
+
+        <span>D'aquesta forma es podrà fer un anàlisi precís del temps dedicat a cada sprint i en el projecte per poder assignar les tasques de forma més adequada i obtenir un major rendiment de l'equip.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Identitat visual SIGGames</span>
+        <span class="card-subtitle">Abel Pérez - <i>Daily Meeting</i> (13/07/2024)</span><div class="ds"></div>
+
+        <span>Per poder completar els perfils públics de l'organització SIGGames (GitHub, Gravatar, Discord, etc.) cal que l'equip artístic i de màrketing (Abel Pérez) acabi de desenvolupar la proposta d'identitat visual de l'empresa i proporcioni logos, banners i la paleta de colors.</span><div class="ds"></div>
+
+        <span>Segons màrketing, la identitat visual de SIGGames estarà completada per abans de la reunió <i>Follow-up Meeting</i> del dilluns 15 de juliol i es farà una presentació de la proposta a tot l'equip.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Exemple</span>
+        <span class="card-subtitle">Júlia Nogales - Daily Meeting (18/08/2024)</span><div class="ds"></div>
+
+        <span>Recentment s'han publicat les entrades per la Fira del Videojoc Indie de Barcelona (7a edició), <a href="https://www.indiedevday.es/">IndieDevDay 2024</a>, que es celebrarà entre el 27 i 29 de setembre de 2024 a <a href="https://maps.app.goo.gl/h7SoXk62j4NkA3vr9">La Farga de l'Hospitalet</a>.</span><div class="ds"></div>
+        
+        <span>La fira ofereix un dia (divendres) dedicat a professionals que busquen participar en l'àrea del negoci i estudiants de la indústria del videojoc. La resta dels dies (dissabte i diumenge) estan dirigits als aficionats dels videojocs i les famílies.</span><div class="ds"></div>
+        
+        <span>L'equip ha trobat molt adequat assistir a la fira i s'han comprat les entrades: dues entrades Student Pass (Júlia i Abel), que permeten l'accés a la fira tots els dies per poder assistir al dia professional i al del públic, i una entrada General Ticket Saturday (Aniol), que només permet l'entrada el dissabte.</span><div class="ds"></div>
+
+
+        <table class="table">
+          <tr>
+            <th colspan="2" class="table-head">Rebut compra entrades</th>
+          </tr>
+          <tr>
+            <td class="table-rows"><tt>Student Pass</tt></td>
+            <td class="table-rows end"><tt>20,00 €</tt></td>
+          </tr>
+          <tr>
+            <td class="table-rows"><tt>Student Pass</tt></td>
+            <td class="table-rows end"><tt>20,00 €</tt></td>
+          </tr>
+          <tr>
+            <td class="table-rows"><tt>General Ticket Saturday</tt></td>
+            <td class="table-rows end"><tt>09,00 €</tt></td>
+          </tr>
+          <tr>
+            <td class="table-rows"><tt>Merchandising T-shirt</tt></td>
+            <td class="table-rows end"><tt>11,97 €</tt></td>
+          </tr>
+          <tr>
+            <td class="table-rows"><tt>Entrades reemborsables</tt></td>
+            <td class="table-rows end"><tt>04,88 €</td>
+          </tr>
+          <tr>
+            <td class="table-rows"><tt>Despeses de transacció</tt></td>
+            <td class="table-rows end"><tt>02,30 €</td>
+          </tr>
+          <tr>
+            <th class="table-head">TOTAL</td>
+            <th class="table-head end">68,16 €</td>
+          </tr>
+        </table><div class="ds"></div>
+
+        <span style="text-align: center;">Temps restant per la fira IndieDevDay 2024:</span><div class="ds"></div>
+
+        <div class="center">
+          <img src="https://countdown.unlayer.com/generate/oK387ntOpjjo" alt="Temps restant" title="Temps restant" width="284">
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="isotip center">
+          <a href="http://www.siggames.cat" target="_blank"><img alt="SIG Games" title="SIG Games · Web Page" src="https://raw.githubusercontent.com/SIGGames/Resources/main/Document%20Templates/mails/img/siggames-iso.png"></a>
+        </div>
+
+        <table role="presentation" align="center" style="border-collapse: collapse; text-align: center; margin: 0 auto; margin-bottom: 10px;">
+          <tr>
+            <td style="padding: 7px;"><a href="mailto:contact@siggames.cat" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/6244/6244710.png" alt="Email" title="SIG Games · Email" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://discord.gg/XAQUEgqP7x" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670325.png" alt="Discord" title="SIG Games · Discord" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://github.com/SIGGames" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="GitHub" title="SIG Games · GitHub" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://www.linkedin.com/company/siggames" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/4494/4494471.png" alt="LinkedIn" title="SIG Games · LinkedIn" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://www.instagram.com/siggames.official" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670274.png" alt="Instagram" title="SIG Games · Instagram" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://www.tiktok.com/@siggames.official" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670299.png" alt="TikTok" title="SIG Games · TikTok" width="32" style="display: block;"></a></td>
+          </tr>
+        </table>
+
+        <span>Si no vols rebre més correus, clica <a href="#">aquí</a>  per desactivar la subscripció.</span><div></div>
+        <span>Si tens alguna pregunta, envia'ns un missatge a <a class="mailto" href="mailto:contact@siggames.cat">contact@siggames.cat</a>.</span><div></div>
+        <span>&copy; 2024 SIG Games. Tots els drets reservats.</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
