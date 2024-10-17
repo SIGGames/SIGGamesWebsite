@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class BlogComponent implements OnInit {
   blogContent: string = '';
+  private blogId: string = '';
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -26,6 +27,7 @@ export class BlogComponent implements OnInit {
   }
 
   loadBlogContent(blogId: string): void {
+    this.blogId = blogId;
     const blogFile = `/assets/blogs/blog-${blogId}.html`;
 
     fetch(blogFile)
@@ -39,6 +41,6 @@ export class BlogComponent implements OnInit {
   }
 
   redirectNotFound(): void {
-    this.router.navigate(['/newsletter/' + this.newsletterId + '/not-found']);
+    this.router.navigate(['/blog/' + this.blogId + '/not-found']);
   }
 }
