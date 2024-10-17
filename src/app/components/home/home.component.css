@@ -194,8 +194,8 @@ nav ul li a:hover {
 #blog {
   display: grid;
   /*grid-template-columns: repeat(2, 1fr);*/
-  grid-gap: 20px;
-  padding: 201px;
+  grid-gap: 1px;
+  padding: 100px 200px 100px 200px;
 }
 
 .blog-card {
@@ -234,7 +234,7 @@ nav ul li a:hover {
 @media (max-width: 1024px) {
   #blog {
     grid-template-columns: 1fr;
-    grid-gap: 20px;
+    grid-gap: 1px;
   }
 
   .blog-card {
