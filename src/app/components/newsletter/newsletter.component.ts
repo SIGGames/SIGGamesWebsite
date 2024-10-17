@@ -32,21 +32,20 @@ export class NewsletterComponent implements OnInit {
   loadNewsletterContent(newsletterId: string): void {
     const newsletterFile = `/assets/newsletter/${newsletterId}_newsletter-devteam.html`;
 
-    try {
-      new URL(newsletterFile, window.location.origin);
-      fetch(newsletterFile)
-        .then((response) => {
-          if (!response.ok) {
-            this.redirectNotFound();
-          }
-          return response.text();
-        })
-        .then((content) => {
-          this.setNewsletterContent(content);
-        });
-    } catch (error) {
-      this.redirectNotFound();
-    }
+    fetch(newsletterFile)
+      .then((response) => {
+        if (!response.ok) {
+          this.redirectNotFound();
+        }
+        return response.text();
+      })
+      .then((content) => {
+        this.setNewsletterContent(content);
+        this.addClickEventListeners();
+      })
+      .catch((error) => {
+        this.redirectNotFound();
+      });
   }
 
   loadCompilationNewsletter(): void {
