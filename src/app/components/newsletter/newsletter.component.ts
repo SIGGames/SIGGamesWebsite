@@ -83,7 +83,9 @@ export class NewsletterComponent implements OnInit {
       this.renderer.listen(link, 'click', (event) => {
         event.preventDefault();
         const url = link.getAttribute('routerLink');
-        this.router.navigate([url]);
+        this.router.navigate([url]).then(() => {
+          window.scrollTo(0, 0);
+        });
       });
     });
   }
