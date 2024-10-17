@@ -1,13 +1,14 @@
 import { Component, OnInit, ViewEncapsulation, ElementRef, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-newsletter',
   standalone: true,
-  imports: [],
+  imports: [HeaderComponent],
   templateUrl: './newsletter.component.html',
   styleUrls: ['./newsletter.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class NewsletterComponent implements OnInit {
   constructor(
@@ -18,7 +19,7 @@ export class NewsletterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       const newsletterId = params.get('id');
       if (newsletterId && newsletterId !== '0') {
         this.loadNewsletterContent(newsletterId);
@@ -31,48 +32,53 @@ export class NewsletterComponent implements OnInit {
   loadNewsletterContent(newsletterId: string): void {
     const newsletterFile = `/assets/newsletter/${newsletterId}_newsletter-devteam.html`;
 
-    fetch(newsletterFile)
-      .then(response => {
-        if (!response.ok) {
-          this.redirectNotFound();
-        }
-        return response.text();
-      })
-      .then(content => {
-        this.setNewsletterContent(content);
-        this.addClickEventListeners();
-      })
-      .catch(error => {
-        this.redirectNotFound();
-      });
+    try {
+      new URL(newsletterFile, window.location.origin);
+      fetch(newsletterFile)
+        .then((response) => {
+          if (!response.ok) {
+            this.redirectNotFound();
+          }
+          return response.text();
+        })
+        .then((content) => {
+          this.setNewsletterContent(content);
+        });
+    } catch (error) {
+      this.redirectNotFound();
+    }
   }
 
   loadCompilationNewsletter(): void {
     const compilationFile = `/assets/newsletter/00_newsletter-devteam-compilation.html`;
 
     fetch(compilationFile)
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           this.redirectNotFound();
         }
         return response.text();
       })
-      .then(content => {
+      .then((content) => {
         this.setNewsletterContent(content);
         this.addClickEventListeners();
       })
-      .catch(error => {
+      .catch((error) => {
         this.redirectNotFound();
       });
   }
 
   setNewsletterContent(content: string): void {
-    const container = this.el.nativeElement.querySelector('#newsletter-container');
+    const container = this.el.nativeElement.querySelector(
+      '#newsletter-container'
+    );
     this.renderer.setProperty(container, 'innerHTML', content);
   }
 
   addClickEventListeners(): void {
-    const container = this.el.nativeElement.querySelector('#newsletter-container');
+    const container = this.el.nativeElement.querySelector(
+      '#newsletter-container'
+    );
     const links = container.querySelectorAll('a[routerLink]');
     links.forEach((link: HTMLAnchorElement) => {
       this.renderer.listen(link, 'click', (event) => {
