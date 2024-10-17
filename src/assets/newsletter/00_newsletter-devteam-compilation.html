@@ -1,217 +1,6 @@
-<!DOCTYPE html>
-<html lang="ca">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.cdnfonts.com/css/cocon" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <title>Newsletter DevTeam</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #F1F2F2;
-      font-family: Montserrat, Arial, sans-serif;
-    }
-
-    .email-wrapper {
-      background-color: #F1F2F2;
-      padding-bottom: 15px;
-    }
-
-    .init-divider {
-      background-color: white;
-      padding: 5px;
-      border: 1px solid #F1F2F2;
-    }
-
-    .divider {
-      background-color: #F1F2F2;
-      padding: 5px;
-    }
-
-    .ds {
-      padding: 9px;
-    }
-
-    .email-container {
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: #FFFFFF;
-      /*border: 1px solid #dddddd;*/
-      overflow: hidden;
-    }
-
-    .header {
-      background-color: #F1F2F2;
-      color: #684B9F;
-      padding: 20px;
-      text-align: center;
-      font-family: Cocon, Arial, sans-serif;
-    }
-    .header h1 {
-      margin: 0;
-      font-size: 3.5em;
-    }
-    .header img {
-      max-width: 100%;
-    }
-
-    .content {
-      padding: 35px;
-      color: #333132;
-      border: 1px solid #F1F2F2;
-    }
-    .content span, strong {
-      font-size: 15px;
-      line-height: 1.75;
-      text-align: justify;
-    }
-    .content span {
-      display: block;
-    }
-
-    .card-title {
-      color: #8298E3;
-      font-weight: bold;
-    }
-    .card-subtitle {
-      font-style: italic;
-      font-size: 13px !important;
-    }
-
-    .email-type {
-      color: #8298E3;
-      font-size: 1.7em !important;
-      font-weight: bold;
-      text-align: center !important;
-      font-family: Cocon, Arial, sans-serif;
-    }
-
-    .mailto {
-      color: #777777 !important;
-      text-decoration: underline !important;
-    }
-    .mailto:hover {
-      color: #333132 !important;
-    }
-
-    .footer {
-      background-color: #F1F2F2;
-      text-align: center;
-      padding: 10px;
-      font-size: 12px;
-      color: #777777;
-    }
-    a {
-      color: #8298E3 !important;
-      text-decoration: none !important;
-    }
-    a:hover {
-      text-decoration: underline !important;
-      color: #8298E3 !important;
-    }
-    a:focus {
-      outline: none !important;
-      background-color: #8298E32A !important;
-    }
-    
-    .isotip {
-      padding-top: 15px;
-      padding-bottom: 10px;
-    }
-    .isotip img {
-      max-width: 100%;
-      height: auto;
-      width: 15%;
-    }
-
-    .contact-icons {
-      padding-bottom: 20px;
-      gap: 15px;
-    }
-
-    table {
-      border-spacing: 0px !important;
-      border-collapse: collapse !important;
-    }
-
-    .table {
-      border: 1px solid #8298E3;
-      width: 100%;
-    }
-    .table-head {
-      padding: 15px;
-      text-align: start;
-      border-bottom: 1px solid #8298E3 !important;
-      border-top: 1px solid #8298E3 !important;
-    }
-    .table-rows {
-      padding-left: 15px;
-      padding-right: 15px;
-      padding-top: 13px;
-      padding-bottom: 13px;
-      text-align: start;
-      border-top: 1px solid #C2CDF0;
-      /*border-bottom: 1px solid #CED7F5;*/
-    }
-    .end {
-      text-align:end;
-    }
-
-    .center {
-      display: flex;
-      justify-content: center;
-    }
-
-    code {
-      background-color: #E0E0E0;
-      border-radius: 3px;
-      padding-left: 4px;
-      padding-right: 4px;
-    }
-    /*
-    li {
-      text-align: start;
-    }
-    */ 
-    .sprint {
-        text-align: center !important;
-        font-size: 1.4em !important;
-        font-weight: bold;
-    }
-    
-    .sprint-date {
-        text-align: center !important;
-        font-size: 1.1em !important;
-        padding-bottom: 20px;
-    }
-
-    tt {
-      font-size: 16px;
-    }
-    ul {
-      list-style-type: disc;
-    }
-
-    sup {
-      font-weight: 100;
-      font-size: large;
-      vertical-align: top;
-    }
-  </style>
-</head>
-
-
 <body>
   <div class="email-wrapper">
     <div class="email-container">
-      <div class="init-divider"></div>
-      <!-- Header -->
-      <div class="header">
-        <a href="http://www.siggames.cat" target="_blank"><img alt="SIG Games" title="SIG Games · Web Page" src="https://raw.githubusercontent.com/SIGGames/Resources/main/Logotyping/Digital/PNG/3x/Logotip%20sobre%20blanc%403x.png"></a>
-      </div>
 
       <!-- Content: Introduction -->
       <div class="content">
@@ -232,7 +21,7 @@
         <span><li>Despeses d'empresa.</li></span>
         <div class="ds"></div>
 
-        <span><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/SIGGames/Resources/main/Email%20Registry/newsletter-devteam/05_newsletter-devteam.html" style="font-size: 13px;">Llegir més...</a></span>
+        <a routerLink="/newsletter/05" style="font-size: 13px; cursor: pointer;" title="#05 | Newsletter DevTeam - SIG Games">Llegir més...</a>
       </div>
 
       <div class="divider"></div>
@@ -246,7 +35,7 @@
 
         <span><li>...</li></span><div class="ds"></div>
 
-        <span><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/SIGGames/Resources/main/Email%20Registry/newsletter-devteam/04_newsletter-devteam.html" style="font-size: 13px;">Llegir més...</a></span>
+        <a routerLink="/newsletter/04" style="font-size: 13px; cursor: pointer;" title="#04 | Newsletter DevTeam - SIG Games">Llegir més...</a>
       </div>
 
       <div class="divider"></div>
@@ -276,7 +65,7 @@
 
         <span><li>Creació de plantilles per correus oficials i documents d'empresa.</li></span><div class="ds"></div>
 
-        <span><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/SIGGames/Resources/main/Email%20Registry/newsletter-devteam/03_newsletter-devteam.html" style="font-size: 13px;">Llegir més...</a></span>
+        <a routerLink="/newsletter/03" style="font-size: 13px; cursor: pointer;" title="#03 | Newsletter DevTeam - SIG Games">Llegir més...</a>
       </div>
 
       <div class="divider"></div>
@@ -296,7 +85,7 @@
 
         <span><li>Reducció de la freqüència d'enviament de correus recordatori de tasques a 3 per setmana.</li></span><div class="ds"></div>
 
-        <span><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/SIGGames/Resources/main/Email%20Registry/newsletter-devteam/02_newsletter-devteam.html" style="font-size: 13px;">Llegir més...</a></span>
+        <a routerLink="/newsletter/02" style="font-size: 13px; cursor: pointer;" title="#02 | Newsletter DevTeam - SIG Games">Llegir més...</a>
       </div>
 
       <div class="divider"></div>
@@ -320,7 +109,7 @@
 
         <span><li>Assistència a la fira IndieDevDay 2024 i compra d'entrades.</li></span><div class="ds"></div>
 
-        <span><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/SIGGames/Resources/main/Email%20Registry/newsletter-devteam/01_newsletter-devteam.html" style="font-size: 13px;">Llegir més...</a></span>
+        <a routerLink="/newsletter/01" style="font-size: 13px; cursor: pointer;" title="#01 | Newsletter DevTeam - SIG Games">Llegir més...</a>
       </div>
 
       <!-- Footer -->
