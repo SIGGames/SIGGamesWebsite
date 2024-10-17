@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ElementRef, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -6,14 +6,19 @@ import { ActivatedRoute, Router } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './newsletter.component.html',
-  styleUrl: './newsletter.component.css',
+  styleUrls: ['./newsletter.component.css'],
   encapsulation: ViewEncapsulation.None
 })
 export class NewsletterComponent implements OnInit {
   public newsletterContent: string = '';
   private newsletterId: string = '';
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private el: ElementRef,
+    private renderer: Renderer2
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -38,14 +43,19 @@ export class NewsletterComponent implements OnInit {
         return response.text();
       })
       .then(content => {
-        this.newsletterContent = content;
+        this.setNewsletterContent(content);
       })
       .catch(error => {
         this.redirectNotFound();
       });
   }
 
+  setNewsletterContent(content: string): void {
+    const container = this.el.nativeElement.querySelector('#newsletter-container');
+    this.renderer.setProperty(container, 'innerHTML', content);
+  }
+
   redirectNotFound(): void {
-    this.router.navigate(['/newsletter/' + this.newsletterId + '/not-found']);
+    this.router.navigate(['/newsletter/not-found']);
   }
 }
