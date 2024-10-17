@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ElementRef, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -10,10 +10,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class BlogComponent implements OnInit {
-  blogContent: string = '';
-  private blogId: string = '';
-
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private el: ElementRef,
+    private renderer: Renderer2
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -27,7 +29,6 @@ export class BlogComponent implements OnInit {
   }
 
   loadBlogContent(blogId: string): void {
-    this.blogId = blogId;
     const blogFile = `/assets/blogs/blog-${blogId}.html`;
 
     try {
@@ -40,7 +41,8 @@ export class BlogComponent implements OnInit {
           return response.text();
         })
         .then(content => {
-          this.blogContent = content;
+          this.setBlogContent(content);
+          this.addClickEventListeners();
         })
         .catch(error => {
           this.redirectNotFound();
@@ -48,6 +50,23 @@ export class BlogComponent implements OnInit {
     } catch (error) {
       this.redirectNotFound();
     }
+  }
+
+  setBlogContent(content: string): void {
+    const container = this.el.nativeElement.querySelector('#blog-container');
+    this.renderer.setProperty(container, 'innerHTML', content);
+  }
+
+  addClickEventListeners(): void {
+    const container = this.el.nativeElement.querySelector('#blog-container');
+    const links = container.querySelectorAll('a[routerLink]');
+    links.forEach((link: HTMLAnchorElement) => {
+      this.renderer.listen(link, 'click', (event) => {
+        event.preventDefault();
+        const url = link.getAttribute('routerLink');
+        this.router.navigate([url]);
+      });
+    });
   }
 
   redirectNotFound(): void {
