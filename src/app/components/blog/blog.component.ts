@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class BlogComponent implements OnInit {
   blogContent: string = '';
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -20,7 +20,7 @@ export class BlogComponent implements OnInit {
       if (blogId) {
         this.loadBlogContent(blogId);
       } else {
-        this.loadDefaultContent();
+        this.redirectNotFound();
       }
     });
   }
@@ -34,12 +34,11 @@ export class BlogComponent implements OnInit {
         this.blogContent = content;
       })
       .catch(error => {
-        this.blogContent = '<p>No s\'ha pogut carregar el contingut del blog.</p>';
+        this.redirectNotFound();
       });
   }
 
-  loadDefaultContent(): void {
-    /* TODO: Add default template or redirect to 404 */
-    this.blogContent = '<p>Contingut per defecte</p>';
+  redirectNotFound(): void {
+    this.router.navigate(['/newsletter/' + this.newsletterId + '/not-found']);
   }
 }
