@@ -8,6 +8,11 @@ body {
   color: #333132;
 }
 
+html {
+  scroll-snap-type: none;
+  scroll-snap-align: unset;
+}
+
 h1, h2, p, ul {
   margin-left: 100px;
 }

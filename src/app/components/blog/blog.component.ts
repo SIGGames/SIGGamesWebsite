@@ -70,6 +70,6 @@ export class BlogComponent implements OnInit {
   }
 
   redirectNotFound(): void {
-    this.router.navigate(['/blog/not-found']);
+    this.router.navigate(['/not-found']);
   }
 }
