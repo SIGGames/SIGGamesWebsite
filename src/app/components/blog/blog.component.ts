@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './blog.component.html',
-  styleUrl: './blog.component.css',
+  styleUrls: ['./blog.component.css'],
   encapsulation: ViewEncapsulation.None
 })
 export class BlogComponent implements OnInit {
@@ -30,17 +30,27 @@ export class BlogComponent implements OnInit {
     this.blogId = blogId;
     const blogFile = `/assets/blogs/blog-${blogId}.html`;
 
-    fetch(blogFile)
-      .then(response => response.text())
-      .then(content => {
-        this.blogContent = content;
-      })
-      .catch(error => {
-        this.redirectNotFound();
-      });
+    try {
+      new URL(blogFile, window.location.origin);
+      fetch(blogFile)
+        .then(response => {
+          if (!response.ok) {
+            this.redirectNotFound();
+          }
+          return response.text();
+        })
+        .then(content => {
+          this.blogContent = content;
+        })
+        .catch(error => {
+          this.redirectNotFound();
+        });
+    } catch (error) {
+      this.redirectNotFound();
+    }
   }
 
   redirectNotFound(): void {
-    this.router.navigate(['/blog/' + this.blogId + '/not-found']);
+    this.router.navigate(['/blog/not-found']);
   }
 }
