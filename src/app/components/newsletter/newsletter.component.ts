@@ -23,10 +23,10 @@ export class NewsletterComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const newsletterId = params.get('id');
-      if (newsletterId) {
+      if (newsletterId && newsletterId !== '0') {
         this.loadNewsletterContent(newsletterId);
       } else {
-        this.redirectNotFound();
+        this.loadCompilationNewsletter();
       }
     });
   }
@@ -50,12 +50,30 @@ export class NewsletterComponent implements OnInit {
       });
   }
 
+  loadCompilationNewsletter(): void {
+    const compilationFile = `/assets/newsletter/00_newsletter-devteam-compilation.html`;
+
+    fetch(compilationFile)
+      .then(response => {
+        if (!response.ok) {
+          this.redirectNotFound();
+        }
+        return response.text();
+      })
+      .then(content => {
+        this.setNewsletterContent(content);
+      })
+      .catch(error => {
+        this.redirectNotFound();
+      });
+  }
+
   setNewsletterContent(content: string): void {
     const container = this.el.nativeElement.querySelector('#newsletter-container');
     this.renderer.setProperty(container, 'innerHTML', content);
   }
 
   redirectNotFound(): void {
-    this.router.navigate(['/newsletter/not-found']);
+    this.router.navigate(['/not-found']);
   }
 }

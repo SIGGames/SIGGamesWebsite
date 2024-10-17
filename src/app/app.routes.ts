@@ -10,6 +10,7 @@ export const routes: Routes = [
   { path: 'game/:id', component: GameDetailComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'blog/:id', component: BlogComponent },
+  { path: 'newsletter', component: NewsletterComponent },
   { path: 'newsletter/:id', component: NewsletterComponent },
   { path: '**', component: NotFoundComponent }
 ];
