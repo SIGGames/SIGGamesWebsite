@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   appName: string = '';
   isSendBtnDisabled: boolean = false;
   newsletters: any[] = [];
+  // Limit the number of newsletters to display. If -1, display all newsletters.
+  private readonly MAX_NEWSLETTERS: number = 4;
 
   // Email Config
   private readonly emailServiceId: string = 'service_0wg0538';
@@ -37,10 +39,16 @@ export class HomeComponent implements OnInit {
   loadNewsletters() {
     const path: string = 'assets/newsletter/recent-newsletters.json';
     this.http.get<any>(path).subscribe((data) => {
-      this.newsletters = data.newsletters.map((newsletter: any) => ({
+      let newsletters = data.newsletters.map((newsletter: any) => ({
         ...newsletter,
         title: `Newsletter ${newsletter.id}`
       }));
+
+      if (this.MAX_NEWSLETTERS !== -1) {
+        newsletters = newsletters.slice(0, this.MAX_NEWSLETTERS);
+      }
+
+      this.newsletters = newsletters;
     });
   }
 
