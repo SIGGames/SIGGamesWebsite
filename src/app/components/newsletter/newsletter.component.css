@@ -39,7 +39,7 @@ body {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  background-color: #FFFFFF;
+  background-color: var(--primary-bg-color-light);
   /*border: 1px solid #dddddd;*/
   overflow: hidden;
 }
@@ -126,7 +126,7 @@ a:focus {
 }
 button {
   background-color: var(--accent-color);
-  color: #FFFFFF;
+  color: var(--primary-bg-color-light);
   font-weight: bold;
   font-family: Montserrat, Arial, sans-serif;
   font-size: 15px;
