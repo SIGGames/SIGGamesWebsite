@@ -75,12 +75,20 @@
   </section>
 
   <section id="newsletter" class="section">
-    <h2>Newsletters recents</h2>
+    <h2>Newsletters</h2>
 
     <div *ngFor="let newsletter of newsletters" class="card-element" (click)="goToPage('newsletter', newsletter.id)">
       <div class="card-content">
-        <h3>{{ newsletter.title }}</h3>
+        <div class="newsletter-title-container">
+          <h3>#{{ newsletter.id }} | {{ newsletter.title }}</h3>
+          <span>{{ newsletter.date }}</span>
+        </div>
+        <div class="newsletter-description-container">
           <p>{{ newsletter.description }}</p>
+        </div>
+        <div class="newsletter-img-container">
+          <img *ngIf="newsletter.img" [src]="newsletter.img" alt="{{ newsletter.title }}" class="newsletter-img">
+        </div>
       </div>
     </div>
     <div id="newsletter-link">

@@ -2,19 +2,29 @@
   "newsletters": [
     {
       "id": "05",
-      "description": "Assistència a l'IndieDevDay 2024 i les seves conclusions per l'equip, incloent xerrades i noves eines per al projecte."
+      "title": "IndieDevDay 2024",
+      "date": "2024-10-01",
+      "description": "Assistència a l'IndieDevDay 2024 i les seves conclusions per l'equip, incloent xerrades i noves eines per al projecte.",
+      "img": "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/f6f58163-f2b5-4f8f-b115-f8e08f51595e/IDD_2024.png?t=1728033689"
     },
     {
       "id": "04",
+      "title": "Resum Sprint 3",
+      "date": "2024-09-01",
       "description": "Resum del tercer sprint, amb focus en les reunions d'equip, retard en tasques, i disseny de personatges."
     },
     {
       "id": "03",
+      "title":"Resum Sprint 2",
+      "date": "2024-08-01",
       "description": "Actualitzacions del segon sprint i avenços en les mecàniques de joc i disseny de personatges."
     },
     {
       "id": "02",
-      "description": "Discussió d'estratègies i temes del primer sprint del projecte amb els punts clau tractats."
+      "title":"Resum Sprint 1",
+      "date": "2024-07-01",
+      "description": "Discussió d'estratègies i temes del primer sprint del projecte amb els punts clau tractats.",
+      "img": "https://raw.githubusercontent.com/SIGGames/Resources/main/Document%20Templates/mails/img/siggames-iso.png"
     }
   ]
 }
