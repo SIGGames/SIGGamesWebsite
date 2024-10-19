@@ -4,8 +4,8 @@ html, body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #f1f2f2;
-  color: #333132;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
 }
 
 .not-found-container {
@@ -20,7 +20,7 @@ html, body {
 .not-found-container h1 {
   font-size: 4rem;
   margin-bottom: 20px;
-  color: #684B9F;
+  color: var(--accent-color);
   font-weight: bold;
 }
 
@@ -34,7 +34,7 @@ html, body {
   display: inline-block;
   margin-top: 20px;
   padding: 15px 30px;
-  background-color: #684B9F;
+  background-color: var(--accent-color);
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -43,6 +43,6 @@ html, body {
 }
 
 .not-found-container .btn:hover {
-  background-color: #563e8b;
+  background-color: var(--accent-color-hover);
   transform: translateY(-2px);
 }

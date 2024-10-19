@@ -3,7 +3,7 @@
 }
 
 header {
-  background-color: #684B9F;
+  background-color: var(--accent-color);
   padding: 10px 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: fixed;
@@ -17,7 +17,7 @@ header {
 }
 
 a {
-  color: #F1F2F2;
+  color: var(--primary-bg-color);
   text-decoration: none;
 }
 
@@ -59,7 +59,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: #F1F2F2;
+  color: var(--primary-bg-color);
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;

@@ -27,6 +27,8 @@
   --tooltip-offset: 40px;
   --icon-transition-duration: 0.3s;
   --tooltip-transition-duration: 0.3s;
+  --accent-color: #684B9F;
+  --accent-color-hover: #563e8b;
 }
 
 /* General Styles */

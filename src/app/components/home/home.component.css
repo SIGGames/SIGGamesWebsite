@@ -54,7 +54,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #f1f2f2;
+  color: var(--primary-bg-color);
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;
@@ -68,7 +68,7 @@ nav ul li a:hover {
 
 /* Homne Section */
 .home {
-  color: #333132;
+  color: var(--primary-text-color);
   padding: 50px 20px;
   text-align: center;
   animation: fadeIn 1s ease-in-out;
@@ -110,7 +110,7 @@ nav ul li a:hover {
 
 .section h2 {
   font-size: 4vw;
-  color: #684b9f;
+  color: var(--accent-color);
   font-weight: 700;
   margin: 20px 5vw 0 0;
   position: absolute;
@@ -168,14 +168,14 @@ nav ul li a:hover {
 
 .card-content h3 {
   font-size: 2rem;
-  color: #684b9f;
+  color: var(--accent-color);
   font-weight: 700;
   margin-bottom: 15px;
 }
 
 .card-content p {
   font-size: 1.4rem;
-  color: #333132;
+  color: var(--primary-text-color);
 }
 
 .down-arrow {
@@ -365,12 +365,12 @@ nav ul li a:hover {
 
 #newsletter-link a {
   text-decoration: none;
-  color: #684b9f;
+  color: var(--accent-color);
   font-weight: 700;
 }
 
 #newsletter-link a:hover {
-  color: #563e8b;
+  color: var(--accent-color-hover);
   cursor: pointer;
   text-decoration: underline;
 }
@@ -419,12 +419,12 @@ nav ul li a:hover {
 
 .team-member:hover img {
   transform: scale(1.1);
-  border-color: #684b9f;
+  border-color: var(--accent-color);
 }
 
 .team-member:hover h3,
 .team-member:hover p {
-  color: #684b9f;
+  color: var(--accent-color);
 }
 
 @media (max-width: 768px) {
@@ -460,7 +460,7 @@ nav ul li a:hover {
 
 .contact-section h2 {
   font-size: 2.5rem;
-  color: #684b9f;
+  color: var(--accent-color);
   text-align: center;
   margin-bottom: 30px;
 }
@@ -507,7 +507,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border-color: #684b9f;
+  border-color: var(--accent-color);
   outline: none;
 }
 
@@ -519,7 +519,7 @@ textarea {
 button[type="submit"] {
   width: 100%;
   padding: 15px;
-  background-color: #684b9f;
+  background-color: var(--accent-color);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -531,7 +531,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #563e8b;
+  background-color: var(--accent-color-hover);
   transform: translateY(-2px);
 }
 
