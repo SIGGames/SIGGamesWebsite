@@ -134,5 +134,6 @@ export class HomeComponent implements OnInit {
 
   public goToPage(urlBase: string, id: string) {
     this.router.navigate([`/${urlBase}`, id]);
+    window.scrollTo(0, 0);
   }
 }
