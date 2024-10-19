@@ -293,6 +293,10 @@ nav ul li a:hover {
   padding: 100px 200px;
 }
 
+#newsletter a {
+  text-decoration: none;
+}
+
 #newsletter .card-element {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;

@@ -77,22 +77,24 @@
   <section id="newsletter" class="section">
     <h2>Newsletters</h2>
 
-    <div *ngFor="let newsletter of newsletters" class="card-element" (click)="goToPage('newsletter', newsletter.id)">
-      <div class="card-content">
-        <div class="newsletter-title-container">
-          <h3>#{{ newsletter.id }} | {{ newsletter.title }}</h3>
-          <span>{{ newsletter.date }}</span>
+    <div *ngFor="let newsletter of newsletters" class="card-element">
+      <a [href]="'/newsletter/' + newsletter.id">
+        <div class="card-content">
+          <div class="newsletter-title-container">
+            <h3>#{{ newsletter.id }} | {{ newsletter.title }}</h3>
+            <span>{{ newsletter.date }}</span>
+          </div>
+          <div class="newsletter-description-container">
+            <p>{{ newsletter.description }}</p>
+          </div>
+          <div class="newsletter-img-container">
+            <img *ngIf="newsletter.img" [src]="newsletter.img" alt="{{ newsletter.title }}" class="newsletter-img">
+          </div>
         </div>
-        <div class="newsletter-description-container">
-          <p>{{ newsletter.description }}</p>
-        </div>
-        <div class="newsletter-img-container">
-          <img *ngIf="newsletter.img" [src]="newsletter.img" alt="{{ newsletter.title }}" class="newsletter-img">
-        </div>
-      </div>
+      </a>
     </div>
     <div id="newsletter-link">
-      <a (click)="goToPage('newsletter', '0')"><h3>Veure'n més...</h3></a>
+      <a href="/newsletter/0"><h3>Veure'n més...</h3></a>
     </div>
   </section>
 
