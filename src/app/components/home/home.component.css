@@ -104,6 +104,10 @@ nav ul li a:hover {
   box-sizing: border-box;
 }
 
+.section a {
+  text-decoration: none;
+}
+
 .section h2 {
   font-size: 4vw;
   color: #684b9f;
@@ -291,10 +295,6 @@ nav ul li a:hover {
   flex-direction: column;
   align-items: center;
   padding: 100px 200px;
-}
-
-#newsletter a {
-  text-decoration: none;
 }
 
 #newsletter .card-element {

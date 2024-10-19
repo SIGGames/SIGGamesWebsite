@@ -128,9 +128,4 @@ export class HomeComponent implements OnInit {
       this.disableSendButton();
     }
   }
-
-  public goToPage(urlBase: string, id: string) {
-    this.router.navigate([`/${urlBase}`, id]);
-    window.scrollTo(0, 0);
-  }
 }
