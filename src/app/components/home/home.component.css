@@ -293,7 +293,7 @@ nav ul li a:hover {
   text-align: right;
   margin-right: 50px;
   width: 100%;
-  max-width: 800px;
+  max-width: 80vw;
 }
 
 #newsletter .card-content span {
