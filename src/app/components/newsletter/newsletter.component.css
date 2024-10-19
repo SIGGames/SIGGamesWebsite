@@ -106,16 +106,16 @@ body {
   color: #777777;
 }
 a {
-  color: #684B9F !important;
-  text-decoration: none !important;
+  color: #684B9F;
+  text-decoration: none;
 }
 a:hover {
-  text-decoration: underline !important;
-  color: #684B9F !important;
+  text-decoration: underline ;
+  color: #684B9F;
 }
 a:focus {
-  outline: none !important;
-  background-color: #684B9F2A !important;
+  outline: none;
+  background-color: #684B9F2A;
 }
 .no-style {
   color: #333132 !important;

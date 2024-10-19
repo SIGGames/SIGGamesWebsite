@@ -1,5 +1,5 @@
 .header-container {
-  display: none;
+  width: 100%;
 }
 
 header {
@@ -11,16 +11,26 @@ header {
   top: 0;
   z-index: 1000;
   transition: top 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  color: #F1F2F2;
+  text-decoration: none;
 }
 
 header.hidden {
-  top: -100px;
+  top: -92px;
 }
 
-nav {
+.header-container nav {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-between;
+  width: 100%;
+  margin-right: 80px;
 }
 
 .logo-link {
