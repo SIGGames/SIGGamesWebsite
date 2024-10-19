@@ -22,7 +22,7 @@ a {
 }
 
 header.hidden {
-  top: -92px;
+  top: -92px; /* Oculta el header */
 }
 
 .header-container nav {
@@ -70,3 +70,4 @@ nav ul li a:hover {
   color: #c5c3c0;
   transform: scale(1.1);
 }
+

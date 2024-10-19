@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewEncapsulation, ElementRef, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [],
+  imports: [HeaderComponent],
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css'],
   encapsulation: ViewEncapsulation.None

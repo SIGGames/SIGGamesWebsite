@@ -1,4 +1,5 @@
 body {
+  margin-top: 50px !important;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -13,8 +14,8 @@ html {
   scroll-snap-align: unset;
 }
 
-h1, h2, p, ul {
-  margin-left: 100px;
+#blog-container {
+  margin: 100px;
 }
 
 h1 {
@@ -48,7 +49,6 @@ pre {
   margin-bottom: 20px;
   overflow-x: auto;
   position: relative;
-  margin: 100px;
 }
 
 pre code {
