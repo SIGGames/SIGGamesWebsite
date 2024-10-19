@@ -288,9 +288,9 @@ nav ul li a:hover {
 
 /* Newsletter Section */
 #newsletter {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 100px 200px;
 }
 
@@ -304,6 +304,9 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
 }
 
 #newsletter .card-element:hover {
@@ -322,62 +325,25 @@ nav ul li a:hover {
 
 #newsletter .card-content p {
   font-size: 1rem;
-  line-height: 1.6;
-  margin: 0;
 }
 
-@media (max-width: 1024px) {
-  #newsletter {
-    grid-template-columns: 1fr;
-  }
-
-  #newsletter .card-element {
-    padding: 15px;
-  }
-
-  #newsletter .card-content h3 {
-    font-size: 1.3rem;
-  }
-
-  #newsletter .card-content p {
-    font-size: 0.9rem;
-  }
+#newsletter-link {
+  text-align: right;
+  margin-right: 50px;
+  width: 100%;
+  max-width: 800px;
 }
 
-@media (max-width: 768px) {
-  #newsletter {
-    grid-template-columns: 1fr;
-  }
-
-  #newsletter .card-element {
-    padding: 15px;
-  }
-
-  #newsletter .card-content h3 {
-    font-size: 1.3rem;
-  }
-
-  #newsletter .card-content p {
-    font-size: 0.9rem;
-  }
+#newsletter-link a {
+  text-decoration: none;
+  color: #684b9f;
+  font-weight: 700;
 }
 
-@media (max-width: 480px) {
-  #newsletter {
-    grid-template-columns: 1fr;
-  }
-
-  #newsletter .card-element {
-    padding: 10px;
-  }
-
-  #newsletter .card-content h3 {
-    font-size: 1.1rem;
-  }
-
-  #newsletter .card-content p {
-    font-size: 0.85rem;
-  }
+#newsletter-link a:hover {
+  color: #563e8b;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 /* Team Section */
