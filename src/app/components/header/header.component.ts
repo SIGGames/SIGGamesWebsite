@@ -12,6 +12,7 @@ export class HeaderComponent {
   private lastScrollTop = 0;
   public isHidden: boolean = false;
   public isAtTop: boolean = true;
+  private headerHeight = 92;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -24,7 +25,9 @@ export class HeaderComponent {
       this.isAtTop = false;
     }
 
-    if (scrollTop > this.lastScrollTop && scrollTop > 0) {
+    if (!this.isAtTop && scrollTop <= this.headerHeight) {
+      this.isHidden = false;
+    } else if (scrollTop > this.headerHeight && scrollTop > this.lastScrollTop) {
       this.isHidden = true;
     } else if (scrollTop < this.lastScrollTop) {
       this.isHidden = false;
@@ -39,7 +42,7 @@ export class HeaderComponent {
 
   onMouseLeave() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > 0 && scrollTop > this.lastScrollTop) {
+    if (scrollTop > this.headerHeight && scrollTop > this.lastScrollTop) {
       this.isHidden = true;
     }
   }
