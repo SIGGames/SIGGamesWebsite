@@ -3,17 +3,20 @@ import { AppService } from '../../app.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { Router } from '@angular/router';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   standalone: true,
-  imports: [FormsModule]
+  imports: [FormsModule, HttpClientModule, CommonModule]
 })
 export class HomeComponent implements OnInit {
   appName: string = '';
   isSendBtnDisabled: boolean = false;
+  newsletters: any[] = [];
 
   // Email Config
   private readonly emailServiceId: string = 'service_0wg0538';
@@ -21,13 +24,24 @@ export class HomeComponent implements OnInit {
   private readonly emailUserId: string = 'mzm-0jmzxq72JQMlu';
   private readonly EMAIL_TIMEOUT: number = 5 * 60 * 1000; // 5 minutes
 
-  constructor(private appService: AppService, private router: Router) { }
+  constructor(private appService: AppService, private router: Router, private http: HttpClient) {}
 
   ngOnInit(): void {
     this.appName = this.appService.getAppName();
     if (typeof window !== 'undefined') {
       this.checkEmailTimeout();
     }
+    this.loadNewsletters();
+  }
+
+  loadNewsletters() {
+    const path: string = 'assets/newsletter/recent-newsletters.json';
+    this.http.get<any>(path).subscribe((data) => {
+      this.newsletters = data.newsletters.map((newsletter: any) => ({
+        ...newsletter,
+        title: `Newsletter ${newsletter.id}`
+      }));
+    });
   }
 
   scrollToNextSection() {
@@ -110,11 +124,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  goToGameDetail(gameId: string) {
-    this.router.navigate(['/game', gameId]);
-  }
-
-  goToBlogPost(blogId: string) {
-    this.router.navigate(['/blog', blogId]);
+  public goToPage(urlBase: string, id: string) {
+    this.router.navigate([`/${urlBase}`, id]);
   }
 }

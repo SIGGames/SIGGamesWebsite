@@ -286,6 +286,100 @@ nav ul li a:hover {
   }
 }
 
+/* Newsletter Section */
+#newsletter {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  padding: 100px 200px;
+}
+
+#newsletter .card-element {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#newsletter .card-element:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#newsletter .card-content {
+  text-align: left;
+}
+
+#newsletter .card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#newsletter .card-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  #newsletter {
+    grid-template-columns: 1fr;
+  }
+
+  #newsletter .card-element {
+    padding: 15px;
+  }
+
+  #newsletter .card-content h3 {
+    font-size: 1.3rem;
+  }
+
+  #newsletter .card-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #newsletter {
+    grid-template-columns: 1fr;
+  }
+
+  #newsletter .card-element {
+    padding: 15px;
+  }
+
+  #newsletter .card-content h3 {
+    font-size: 1.3rem;
+  }
+
+  #newsletter .card-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #newsletter {
+    grid-template-columns: 1fr;
+  }
+
+  #newsletter .card-element {
+    padding: 10px;
+  }
+
+  #newsletter .card-content h3 {
+    font-size: 1.1rem;
+  }
+
+  #newsletter .card-content p {
+    font-size: 0.85rem;
+  }
+}
+
 /* Team Section */
 .team-container {
   display: flex;

@@ -1,0 +1,20 @@
+{
+  "newsletters": [
+    {
+      "id": "02",
+      "description": "Discussió d'estratègies i temes del primer sprint del projecte amb els punts clau tractats."
+    },
+    {
+      "id": "03",
+      "description": "Actualitzacions del segon sprint i avenços en les mecàniques de joc i disseny de personatges."
+    },
+    {
+      "id": "04",
+      "description": "Resum del tercer sprint, amb focus en les reunions d'equip, retard en tasques, i disseny de personatges."
+    },
+    {
+      "id": "05",
+      "description": "Assistència a l'IndieDevDay 2024 i les seves conclusions per l'equip, incloent xerrades i noves eines per al projecte."
+    }
+  ]
+}
