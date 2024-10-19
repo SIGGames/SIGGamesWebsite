@@ -1,28 +1,20 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
-import { AppService } from './app.service';
-import { Title } from '@angular/platform-browser';
-import { routes } from './app.routes';
+import { FooterComponent } from "./components/footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterModule],
+  imports: [RouterModule, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  // Titles
-  private readonly originalTitle: string;
-
   // Logos
   private readonly originalLogo: string = 'assets/logo-white.png';
   private readonly altLogo: string = 'assets/logo-purple.png';
 
-  constructor(private appService: AppService, private titleService: Title) {
-    this.originalTitle = this.appService.getAppName();
-    this.titleService.setTitle(this.originalTitle);
-  }
+  constructor() {}
 
   @HostListener('window:blur', [])
   onWindowBlur() {
@@ -40,17 +32,5 @@ export class AppComponent {
     if (link) {
       link.href = iconUrl;
     }
-  }
-
-  getAppName(): string {
-    return this.appService.getAppName();
-  }
-
-  scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  getCurrentYear(): number {
-    return new Date().getFullYear();
   }
 }
