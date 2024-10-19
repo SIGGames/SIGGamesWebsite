@@ -128,7 +128,6 @@ nav ul li a:hover {
   width: 90%;
   animation: fadeInUp 1.6s ease-in-out;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin: 5vw;
 }
 
 .card-element:hover {
@@ -222,8 +221,8 @@ nav ul li a:hover {
 #newsletter {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 100px 200px;
+  align-items: flex-start;
+  padding: 150px 6vw;
 }
 
 #newsletter .card-element {
@@ -236,10 +235,10 @@ nav ul li a:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
-  max-width: 800px;
-  margin-bottom: 20px;
+  max-width: 80vw;
+  margin-bottom: 25px;
 }
 
 #newsletter .card-element:hover {
@@ -254,11 +253,19 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-bottom: 0;
 }
 
 #newsletter .card-content h3 {
   font-size: 1.5rem;
   margin-bottom: 5px;
+  margin-top: 0;
+}
+
+#newsletter .card-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 
 #newsletter .newsletter-description-container {
@@ -266,15 +273,17 @@ nav ul li a:hover {
 }
 
 #newsletter .newsletter-img-container {
-  width: 30%;
+  width: 20%;
+  min-width: 200px;
   max-height: 100%;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
 }
 
 #newsletter .newsletter-img {
   width: 100%;
+  max-width: 200px;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
