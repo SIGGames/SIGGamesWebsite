@@ -204,7 +204,7 @@ nav ul li a:hover {
 .blog-card {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: white;
+  background-color: var(--primary-bg-color-light);
   padding: 5px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -300,7 +300,7 @@ nav ul li a:hover {
 #newsletter .card-element {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: white;
+  background-color: var(--primary-bg-color-light);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
