@@ -58,7 +58,7 @@ pre code {
   color: #e83e8c;
   background-color: transparent;
   padding: 2px 4px;
-  color: #333;
+  color: var(--primary-text-color);
 }
 
 pre .copy-btn {

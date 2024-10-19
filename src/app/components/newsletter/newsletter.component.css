@@ -261,8 +261,8 @@ tt {
 
 .tooltip {
   visibility: hidden;
-  background-color: #333;
-  color: #fff;
+  background-color: var(--primary-text-color);
+  color: var(--tooltip-text-color);
   text-align: center;
   border-radius: 5px;
   padding-left: 10px;

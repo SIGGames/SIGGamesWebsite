@@ -27,7 +27,7 @@ html, body {
 .not-found-container p {
   font-size: 1.5rem;
   margin-bottom: 30px;
-  color: #555;
+  color: var(--primary-text-color-light);
 }
 
 .not-found-container .btn {

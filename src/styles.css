@@ -17,6 +17,7 @@
 :root {
   --primary-bg-color: #f1f2f2;
   --primary-text-color: #333132;
+  --primary-text-color-light: #555;
   --default-icon-bg-color: transparent;
   --default-icon-size: 45px;
   --default-icon-padding: 0;
