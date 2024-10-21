@@ -280,6 +280,7 @@ nav ul li a:hover {
 #newsletter .newsletter-img {
   width: 100%;
   max-width: 300px;
+  max-height: 150px;
   width: auto;
   object-fit: cover;
   border-radius: 8px;
