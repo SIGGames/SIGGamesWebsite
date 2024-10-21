@@ -88,12 +88,14 @@
     <div *ngFor="let newsletter of newsletters" class="card-element">
       <a [href]="'/newsletter/' + newsletter.id">
         <div class="card-content">
-          <div class="newsletter-title-container">
-            <h3>#{{ newsletter.id }} | {{ newsletter.title }}</h3>
-            <span>{{ newsletter.date }}</span>
-          </div>
-          <div class="newsletter-description-container">
-            <p>{{ newsletter.description }}</p>
+          <div class="newsletter-text-container">
+            <div class="newsletter-title-container">
+              <h3>#{{ newsletter.id }} | {{ newsletter.title }}</h3>
+              <span>{{ newsletter.date }}</span>
+            </div>
+            <div class="newsletter-description-container">
+              <p>{{ newsletter.description }}</p>
+            </div>
           </div>
           <div class="newsletter-img-container">
             <img *ngIf="newsletter.img" [src]="newsletter.img" alt="{{ newsletter.title }}" class="newsletter-img">

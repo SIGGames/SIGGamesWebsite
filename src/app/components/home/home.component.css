@@ -232,12 +232,9 @@ nav ul li a:hover {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
   width: 100%;
   max-width: 80vw;
+  min-width: 600px;
   margin-bottom: 25px;
 }
 
@@ -247,13 +244,45 @@ nav ul li a:hover {
 }
 
 #newsletter .card-content {
-  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-bottom: 0;
   text-align: left;
-  padding-right: 20px;
+  padding: 0;
+}
+
+#newsletter .card-content .newsletter-title-container {
+  min-width: 265px;
+  margin-right: 20px;
+}
+
+#newsletter .newsletter-description-container {
+  vertical-align: top;
+}
+
+#newsletter .newsletter-text-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding-bottom: 0;
+  flex-grow: 1;
+  min-width: 300px;
+  vertical-align: middle;
+}
+
+#newsletter .newsletter-img-container {
+  width: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: right;
+}
+
+#newsletter .newsletter-img {
+  width: 100%;
+  max-width: 300px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 #newsletter .card-content h3 {
@@ -265,28 +294,6 @@ nav ul li a:hover {
 #newsletter .card-content p {
   font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-#newsletter .newsletter-description-container {
-  flex-grow: 1;
-}
-
-#newsletter .newsletter-img-container {
-  width: 20%;
-  min-width: 200px;
-  max-height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-
-#newsletter .newsletter-img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
 }
 
 #newsletter-link {
