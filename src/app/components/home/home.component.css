@@ -234,7 +234,7 @@ nav ul li a:hover {
 .team-container {
   display: flex;
   justify-content: center;
-  gap: 100px;
+  gap: clamp(5px, 3vw, 100px);
   flex-wrap: wrap;
   padding: 40px 0;
 }
@@ -321,10 +321,6 @@ nav ul li a:hover {
   max-width: 240px;
   margin-bottom: 40px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#about .team-member:last-child {
-  margin-bottom: 0;
 }
 
 /* Contact Section */
