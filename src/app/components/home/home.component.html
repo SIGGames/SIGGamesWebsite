@@ -131,31 +131,5 @@
 
   <section id="contact" class="section">
     <h2>Contacte</h2>
-    <div class="contact-section">
-      <form (ngSubmit)="sendEmail(contactForm)" #contactForm="ngForm">
-        <div class="form-group">
-          <div class="form-field">
-            <label for="firstName">Nom<span id="red-star">*</span></label>
-            <input type="text" id="firstName" name="firstName" ngModel required />
-          </div>
-          <div class="form-field">
-            <label for="lastName">Cognoms</label>
-            <input type="text" id="lastName" name="lastName" ngModel />
-          </div>
-        </div>
-        <div class="form-field">
-          <label for="email">Email<span id="red-star">*</span></label>
-          <input type="email" id="email" name="email" ngModel required />
-        </div>
-        <div class="form-field">
-          <label for="subject">Assumpte<span id="red-star">*</span></label>
-          <input type="text" id="subject" name="subject" ngModel required />
-        </div>
-        <div class="form-field">
-          <label for="message">Escriu un missatge<span id="red-star">*</span></label>
-          <textarea id="message" name="message" rows="4" ngModel required="Has d'introduir un missatge"></textarea>
-        </div>
-        <button type="submit" [disabled]="!contactForm.valid || isSendBtnDisabled">Enviar</button>
-      </form>
-    </div>
+    <app-contact-form></app-contact-form>
   </section>
