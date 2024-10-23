@@ -177,6 +177,12 @@ nav ul li a:hover {
   padding: 150px 6vw;
 }
 
+#games .card-element {
+  position: relative;
+  overflow: hidden;
+  width: 80vw;
+}
+
 #games .card-element:hover {
   cursor: pointer;
 }
@@ -241,9 +247,10 @@ nav ul li a:hover {
 }
 
 .team-member img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
+  min-width: 150px;
+  min-height: 150px;
+  width: 10vw;
+  height: 10vw;
   border-radius: 50%;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   margin-bottom: 25px;
@@ -276,16 +283,48 @@ nav ul li a:hover {
   color: var(--accent-color);
 }
 
-@media (max-width: 768px) {
-  .team-container {
-    flex-direction: column;
-    align-items: center;
-  }
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 6vw;
+}
 
-  .team-member {
-    max-width: 80%;
-    margin-bottom: 40px;
-  }
+#about .card-element {
+  position: relative;
+  margin-top: 10vh;
+  overflow: hidden;
+  min-width: 500px;
+  max-width: 80vw;
+  margin-left: 0;
+  margin-right: auto;
+  padding: 20px;
+}
+
+#about .section h2 {
+  position: sticky;
+  margin: -10px 5vw 0 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+}
+
+
+#about .team-container {
+  flex-direction: row;
+  align-items: center;
+  padding: 100px 0;
+}
+
+#about .team-member {
+  text-align: center;
+  max-width: 240px;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#about .team-member:last-child {
+  margin-bottom: 0;
 }
 
 /* Contact Section */
