@@ -11,8 +11,10 @@ import { CommonModule } from '@angular/common';
 export class HomeNavbarComponent implements OnInit {
   isNearFooter: boolean = false;
   activeSection: string = '';
+  sections: string[] = [];
 
   ngOnInit(): void {
+    this.loadSections();
     this.getActiveSection();
   }
 
@@ -33,10 +35,14 @@ export class HomeNavbarComponent implements OnInit {
     this.getActiveSection();
   }
 
+  loadSections() {
+    const sectionElements = document.querySelectorAll('section[id]');
+    this.sections = Array.from(sectionElements).map(section => `#${section.id}`);
+  }
+
   getActiveSection() {
     const visiblePercentage = 0.5;
-    const sections = ['#home', '#about', '#games', '#blog', '#newsletter', '#contact'];
-    for (let sectionId of sections) {
+    for (let sectionId of this.sections) {
       const section = document.querySelector(sectionId);
       if (section) {
         const rect = section.getBoundingClientRect();
@@ -45,6 +51,12 @@ export class HomeNavbarComponent implements OnInit {
           break;
         }
       }
+    }
+
+    // HACK: If the user scrolls up to the top, the active section is the home section
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (scrollTop === 0) {
+      this.activeSection = '#home';
     }
   }
 }
