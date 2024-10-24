@@ -1,31 +1,35 @@
 <div class="navbar" [ngClass]="{'near-footer': isNearFooter}">
-  <a (click)="scrollToSection('#home')" class="nav-item">
+  <a (click)="scrollToSection('#home')" class="nav-item" [ngClass]="{'active': activeSection === '#home'}">
     <div class="icon">
       <i class="fas fa-home"></i>
     </div>
   </a>
 
-  <a (click)="scrollToSection('#about')" class="nav-item">
+  <a (click)="scrollToSection('#about')" class="nav-item" [ngClass]="{'active': activeSection === '#about'}">
     <div class="icon">
       <i class="fas fa-info-circle"></i>
     </div>
   </a>
-  <a (click)="scrollToSection('#games')" class="nav-item">
+
+  <a (click)="scrollToSection('#games')" class="nav-item" [ngClass]="{'active': activeSection === '#games'}">
     <div class="icon">
       <i class="fas fa-gamepad"></i>
     </div>
   </a>
-  <a (click)="scrollToSection('#blog')" class="nav-item">
+
+  <a (click)="scrollToSection('#blog')" class="nav-item" [ngClass]="{'active': activeSection === '#blog'}">
     <div class="icon">
       <i class="fas fa-pencil-alt"></i>
     </div>
   </a>
-  <a (click)="scrollToSection('#newsletter')" class="nav-item">
+
+  <a (click)="scrollToSection('#newsletter')" class="nav-item" [ngClass]="{'active': activeSection === '#newsletter'}">
     <div class="icon">
       <i class="fas fa-paper-plane"></i>
     </div>
   </a>
-  <a (click)="scrollToSection('#contact')" class="nav-item">
+
+  <a (click)="scrollToSection('#contact')" class="nav-item" [ngClass]="{'active': activeSection === '#contact'}">
     <div class="icon">
       <i class="fas fa-envelope"></i>
     </div>

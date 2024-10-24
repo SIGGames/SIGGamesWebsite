@@ -51,7 +51,15 @@
   color: var(--primary-text-color);
 }
 
-.nav-item:hover .icon {
+.nav-item.active .icon {
   background-color: var(--accent-color-light);
+}
+
+.nav-item:hover .icon {
+  background-color: var(--accent-color);
   cursor: pointer;
+}
+
+.icon {
+  transition: background-color 0.3s ease;
 }
