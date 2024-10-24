@@ -234,9 +234,15 @@ nav ul li a:hover {
 .team-container {
   display: flex;
   justify-content: center;
-  gap: clamp(5px, 3vw, 100px);
+  gap: clamp(1px, 5vw, 40px);
   flex-wrap: wrap;
   padding: 40px 0;
+}
+
+@media (max-width: 900px) {
+  .team-container {
+    gap: 1px;
+  }
 }
 
 .team-member {
@@ -291,7 +297,7 @@ nav ul li a:hover {
 
 #about .card-element {
   position: relative;
-  margin-top: 10vh;
+  margin-top: 21vh;
   overflow: hidden;
   min-width: 500px;
   max-width: 80vw;
@@ -306,13 +312,6 @@ nav ul li a:hover {
   top: 0;
   z-index: 10;
   width: 100%;
-}
-
-
-#about .team-container {
-  flex-direction: row;
-  align-items: center;
-  padding: 100px 0;
 }
 
 #about .team-member {
