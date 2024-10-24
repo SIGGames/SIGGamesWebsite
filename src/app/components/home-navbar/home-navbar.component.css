@@ -56,7 +56,7 @@
 }
 
 .nav-item:hover .icon {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color-light-hover);
   cursor: pointer;
 }
 
