@@ -3,13 +3,14 @@ import { AppService } from '../../app.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ContactFormComponent } from '../contact-form/contact-form.component';
+import { HomeNavbarComponent } from "../home-navbar/home-navbar.component";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css', './newsletter.home.component.css'],
   standalone: true,
-  imports: [HttpClientModule, CommonModule, ContactFormComponent]
+  imports: [HttpClientModule, CommonModule, ContactFormComponent, HomeNavbarComponent]
 })
 export class HomeComponent implements OnInit {
   appName: string = '';
