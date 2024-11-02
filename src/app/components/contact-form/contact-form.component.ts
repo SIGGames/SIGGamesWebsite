@@ -61,7 +61,7 @@ export class ContactFormComponent implements OnInit {
               form.resetForm();
               this.setLastEmailSentTime();
             },
-            (error) => {
+            () => {
               this.sendNotification(
                 `No s'ha pogut enviar el correu correctament`
               );
