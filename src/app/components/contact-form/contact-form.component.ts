@@ -1,16 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { get } from 'http';
+
+export enum FormMode {
+  SUBSCRIBE = 'subscribe',
+  UNSUBSCRIBE = 'unsubscribe',
+  CONTACT = 'contact'
+}
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './contact-form.component.html',
-  styleUrl: './contact-form.component.css',
+  styleUrls: ['./contact-form.component.css'],
 })
 export class ContactFormComponent implements OnInit {
+  @Input() mode: FormMode = FormMode.CONTACT;
+  subject: string | null = null;
   public isSendBtnDisabled: boolean = false;
 
   // Email Config
@@ -25,6 +35,7 @@ export class ContactFormComponent implements OnInit {
     if (typeof window !== 'undefined') {
       this.checkEmailTimeout();
     }
+    this.subject = this.getSubject();
   }
 
   sendEmail(form: NgForm) {
@@ -35,7 +46,7 @@ export class ContactFormComponent implements OnInit {
             this.emailServiceId,
             this.emailTemplateId,
             {
-              subject: form.value.subject,
+              subject: form.value.subject || this.subject,
               firstName: form.value.firstName,
               lastName: form.value.lastName,
               email: form.value.email,
@@ -45,8 +56,7 @@ export class ContactFormComponent implements OnInit {
             },
             this.emailUserId
           )
-          .then(
-            (response: EmailJSResponseStatus) => {
+          .then(() =>{
               this.sendNotification(`El correu s'ha enviat correctament`);
               form.resetForm();
               this.setLastEmailSentTime();
@@ -105,6 +115,18 @@ export class ContactFormComponent implements OnInit {
   private checkEmailTimeout() {
     if (this.isUserRecentSentEmail()) {
       this.disableSendButton();
+    }
+  }
+
+  private getSubject(): string {
+    if (this.mode == FormMode.CONTACT) {
+      return 'Contacte';
+    } else if (this.mode == FormMode.SUBSCRIBE) {
+      return 'Nova Subscripció';
+    } else if (this.mode == FormMode.UNSUBSCRIBE) {
+      return 'Baixa Subscripció';
+    } else {
+      return 'Sense Assumpte';
     }
   }
 }

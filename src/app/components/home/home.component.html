@@ -102,6 +102,9 @@
   <section id="newsletter" class="section">
     <h2>Newsletters</h2>
 
+    <div id="newsletter-link">
+      <a href="subscribe"><h3>Subscriu-te</h3></a>
+    </div>
     <div *ngFor="let newsletter of newsletters" class="card-element">
       <a [href]="'/newsletter/' + newsletter.id">
         <div class="card-content">
