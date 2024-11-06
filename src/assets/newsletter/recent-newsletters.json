@@ -1,6 +1,13 @@
 {
   "newsletters": [
     {
+      "id": "06",
+      "title": "#06 Newsletter DevTeam",
+      "date": "2024-11-03",
+      "description": "Descobreix les últimes novetats de l'equip de SIG Games, amb l'animació idle del personatge Micca, el llançament de noves versions i molt més.",
+      "img": "https://raw.githubusercontent.com/SIGGames/Resources/main/PacoMonkey/PacoMonkey-v0.2.0.gif"
+    },
+    {
       "id": "05",
       "title": "IndieDevDay 2024",
       "date": "2024-10-12",

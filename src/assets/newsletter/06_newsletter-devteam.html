@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <!-- Metadades Open Graph per personalitzar la previsualització a Discord -->
+  <meta property="og:title" content="#06 Newsletter DevTeam - SIG Games">
+  <meta property="og:description" content="Descobreix les últimes novetats de l'equip de SIG Games, l'estudi independent de desenvolupament de videojocs, amb la nostra newsletter.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/SIGGames/Resources/main/Logotyping/Digital/PNG/3x/Logotip%20sobre%20blanc%403x.png">
+  <meta property="og:url" content="https://htmlpreview.github.io/?https://raw.githubusercontent.com/SIGGames/Resources/main/Email%20Registry/newsletter-devteam/05_newsletter-devteam.html">
+  <meta property="og:type" content="website">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.cdnfonts.com/css/cocon" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Newsletter DevTeam</title>
+</head>
+
+<body>
+  <div class="email-wrapper">
+    <div class="email-container">
+      <div class="init-divider"></div>
+      <!-- Header -->
+      <div class="header">
+        <a href="http://www.siggames.cat" target="_blank"><img alt="SIG Games" title="SIG Games · Web Page" src="https://raw.githubusercontent.com/SIGGames/Resources/main/Logotyping/Digital/PNG/3x/Logotip%20sobre%20blanc%403x.png"></a>
+      </div>
+
+      <!-- Content: Introduction -->
+      <div class="content">
+        <span class="email-type center">Newsletter DevTeam #06</span>
+        <span class="sprint"></span>
+        <span class="sprint-date">03/11/2024</span><div class="ds"></div>
+
+        <strong>Bona nit,</strong><div class="ds"></div>
+
+        <span>En aquesta <i>newsletter</i> es presenta el progrés realitzat de l'equip de desenvolupament en el projecte PacoMonkey durant el sprint 4, juntament amb la sessió de <i>retrospective</i> per analitzar què ha anat bé i malament i què fer per millorar-ho.</span><div class="ds"></div>
+
+        <span>Altre cop s'ha tornat a allargar el sprint més de l'acordat al principi però perquè en aquest cas, entre altres coses, l'equip ha disposat de menys temps degut als estudis i la feina, tot i que també s'han agafat alguns dies de vacances no contemplats en la planificació inical. 🤭</span><div class="ds"></div>
+
+        <strong>SIG Games</strong>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Animació "idle"</span>
+        <span class="card-subtitle"><i>Abel Pérez</i> - <i>Daily Meeting</i> (02/10/2024 - 05/10/2024)</span><div class="ds"></div>
+
+        <span>S'ha presentat la primera versió de l'animació del personatge Micca en estat "idle" (mostrat en la primera imatge), però s'ha observat que la cua es movia massa i acaparava tota l'atenció, així que s'ha proposat que el moviment sigui més subtil, donant com a resultat final la segona animació:</span><div class="ds"></div>
+
+        <div style="display: flex; justify-content: space-between; position: relative">
+          <img src="https://raw.githubusercontent.com/SIGGames/ArtDevelopment/main/animations-dev/dev-gif/micca-peaceful-idle-crazytail-no-background.gif" style="width: 50%; transform: scaleX(-1);">
+
+          <img src="https://raw.githubusercontent.com/SIGGames/ArtDevelopment/main/animations-dev/dev-gif/micca-peaceful-idle-no-background.gif" style="width: 50%;">
+        </div><div class="ds"></div>
+        <span style="text-align: center; font-size: small;"><i>Animació Micca "idle", versió inicial i final, respectivament.</i></span><div class="ds"></div>
+
+        <span>Tot i així, com que l'animació 1 seguia agradant, s'ha comentat que es podria incorporar en l'animació "idle" extesa.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Llançament de versions</span>
+        <span class="card-subtitle"><i>Aniol Serrano</i> - <i>Daily Meeting</i> (30/09/2024 - 28/10/2024)</span><div class="ds"></div>
+
+        <span>El 30 de setembre es va publicar la primera <i>release</i>, sota la versió <a href="https://github.com/SIGGames/PacoMonkey/releases/tag/v0.1.0">v0.1.0</a>, després de la implementació inial de la mecànica "climb", preparar l'entorn i altres característiques.</span><div class="ds"></div>
+
+        <span>Entre mig de les dues versions s'ha implementat un <i>pop-up</i> al projecte de Unity a mode de presentació de l'organització:</span><div class="ds"></div>
+
+        <img src="https://raw.githubusercontent.com/SIGGames/Resources/main/PacoMonkey/unity-popup-presentation.png" style="width: 100%; border-radius: 3px; border: #333 solid 1px;"><div class="ds"></div>
+
+        <span>El 12 d'octubre s'ha publicat la segona <i>release</i>, sota la versió <a href="https://github.com/SIGGames/PacoMonkey/releases/tag/v0.2.0">v0.2.0</a>, corregint molts dels <i>bugs</i> i imperfeccions que presentava la versió anterior.</span><div class="ds"></div>
+
+        <span>El 28 d'octubre s'ha presentat la tercera <i>release</i> (v0.3.0) però sense canvis significatius. Per aquest motiu s'ha estipulat pujar noves versions (v0.2.0 → v0.3.0) només si no s'ha implementat una "feature" nova. En canvi, si només s'han arreglat "bugs" o s'ha incorporat una característica mínima es farà una versió <i>patch</i> (v0.2.0 → v0.2.1).</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Implementació inicial mecànica "climb"</span>
+        <span class="card-subtitle"><i>Aniol Serrano</i> - <i>Daily Meeting</i> (02/10/2024)</span><div class="ds"></div>
+
+        <span>S'ha mostrat la primera versió de la mecànica "climb". No és una versió estable ja que presenta molts <i>bugs</i> (alguns crítics) i no implementa correctament les característiques definides.</span><div class="ds"></div>
+
+        <span><li>S'activa el "climb" al passar per davant de l'element escalable.</li></span>
+        <span><li>Patina/cau enlloc de mantenir-se en una posició fixa.</li></span>
+        <span><li>Ignora el terra i segueix baixant fins morir.</li></span>
+        <span><li>Després de sortir de l'element escalable no para de saltar.</li></span>
+        <span><li>Permet el moviment horitzontal.</li></span><div class="ds"></div>
+
+        <img src="https://raw.githubusercontent.com/SIGGames/Resources/main/PacoMonkey/PacoMonkey-v0.1.0.gif" style="width: 100%; border: #333 solid 1px; border-radius: 2px;"><div class="ds"></div>
+        <span style="text-align: center; font-size: small;"><i>Mecànica "climb" PacoMonkey - v0.1.0.</i></span><div class="ds"></div>
+
+        <span>La següent versió soluciona tots els problemes de l'anterior, però encara presenta alguns punts de millora que caldrà corregir en la pròxima iteració:</span><div class="ds"></div>
+
+        <span><li>Paràmetres (velocitat "climb") pendents d'ajustar.</li></span>
+        <span><li>Quan es pressiona la tecla de desplaçament lateral (← o →) cau enlloc d'encarar-se.</li></span>
+        <span><li>No permet saltar mentre escala.</li></span>
+        <span><li>No hi ha límit on es freni el descens o ascens, sinó que cau.</li></span>
+        <span><li>No es transforma la posició del personatge al centre de l'element quan escala.</li></span><div class="ds"></div>
+
+        <img src="https://raw.githubusercontent.com/SIGGames/Resources/main/PacoMonkey/PacoMonkey-v0.2.0.gif" style="width: 100%; border: #333 solid 1px; border-radius: 2px;"><div class="ds"></div>
+        <span style="text-align: center; font-size: small;"><i>Mecànica "climb" PacoMonkey - v0.2.0.</i></span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Implementació inicial mecànica "crouch"</span>
+        <span class="card-subtitle"><i>Aniol Serrano</i> - <i>Daily Meeting</i> (07/10/2024 - 30/10/2024)</span><div class="ds"></div>
+
+        <span>La implementació de "crouch" no ha seguit cap de les pautes indicades en la definició de la mecànica (<a href="https://siggames-pacomonkey.atlassian.net/wiki/spaces/PacoMonkey/pages/50855984/Ajupir-se+crouch">Ajupir-se (crouch)</a>) quan s'ha presentat com a "tasca en revisió":</span>
+        <span><li>Redueix la mida del personatge a la meitat.</li></span>
+        <span><li>La càmera baixa.</li></span>
+        <span><li>Si s'ajup en "run" derrapa.</li></span>
+        <div class="ds"></div>
+
+        <span>Finalment, a la reunió del dia 30 es va presentar la implementació inicial real de la mecànica, aquest cop complint les pautes indicades prèviament. S'ha acordat que un cop es puguin incorporar les animacions reals del personatge es tornarà a revisar la mecànica per verificar que compleix amb les sensacions especificades (segurament caldrà corregir el desplaçament de la càmera).</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Implementació inicial mecànica "jump"</span>
+        <span class="card-subtitle"><i>Aniol Serrano</i> - <i>Daily Meeting</i> (07/10/2024)</span><div class="ds"></div>
+
+        <span>S'ha presentat la mecànica "jump", però cal ajustar alguns dels paràmetres ("<strong style="font-family: monospace; font-weight: lighter;">Jump Modifier</strong>", "<strong style="font-family: monospace; font-weight: lighter;">Jump Take Off Speed</strong>", "<strong style="font-family: monospace; font-weight: lighter;">Jump Deceleration</strong>", "<strong style="font-family: monospace; font-weight: lighter;">Coyote Time</strong>", "<strong style="font-family: monospace; font-weight: lighter;">Jump Buffer Time</strong>", "<strong style="font-family: monospace; font-weight: lighter;">Fall Speed Multiplier</strong>", "<strong style="font-family: monospace; font-weight: lighter;">Jump Component Balance</strong>") per corregir la sensació del salt.</span><div class="ds"></div>
+
+        <span>Per entendre més quina és la sensació de salt que es vol aconseguir, s'ha recomanat el vídeo "What makes a good 2d platformer? - FiddleStone Games":</span><div class="ds"></div>
+
+        <iframe width="100%" width="560" height="315" style="border-radius: 3px;" src="https://www.youtube.com/embed/REzxBzQlhuc?si=ZBrO-2lc8XcDKh3A" title="What makes a good 2d platformer?" allow="accelerometer; autoplay; clipboard-write; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Definició en detall de les mecàniques</span>
+        <span class="card-subtitle"><i>Júlia Nogales</i> - <i>Daily Meeting</i> (07/10/2024)</span><div class="ds"></div>
+
+        <span>Les mecàniques s'han definit de forma massa ambigua per a que puguin ser enteses per programadors sense coneixements en videojocs, especialment la mecànica "climb" (i la diferenciació entre "wallClimb" i "ladderClimb"), així que s'han intentat detallar més (<a href="https://siggames-pacomonkey.atlassian.net/wiki/spaces/PacoMonkey/pages/50921530/Escalar+climb">Escalar (climb)</a>), especificar el comportament dels elemenets del videojoc i s'ha demanat que, en cas de que no s'entenguin prou, consultar-ho amb el "Game Designer".</span><div class="ds"></div>
+
+        <span>S'ha discutit la responsabilitat d'informar-se sobre com funcionen els videojocs per poder programar correctament la sensació que es vol transmetre, inicialment suggerint que era tasca del Game Designer informar al programador sobre aquestes característiques en documents detallats, ja que aquest no estava disposat a entendre els videojocs adquirint experiència a través del "gameplay" (ja sigui jugant personalment o consumint vídeos d'altres jugadors). Finalment s'ha conclòs que aquesta feina extra no correspon al Game Designer i que la responsabilitat recau sobre el programador.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Canvi personatge Micca - [main-boss]</span>
+        <span class="card-subtitle"><i>Júlia Nogales</i> - <i>Follow-up Meeting</i> (03/10/2024)</span><div class="ds"></div>
+
+        <span>S'ha proposat una idea pel combat final de la "demo" que s'extrapola a tot el videojoc per reforçar les emocions que vol transmetre la narrativa:</span><div class="ds"></div>
+
+        <i><span>Durant el combat final, quan el jugador (amb el personatge Micca) està a punt de derrotar a l'enemic, [main-boss], el personatge controlat pel jugador canvia i passa a ser el [main-boss]. Ara el jugador ha de derrotar al personatge que ha estat controlant durant tota la "demo" mentre ell està a vida mínima.</span></i><div class="ds"></div>
+
+        <span><u>Canviar el personatge que el jugador controla segons el transcurs de la narrativa</u> segueix els principis bàsics del videojoc i de la narrativa que es vol dissenyar:</span><div class="ds"></div>
+
+        <span><li><strong>Proposta de Valor Únic</strong>: aporta una diferenciació entre la resta de videojocs del mateix estil.</li></span><div class="ds"></div>
+
+        <span><li><strong>"El dolent NO és dolent perquè és dolent"</strong>: aporta profunditat en la narrativa i en la creació de personatges, fent empatitzar al jugador amb les emocions de molts individus i eliminant la tendència de fer els enemics i aliats simplement bons o dolents.</li></span><div class="ds"></div>
+
+        <span><li><strong>Narrativa multicapa</strong>: connecta amb diferents audiències simultàniament, aquelles interessades en la narrativa i els diàlegs i aquelles només estan interessades en la jugabilitat, oferint diferents emocions i lectures de la situació segons el seu perfil.</li></span><div class="ds"></div>
+
+        <span><li><strong>Apte per a jugadors de tots els nivells</strong>: tot i que pot ser una mica desconcertant i desafiant per a jugadors novells al principi, la cinemàtica i la UI facilitaran la comprensió de la situació.</li></span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Animació "walk"</span>
+        <span class="card-subtitle"><i>Abel Pérez</i> - <i>Follow-up Meeting</i> (09/10/2024 - 27/10/2024)</span><div class="ds"></div>
+
+        <span>S'ha presentat la primera proposta de l'animació de la Micca en estat "walk" (mostrat en la primera imatge), però en la següent reunió es va observar que no s'havia incorporat la cua, així que s'ha proposat una segona versió (mostrada en la segona imatge) on l'incorpora:</span><div class="ds"></div>
+
+        <div style="display: flex; justify-content: space-between; position: relative">
+          <img src="https://raw.githubusercontent.com/SIGGames/ArtDevelopment/main/animations-dev/dev-gif/micca-peaceful-walk-no-background-v4.gif" style="width: 50%;">
+
+          <img src="https://raw.githubusercontent.com/SIGGames/ArtDevelopment/main/animations-dev/dev-gif/micca-peaceful-walk-no-background-v5.gif" style="width: 50%;">
+        </div><div class="ds"></div>
+        <span style="text-align: center; font-size: small;"><i>Animació Micca "walk", versió 1 i 2, respectivament.</i></span><div class="ds"></div>
+
+        <span>S'ha proposat, per futures iteracions, corregir el moviment vertical de la perla del collar per a que sigui més subtil.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+      <span class="card-title">Canvi dates reunions i sprint</span>
+      <span class="card-subtitle">Júlia Nogales - <i>Daily Meeting</i> (09/10/2024)</span><div class="ds"></div>
+
+      <span>S'ha establert una nova data per les reunions d'equip presencials, ja que degut a una incompatibilitat horària s'ha hagut de reservar la sala de reunions pel dimecres enlloc del dijous, mantenint el mateix horari (19:00h - 21:00h).</span><div class="ds"></div>
+
+      <span>A més, s'ha allargat el sprint 4 més temps del pactat inicialment degut a més complicacions d'horaris, fent que la nova data de finalització del sprint sigui el 30 d'octubre, és a dir, tenint una durada d'un mes.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Subscripció Newsletters</span>
+        <span class="card-subtitle">Júlia Nogales - <i>Follow-up Meeting</i> (16/10/2024)</span><div class="ds"></div>
+
+        <span>S'ha creat el canal "<a href="https://discord.gg/C2zPadMxW4">📰┃newsletters</a>" al servidor de Discord on es publicaran totes les <i>newsletters</i> de SIG Games a través del bot "<a href="https://carl.gg/">Carl-bot</a>". Juntament amb cada publicació ve adjunt un codi QR per subscriure's a la <i>newsletter</i> amb el correu electrònic, també accessible a través del link (temporal) <a href="https://siggames-official.vercel.app/subscribe">siggames-official.vercel.app/subscribe</a>.</span><div class="ds"></div>
+
+        <div style="position: relative; width: 100%;">
+          <img src="https://raw.githubusercontent.com/SIGGames/Resources/main/SIG%20Games%20WebPage/discord-newsletter.png" width="100%" style="border-radius: 3px;">
+          <img src="https://raw.githubusercontent.com/SIGGames/Resources/main/SIG%20Games%20WebPage/QRCode_SubNews.png" style="position: absolute; top: 12%; right: 5.5%; width: 16%; border-radius: 3px;">
+        </div><div class="ds"></div>
+
+        <span>A més, també s'ha habilitat una secció per la pàgina web de SIG Games on es recopil·len les newsletters, per exemple: <a href="https://siggames-official.vercel.app/newsletter/05">#05 | IndieDevDay 2024</a>.</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Actualització pàgina web</span>
+        <span class="card-subtitle">Aniol Serrano - <i>Daily Meeting</i> (19/10/2024 - 27/10/2024)</span><div class="ds"></div>
+
+        <span>Durant aquest sprint s'han fet algunes actualitzacions/millores a la pàgina web oficial de SIG Games, com la secció de newsletters (comentada anteriorment), la barra de navegació lateral i el <i>header</i>, entre altres. Tot i que no hi ha cap element definitiu en la pàgina web, algun d'aquests s'han anat millorant amb el <i>feedback</i> rebut a les reunions, com la secció de newsletters:</span><div class="ds"></div>
+
+        <img src="https://raw.githubusercontent.com/SIGGames/Resources/main/SIG%20Games%20WebPage/webpage-newsletter-v1.png" width="100%" style="border-radius: 3px; border: #333 1px solid;"><div class="ds"></div>
+        <span style="text-align: center; font-size: small;"><i>Secció "Newsletter", versió 1.</i></span><div class="ds"></div>
+
+        <img src="https://raw.githubusercontent.com/SIGGames/Resources/main/SIG%20Games%20WebPage/webpage-newsletter-v2.png" width="100%" style="border-radius: 3px; border: #333 1px solid;"><div class="ds"></div>
+        <span style="text-align: center; font-size: small;"><i>Secció "Newsletter", versió 2.</i></span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Fira TalentDevDay</span>
+        <span class="card-subtitle">Júlia Nogales - <i>Daily Meeting</i> (28/10/2024)</span><div class="ds"></div>
+
+        <span>Després d'assistir a la fira IndieDevDay i fer-nos subscriptors de les seves <i>newsletters</i>, ens han informat des de "<a href="https://gencat.us8.list-manage.com/subscribe?u=3771e6ad58eb419a16d7da12c&id=b64d19725c">BUMP! Butlletí de tendències i cultura digital</a>" com va ser la secció de la fira a la que no vam poder assistir, la TalentDevDay. Si us interessa la temàtica, recomano llegir el següent article per més informació:</span><div class="ds"></div>
+
+        <div class="content" style="padding: 20px; border: #8298E3 solid 1px; border-radius: 2px;">
+          <img src="https://ci3.googleusercontent.com/meips/ADKq_NbWgANhbxE61Hrnee2cch74M0qgGRxLK6volbX2HXexan2A8dDqIkWFqaGFb1HjUijjuTqPcW96W25f2t_0HV-yl6jBNtIwxxdMtCA6u4mgQEN5TWlTKPh38F4oleaFhyTQ3GiutLJvbF0r1_NN3Ow2skGz1ysHfZg=s0-d-e1-ft#https://mcusercontent.com/3771e6ad58eb419a16d7da12c/images/df92bf06-01c7-61a7-ea97-312065ac0d8a.png" style="width: 100%; border-radius: 2px; margin-bottom: 7px;">
+          <strong>Consells per cercar feina a la indústria dels videojocs</strong><div class="ds" style="padding-bottom: 1px;"></div>
+
+          <span>Cercar feina és sempre un pas vertiginós, i encara més quan tot just has acabat la formació i no tens experiència. Per això hem condensat tot el que vam aprendre a la fira d'ocupació TalentDevDay sobre com trobar feina dins la indústria del videojoc de forma eficaç.</span>
+
+          <span style="display: block; text-align: right;"><a href="https://gencat.us8.list-manage.com/track/click?u=3771e6ad58eb419a16d7da12c&id=b4663080fb&e=3695b4bb1e" style="font-family: monospace;">+info</a></span>
+        </div><div class="ds"></div>
+
+        <span>Des de la <i>newsletter</i> de <a href="https://www.levelup-gamedevhub.com/newsletter/">Level Up</a> també ens han informat de la nova secció que han incorporat a la seva pàgina web, masterclasses gratuïtes:</span><div class="ds"></div>
+
+        <div class="content" style="padding: 20px; border: #8298E3 solid 1px; border-radius: 2px;">
+          <img src="https://www.levelup-gamedevhub.com/wp-content/uploads/2022/11/gaming-concept-joystick-on-color-background-2022-01-28-11-33-35-utc-scaled.jpg" style="width: 100%; aspect-ratio: 16 / 5; overflow: hidden; object-fit: cover; border-radius: 2px; margin-bottom: 7px;">
+          <strong>Masterclasses gratuïtes en el desenvolupament de videojocs</strong><div class="ds" style="padding-bottom: 1px;"></div>
+
+          <span>En la secció "Cursos" de Level Up podràs trobar masterclasses online que s'han ofert durant anys amb continguts molt específics en totes les àrees clau del desenvolupament de videojocs, com Game Design, Programació, Art, Negoci de videojocs, etc. Aquestes classes estan obertes als usuaris de forma totalment gratuïta, essent registrar-se a la plataforma l'únic requisit per accedir-hi.</span>
+
+          <span style="display: block; text-align: right;"><a href="https://www.levelup-gamedevhub.com/tipos-de-formacion/cursos/" style="font-family: monospace;">+info</a></span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Animació "jump"</span>
+        <span class="card-subtitle">Abel Pérez - <i>Follow-up Meeting</i> (30/10/2024)</span><div class="ds"></div>
+
+        <span>S'ha presentat la idea inicial de l'animació de "jump": un salt amb una voltereta en el punt més alt, però enlloc de tenir el mateix tipus de salt per les dues fases de la Micca, s'ha proposat que el salt amb voltereta, és a dir, el més dinàmic, sigui per la Micca-2, i per la Micca-1 es faci una animació més senzilla (sense voltereta).</span><div class="ds"></div>
+
+        <img src="https://raw.githubusercontent.com/SIGGames/ArtDevelopment/main/animations-dev/dev-gif/micca-peaceful-jump-dev-150ms.gif" style="width: 100%; border: #8298E3 1px solid; border-radius: 4px; background-color: #ccd7fd;"><div class="ds"></div><span style="text-align: center; font-size: small;"><i>Prototip animació Micca "jump"</i></span><div class="ds"></div>
+
+        <span>No s'ha pogut completar l'animació per aquest sprint perquè s'han presentat problemes amb el disseny del salt: el plantejament inicial depenia de la implementació del programador de la mecànica per saber com seria la trajectòria del salt, però s'ha decidit invertir l'ordre de dependència, així que serà l'art el que dictarà la programació (compartirà .gif).</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Implementació CameraManager</span>
+        <span class="card-subtitle">Aniol Serrano - <i>Follow-up Meeting</i> (30/10/2024)</span><div class="ds"></div>
+
+        <span>S'ha incorporat un controlador de càmera per afegir efectes de "zoom-in", "zoom-out", "shake", "move", etc., que es poden accionar amb les tecles numèriques per testejar-ho al Unity.</span><div class="ds"></div>
+
+        <img src="https://raw.githubusercontent.com/SIGGames/Resources/main/PacoMonkey/PacoMonkey-CameraManager.gif" style="width: 100%; border: #333 solid 1px; border-radius: 2px;"><div class="ds"></div>
+        <span style="text-align: center; font-size: small;"><i>CameraManager PacoMonkey</i></span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Punts negatius sprint</span>
+        <span class="card-subtitle">Equip SIG Games - <i>Retrospective Meeting</i> (02/11/2024)</span><div class="ds"></div>
+
+        <strong><u>Equip SIG Games</u></strong>
+          <span><li>S'ha hagut d'ampliar la duració del sprint (altre cop) a 1 mes.</li></span>
+          <span><li>Es segueix sense treure el màxim potencial dels sprints (poca dedicació de temps).</li></span>
+          <span><li>Ha estat un error enfocar la creació de tasques d'aquest sprint en els enemics enlloc de prioritzar el personatge protagonista → s'han posposat les tasques relacionades amb aquests.</li></span>
+        <div class="ds"></div>
+
+        <strong>Abel (<i>Disseny Artístic</i>)</strong>
+          <span><li>Ha subestimat la duració de les tasques i no s'ha aplicat suficient per poder completar-les a temps.</li></span>
+        <div class="ds"></div>
+
+        <strong>Aniol (<i>Programador</i>)</strong>
+          <span><li>No s'ha mirat les descripcions detallades i no ha preguntat quan tenia dubtes, fent endarrerir el progrés al haver de corregir parts.</li></span>
+        <div class="ds"></div>
+
+        <strong>Júlia (<i>Game Designer</i> - <i>Project Manager</i>)</strong>
+          <span><li>No ha redefinit les mecàniques immediatament quan s'ha exposat en la reunió que era urgent corregir-les.</li></span>
+          <span><li>Pitjor rendiment de tots els sprint: tenia tasques poc urgents que no causaven dependències i s'ha relaxat massa.</li></span>
+          <span><li>No ha organitzat les reunions pactades de <i>brainstorming</i>.</li></span>
+          <span><li>Hi ha hagut discussions d'equip que es podrien haver gestionat millor.</li></span>
+          <span><li>Caldria analitzar els gràfics i progressos del Jira setmanalment i reportar-ho a les reunions d'equip.</li></span>
+          <span><li>No ha computat al Jira les hores de treball → cal crear tasques genèriques de <i>Project Manager</i>.</li></span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Punts positius sprint</span>
+        <span class="card-subtitle">Equip SIG Games - <i>Retrospective Meeting</i> (02/11/2024)</span><div class="ds"></div>
+
+        <strong><u>Equip SIG Games</u></strong>
+          <span><li>S'ha progressat més en aquest sprint que en els anteriors.</li></span>
+        <div class="ds"></div>
+
+        <strong>Abel</strong>
+          <span><li>La mateixa tasca l'ha aprés ha realitzar en menor temps.</li></span>
+          <span><li>S'ha compromès a aplicar-se més en els futurs sprints.</li></span>
+        <div class="ds"></div>
+
+        <strong>Aniol</strong>
+          <span><li>Sprint en el que s'ha aplicat més (ha completat més tasques, amb millor qualitat i més bones pràctiques).</li></span>
+        <div class="ds"></div>
+
+        <strong>Júlia</strong>
+          <span><li>S'han solucionat totes les discussions d'equip.</li></span>
+          <span><li>Millor organització de l'equip i de les reunions.</li></span>
+          <span><li>S'ha compromès a aplicar-se més en els futurs sprints.</li></span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <span class="card-title">Planificació sprint 5</span>
+        <span class="card-subtitle">Equip SIG Games - <i>Planning Meeting</i> (02/11/2024)</span><div class="ds"></div>
+
+        <span>El sprint 5, que tindrà una durada d'unes 3 setmanes (de l'11 al 27 de novembre) es basarà en les següents tasques:</span><div class="ds"></div>
+
+        <strong>Abel</strong>
+        <span><li>Creació ràpida de l'entorn pixel art de mostra, encara que signifiqui fer-lo "lleig" o "cutre", per permetre a la resta de l'equip treballar sobre aquest (configuració entorn Unity i disseny de nivells).</li></span>
+        <div class="ds"></div>
+
+        <strong>Aniol</strong>
+        <span><li>Incorporació d'animacions i configuració de l'entorn pixel art.</li></span>
+        <span><li>Sistema de vida i <i>checkpoints</i>.</li></span>
+        <div class="ds"></div>
+
+        <strong>Júlia</strong>
+        <span><li>Disseny de nivells.</li></span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- More info content -->
+      <div class="content">
+        <span class="button-title">Per consultar newsletters anteriors</span><div class="ds"></div>
+
+        <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/SIGGames/Resources/main/Email%20Registry/newsletter-devteam/00_newsletter-devteam-compilation.html" title="Compilació newsletters SIG Games"><button>Clica aquí</button></a>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="isotip center">
+          <a href="http://www.siggames.cat" target="_blank"><img alt="SIG Games" title="SIG Games · Web Page" src="https://raw.githubusercontent.com/SIGGames/Resources/main/Document%20Templates/mails/img/siggames-iso.png"></a>
+        </div>
+
+        <table role="presentation" align="center" style="border-collapse: collapse; text-align: center; margin: 0 auto; margin-bottom: 10px;">
+          <tr>
+            <td style="padding: 7px;"><a href="mailto:contact@siggames.cat" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/6244/6244710.png" alt="Email" title="SIG Games · Email" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://discord.gg/XAQUEgqP7x" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670325.png" alt="Discord" title="SIG Games · Discord" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://github.com/SIGGames" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="GitHub" title="SIG Games · GitHub" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://www.linkedin.com/company/siggames" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/4494/4494471.png" alt="LinkedIn" title="SIG Games · LinkedIn" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://www.instagram.com/siggames.official" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670274.png" alt="Instagram" title="SIG Games · Instagram" width="32" style="display: block;"></a></td>
+            <td style="padding: 7px;"><a href="https://www.tiktok.com/@siggames.official" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670299.png" alt="TikTok" title="SIG Games · TikTok" width="32" style="display: block;"></a></td>
+          </tr>
+        </table>
+
+        <span>Si no vols rebre més correus, clica <a href="#">aquí</a>  per desactivar la subscripció.</span><div></div>
+        <span>Si tens alguna pregunta, envia'ns un missatge a <a class="mailto" href="mailto:contact@siggames.cat">contact@siggames.cat</a>.</span><div></div>
+        <span>&copy; 2024 SIG Games. Tots els drets reservats.</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
