@@ -28,7 +28,7 @@ export class SubscribeUnsubscribeComponent implements OnInit {
     if (this.mode === FormMode.SUBSCRIBE) {
       return 'Subscriu-te';
     } else {
-      return 'Desubscriu-te';
+      return 'Donar-se de baixa';
     }
   }
 

@@ -1,9 +1,11 @@
 <app-header></app-header>
 
-<div class="center">
-  <h2>{{ title }}</h2>
-  <p>{{ description }}</p>
-</div>
-<div class="contact">
-  <app-contact-form [mode]="mode"></app-contact-form>
+<div class="content-wrapper">
+  <div class="center">
+    <h2 class="title">{{ title }}</h2>
+    <p>{{ description }}</p>
+  </div>
+  <div class="contact">
+    <app-contact-form [mode]="mode"></app-contact-form>
+  </div>
 </div>
