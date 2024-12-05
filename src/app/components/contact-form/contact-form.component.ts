@@ -3,7 +3,6 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { get } from 'http';
 
 export enum FormMode {
   SUBSCRIBE = 'subscribe',
@@ -25,7 +24,7 @@ export class ContactFormComponent implements OnInit {
 
   // Email Config
   private readonly emailServiceId: string = 'service_0wg0538';
-  private readonly emailTemplateId: string = 'template_0vewupv';
+  private emailTemplateId: string = 'template_0vewupv';
   private readonly emailUserId: string = 'mzm-0jmzxq72JQMlu';
   private readonly EMAIL_TIMEOUT: number = 5 * 60 * 1000; // 5 minutes
 
@@ -35,6 +34,11 @@ export class ContactFormComponent implements OnInit {
     if (typeof window !== 'undefined') {
       this.checkEmailTimeout();
     }
+
+    if (this.mode == FormMode.SUBSCRIBE || this.mode == FormMode.UNSUBSCRIBE) {
+      this.emailTemplateId = 'template_25xryp4';
+    }
+
     this.subject = this.getSubject();
   }
 
