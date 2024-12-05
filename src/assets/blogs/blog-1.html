@@ -1,10 +1,143 @@
-<h1>Introducció a PacoMonkey: El teu projecte de joc 2D en Unity</h1>
-<p>PacoMonkey és un joc en 2D desenvolupat en Unity com a part del TFG. L'objectiu principal del projecte és crear una experiència divertida i dinàmica per als jugadors mentre desenvolupem les nostres habilitats tècniques en programació de jocs.</p>
-<p>En aquesta sèrie de blocs, explorarem les diferents fases del desenvolupament de PacoMonkey, des del concepte inicial fins a la publicació final.</p>
-<h2>Objectius del projecte</h2>
-<ul>
-  <li>Aprendre les eines i tècniques bàsiques de Unity.</li>
-  <li>Desenvolupar un joc funcional en 2D.</li>
-  <li>Crear un disseny de nivells que sigui divertit i accessible.</li>
-  <li>Implementar mecàniques de joc senzilles però efectives.</li>
-</ul>
+<h1>Implementació sistema de vida</h1>
+<div class="blog-data">
+  <em>Desembre 2024</em> · <em>Aniol Serrano</em>
+</div>
+
+<p>El sistema de vida es divideix en dos apartats, el sistema de vida del jugador i el sistema de vida dels enemics.</p>
+
+<h2>Sistema de vida del jugador</h2>
+
+<p>
+  El sistema de vida del jugador funciona de forma similar a molts jocs usant un sistma de vides. Aquestes vides estan
+  representades en la UI usant un cor. Aquest asset és susceptible a ser cambiat, però en un inici s'ha proposat usar un cor.
+  Aquest cor pot tres estats possibles: ple, mig ple i buit.
+</p>
+
+<p>
+  D'altra banda, s'ha fet el sistema de vides dinàmic, ja que en funció de les vides que té el jugador i de les vides máximes
+  que pot tenir el jugador, es mostra la barra de cors.
+</p>
+
+
+<div class="image-container-caption">
+  <div class="image-container">
+    <img src="assets/img/heart.png" alt="cors-vida">
+  </div>
+  <span class="caption">Diferents estats possibles d'un cor de vida</span>
+</div>
+
+
+<p>
+  La UI per tant, queda de la següent manera:
+</p>
+
+
+<div class="iframe-container-caption">
+  <div class="iframe-container">
+      <iframe class="responsive-iframe" src="https://github.com/user-attachments/assets/34f92e90-d69c-4a1d-8708-2cff9c28cff4" alt="sistema-vida"></iframe>
+  </div>
+    <span class="caption">UI sistema de vida</span>
+</div>
+
+
+<p>
+  Per a implementar aquest sistema de vida, primerament s'ha creat un script anomenat <code>Lives.cs</code> que conté la lógica
+  del sistema de vides. Simplificant, aquesta classe té els seguents paràmetres:
+</p>
+
+<pre>
+<code>
+  public class Lives : MonoBehaviour {
+    private const float MaxInspectorLives = 10;
+    private const float MinMaxLives = 0.5f;
+
+    [SerializeField, HalfStepSlider(0, MaxInspectorLives)]
+    private float startingLives = 3;
+
+    [SerializeField, HalfStepSlider(0, MaxInspectorLives)]
+    private float maxLives = 5;
+
+    [SerializeField, HalfStepSlider(0, MaxInspectorLives), ReadOnly(true)]
+    private float currentLives;
+
+    // ...
+  }
+</code>
+</pre>
+
+<p>
+  Aquests camps són els que es defineixen a l'inspector de Unity i permeten modificar les vides màximes, les vides inicials i les
+  vides actuals del jugador. A més, s'ha afegit un <code>HalfStepSlider</code> per a que sigui més fàcil modificar els valors
+  de les vides.
+</p>
+
+<p>
+  Finalment, s'han publicat una sèrie de mètodes per tal d'actualitzar els valors de la vida actual i el màxim de vides. Aquests
+  mètodes són cridats des de diferents parts del joc, com ara quan el jugador col·lisiona amb un enemic o quan recull un objecte
+  que li dona vida. Aquests mètodes a més, actualitzen la UI per tal de mostrar les vides actuals del jugador de forma indirecta,
+  ja que l'escript <code>HealthBar</code> s'encarrega de mostrar les vides del jugador quan aquests valors canvien (<code>OnLivesChanged</code>). Per a exemplificar
+  es planteja el seguent codi:
+</p>
+
+<pre>
+<code>
+  # Lives.cs
+
+  public float CurrentLives {
+    get => currentLives;
+    set {
+        float clampedValue = Mathf.Clamp(Mathf.Round(value * 2) / 2, 0, MaxLives);
+        if (Math.Abs(currentLives - clampedValue) > Mathf.Epsilon) {
+            currentLives = clampedValue;
+            OnLivesChanged?.Invoke();
+        }
+    }
+  }
+
+  # HealthBar.cs
+
+  public class HealthBar : MonoBehaviour {
+    public GameObject heartPrefab;
+    public Lives playerLives;
+    private readonly List<HealthHeart> _hearts = new List<HealthHeart>();
+
+    void Start() {
+        playerLives.OnLivesChanged += UpdateUI; // Suscribe to event
+        InitializeHearts();
+        UpdateUI();
+    }
+
+    private void OnDestroy() {
+        playerLives.OnLivesChanged -= UpdateUI;
+    }
+
+    private void InitializeHearts() {
+        ClearHearts();
+        int maxLives = Mathf.CeilToInt(playerLives.GetMaxLives());
+        for (int i = 0; i < maxLives; i++) {
+            GameObject newHeart = Instantiate(heartPrefab, transform);
+            newHeart.transform.SetParent(transform);
+            _hearts.Add(newHeart.GetComponent<HealthHeart>());
+        }
+    }
+
+    public void UpdateUI() {
+        // ...
+    }
+
+    private void ClearHearts() {
+        foreach (Transform t in transform) {
+            Destroy(t.gameObject);
+        }
+
+        _hearts.Clear();
+    }
+  }
+</code>
+</pre>
+
+<p>
+  En aquest exemple, es pot veure com el sistema de vides del jugador es comunica amb la UI per tal de mostrar les vides del jugador
+  en tot moment. Al cambiar un valor tant de <code>currentLives</code> com de <code>maxLives</code> s'invoca el <code>onLivesChanged</code> i s'actualitza la UI de la vida.
+  A més, s'ha afegit un mètode per a inicialitzar els cors de vida a la UI, que s'executa quan s'inicia el joc.
+</p>

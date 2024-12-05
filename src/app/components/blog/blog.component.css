@@ -26,6 +26,10 @@ h1 {
   text-align: left;
 }
 
+.blog-data em {
+  color: rgb(105, 104, 104);
+}
+
 h2 {
   font-size: 2rem;
   margin-top: 30px;
@@ -39,11 +43,11 @@ p {
   margin-bottom: 20px;
   color: var(--primary-text-color);
   line-height: 1.8;
+  text-align: justify;
 }
 
 pre {
   background-color: #f4f4f4;
-  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
@@ -91,6 +95,52 @@ code {
   background-color: #f8f9fa;
   padding: 1px 2px;
   border-radius: 4px;
+}
+
+.image-container-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}
+
+.iframe-container-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.iframe-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.responsive-iframe {
+  height: 420px;
+  width: 750px;
+  max-width: 1000px;
+  max-height: 800px;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.caption {
+  color: var(--primary-text-color);
+  text-align: center;
 }
 
 @media (max-width: 1024px) {
