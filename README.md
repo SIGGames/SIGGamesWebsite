@@ -107,4 +107,4 @@ You can find the full license text in the following files:
 
 For any questions or inquiries, feel free to contact us at [contact@siggames.cat](mailto:contact@siggames.cat).
 
-Visit our official website: [SIG Games](https://siggames-official.vercel.app)
+Visit our official website: [SIG Games](https://siggames.cat)
