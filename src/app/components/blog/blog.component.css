@@ -26,16 +26,16 @@ h1 {
   text-align: left;
 }
 
-.blog-data em {
-  color: rgb(105, 104, 104);
-}
-
 h2 {
   font-size: 2rem;
   margin-top: 30px;
   margin-bottom: 15px;
   color: var(--accent-color);
   font-family: "Montserrat", sans-serif;
+}
+
+.blog-data em {
+  color: rgb(105, 104, 104);
 }
 
 p {
