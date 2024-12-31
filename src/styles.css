@@ -58,6 +58,11 @@ body {
   scroll-snap-align: start;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 section {
   scroll-snap-align: start;
   min-height: 100vh;
@@ -66,4 +71,24 @@ section {
 
 h1, h2 {
   font-family: "cocon", "Montserrat", sans-serif;
+  margin: 0 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  white-space: normal;
+  max-width: 90%;
+}
+
+h1 {
+  font-size: clamp(3rem, 2.4909rem + 3vw, 5.25rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 3.2545rem + 1.8182vw, 3.7rem);
+}
+
+@media (max-width: 620px) {
+  h2 {
+    font-size: 1.7rem;
+  }
 }

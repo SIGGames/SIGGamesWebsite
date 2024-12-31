@@ -21,19 +21,14 @@ section {
 }
 
 #home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
   min-height: 100vh;
   text-align: center;
   box-sizing: border-box;
-  padding-top: 10vh;
 }
 
-#home h1 {
-  font-size: 6rem;
-}
+ #home section {
+  padding-top: 20vh;
+ }
 
 nav {
   display: flex;
@@ -82,14 +77,12 @@ nav ul li a:hover {
 }
 
 .home h1 {
-  font-size: 7.5rem;
   margin-bottom: 20px;
   font-weight: 700;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .home h2 {
-  font-size: 2rem;
   color:rgb(103, 101, 101);
 }
 
@@ -109,10 +102,9 @@ nav ul li a:hover {
 }
 
 .section h2 {
-  font-size: 4.5rem;
   color: var(--accent-color);
   font-weight: 700;
-  margin: 20px 5vw 0 0;
+  margin: 8vh 5vw 0 0;
   position: absolute;
   top: 20px;
   opacity: 1;
