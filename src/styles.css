@@ -38,13 +38,13 @@
 /* General Styles */
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   overflow-y: scroll;
   background-color: var(--primary-bg-color);
   color: var(--primary-text-color);
   margin: 0;
   padding: 0;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 
 body {
@@ -55,7 +55,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 
 html, body {

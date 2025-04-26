@@ -2,7 +2,7 @@
 
 html,
 body {
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   scroll-behavior: smooth;
   height: 100%;
   overflow-y: scroll;
@@ -19,7 +19,7 @@ h1, h2 {
 }
 
 section {
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
   min-height: 100vh;
   box-sizing: border-box;
 }
