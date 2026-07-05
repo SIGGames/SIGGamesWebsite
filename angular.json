@@ -55,6 +55,11 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "github-pages": {
+              "baseHref": "/SIGGamesWebsite/",
+              "prerender": false,
+              "ssr": false
             }
           },
           "defaultConfiguration": "production"

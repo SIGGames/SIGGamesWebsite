@@ -30,27 +30,25 @@ export class BlogComponent implements OnInit {
   }
 
   loadBlogContent(blogId: string): void {
-    const blogFile = `/assets/blogs/blog-${blogId}.html`;
+    const blogFile = new URL(
+      `assets/blogs/blog-${blogId}.html`,
+      document.baseURI
+    ).toString();
 
-    try {
-      new URL(blogFile, window.location.origin);
-      fetch(blogFile)
-        .then(response => {
-          if (!response.ok) {
-            this.redirectNotFound();
-          }
-          return response.text();
-        })
-        .then(content => {
-          this.setBlogContent(content);
-          this.addClickEventListeners();
-        })
-        .catch(error => {
+    fetch(blogFile)
+      .then(response => {
+        if (!response.ok) {
           this.redirectNotFound();
-        });
-    } catch (error) {
-      this.redirectNotFound();
-    }
+        }
+        return response.text();
+      })
+      .then(content => {
+        this.setBlogContent(content);
+        this.addClickEventListeners();
+      })
+      .catch(error => {
+        this.redirectNotFound();
+      });
   }
 
   setBlogContent(content: string): void {

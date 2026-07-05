@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ContactFormComponent, FormMode } from '../contact-form/contact-form.component';
 import { HeaderComponent } from "../header/header.component";
 
@@ -14,8 +15,10 @@ export class SubscribeUnsubscribeComponent implements OnInit {
   public title : string = '';
   public description : string = '';
 
+  constructor(private router: Router) {}
+
   ngOnInit(): void {
-    this.mode = window.location.pathname === '/unsubscribe' ? FormMode.UNSUBSCRIBE : FormMode.SUBSCRIBE;
+    this.mode = this.router.url.startsWith('/unsubscribe') ? FormMode.UNSUBSCRIBE : FormMode.SUBSCRIBE;
     this.title = this.getTitle();
     this.description = this.getDescription();
   }

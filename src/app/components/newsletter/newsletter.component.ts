@@ -30,7 +30,10 @@ export class NewsletterComponent implements OnInit {
   }
 
   loadNewsletterContent(newsletterId: string): void {
-    const newsletterFile = `/assets/newsletter/${newsletterId}_newsletter-devteam.html`;
+    const newsletterFile = new URL(
+      `assets/newsletter/${newsletterId}_newsletter-devteam.html`,
+      document.baseURI
+    ).toString();
 
     fetch(newsletterFile)
       .then((response) => {
@@ -49,7 +52,10 @@ export class NewsletterComponent implements OnInit {
   }
 
   loadCompilationNewsletter(): void {
-    const compilationFile = `/assets/newsletter/00_newsletter-devteam-compilation.html`;
+    const compilationFile = new URL(
+      'assets/newsletter/00_newsletter-devteam-compilation.html',
+      document.baseURI
+    ).toString();
 
     fetch(compilationFile)
       .then((response) => {
