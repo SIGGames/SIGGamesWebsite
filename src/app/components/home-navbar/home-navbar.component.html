@@ -1,35 +1,35 @@
 <div class="navbar" [ngClass]="{'near-footer': isNearFooter}">
-  <a (click)="scrollToSection('#home')" class="nav-item" [ngClass]="{'active': activeSection === '#home'}">
+  <a data-section="home" (click)="scrollToSection('#home')" class="nav-item" [ngClass]="{'active': activeSection === '#home'}">
     <div class="icon">
       <i class="fas fa-home"></i>
     </div>
   </a>
 
-  <a (click)="scrollToSection('#about')" class="nav-item" [ngClass]="{'active': activeSection === '#about'}">
-    <div class="icon">
-      <i class="fas fa-info-circle"></i>
-    </div>
-  </a>
-
-  <a (click)="scrollToSection('#games')" class="nav-item" [ngClass]="{'active': activeSection === '#games'}">
+  <a data-section="games" (click)="scrollToSection('#games')" class="nav-item" [ngClass]="{'active': activeSection === '#games'}">
     <div class="icon">
       <i class="fas fa-gamepad"></i>
     </div>
   </a>
 
-  <a (click)="scrollToSection('#blog')" class="nav-item" [ngClass]="{'active': activeSection === '#blog'}">
+  <a data-section="about" (click)="scrollToSection('#about')" class="nav-item" [ngClass]="{'active': activeSection === '#about'}">
+    <div class="icon">
+      <i class="fas fa-info-circle"></i>
+    </div>
+  </a>
+
+  <a data-section="blog" (click)="scrollToSection('#blog')" class="nav-item" [ngClass]="{'active': activeSection === '#blog'}">
     <div class="icon">
       <i class="fas fa-book-open"></i>
     </div>
   </a>
 
-  <a (click)="scrollToSection('#newsletter')" class="nav-item" [ngClass]="{'active': activeSection === '#newsletter'}">
+  <a data-section="newsletter" (click)="scrollToSection('#newsletter')" class="nav-item" [ngClass]="{'active': activeSection === '#newsletter'}">
     <div class="icon">
       <i class="fa-regular fa-newspaper"></i>
     </div>
   </a>
 
-  <a (click)="scrollToSection('#contact')" class="nav-item" [ngClass]="{'active': activeSection === '#contact'}">
+  <a data-section="contact" (click)="scrollToSection('#contact')" class="nav-item" [ngClass]="{'active': activeSection === '#contact'}">
     <div class="icon">
       <i class="fas fa-envelope"></i>
     </div>

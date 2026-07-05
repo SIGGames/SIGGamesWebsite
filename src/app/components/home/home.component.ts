@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
       return;
     }
 
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('games')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   handleNewsletterImageError(event: Event): void {

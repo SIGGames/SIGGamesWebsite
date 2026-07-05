@@ -5,9 +5,11 @@ footer {
   flex-wrap: wrap;
   gap: 18px;
   padding: 28px 20px;
-  background-color: var(--primary-bg-color);
-  letter-spacing: 1px;
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(135deg, #352f46 0%, #4f3f73 100%);
+  color: #f8f6ff;
+  letter-spacing: 0.4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 -12px 28px rgba(51, 49, 50, 0.16);
   width: 100%;
   box-sizing: border-box;
   text-align: center;
@@ -15,6 +17,7 @@ footer {
 }
 
 footer label {
+  color: #f8f6ff;
   margin-right: 0;
 }
 
@@ -52,6 +55,11 @@ footer label {
   height: 100%;
   justify-content: center;
   width: 100%;
+}
+
+.icon-link:hover i,
+.icon-link:focus i {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.18);
 }
 
 .icon-link img {

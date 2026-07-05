@@ -16,7 +16,7 @@ section {
 
 #home section {
   min-height: 100dvh;
-  padding: clamp(120px, 20vh, 180px) 20px 96px;
+  padding: clamp(86px, 14vh, 132px) 20px 96px;
   position: relative;
 }
 
@@ -64,13 +64,43 @@ nav ul li a:hover {
   background-repeat: no-repeat;
   opacity: 0.95;
   margin-top: 0;
-  background:
-    radial-gradient(circle at 50% 18%, rgba(161, 134, 220, 0.28), transparent 28%),
-    linear-gradient(180deg, #ffffff 0%, var(--primary-bg-color) 76%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--primary-bg-color) 86%);
+}
+
+.hero-mark {
+  align-items: center;
+  background-color: white;
+  border: 1px solid rgba(104, 75, 159, 0.14);
+  border-radius: 50%;
+  box-shadow: 0 16px 32px rgba(51, 49, 50, 0.12);
+  display: inline-flex;
+  height: clamp(74px, 8vw, 106px);
+  justify-content: center;
+  margin-bottom: 22px;
+  width: clamp(74px, 8vw, 106px);
+}
+
+.hero-mark img {
+  display: block;
+  transition: transform 0.65s ease;
+  width: 72%;
+}
+
+.hero-mark:hover img {
+  transform: rotate(360deg);
+}
+
+.hero-kicker {
+  color: var(--accent-color);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin: 0 0 clamp(22px, 3vh, 34px);
+  text-transform: uppercase;
 }
 
 .home h1 {
-  margin-bottom: 20px;
+  margin-bottom: clamp(20px, 3vh, 32px);
   font-weight: 700;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
@@ -80,7 +110,7 @@ nav ul li a:hover {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(1.15rem, 2vw, 1.65rem);
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: clamp(24px, 3.2vh, 36px);
 }
 
 .hero-actions,
@@ -271,6 +301,7 @@ nav ul li a:hover {
 
 .game-art img {
   image-rendering: pixelated;
+  transform: translateY(-50px);
   width: min(56%, 190px);
 }
 
@@ -532,6 +563,10 @@ nav ul li a:hover {
     width: min(180px, 100%);
     margin: 0 auto;
     order: -1;
+  }
+
+  .game-art img {
+    transform: translateY(-24px);
   }
 
   .game-copy .eyebrow {

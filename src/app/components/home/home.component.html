@@ -1,7 +1,11 @@
 <div id="home" class="home">
   <section>
+    <div class="hero-mark">
+      <img src="assets/logo-purple.png" alt="" aria-hidden="true">
+    </div>
+    <p class="hero-kicker">Estudi indie de videojocs · Universitat de Lleida</p>
     <h1>{{ appName }}</h1>
-    <h2>Desenvolupadora de videojocs indie.</h2>
+    <h2>Desenvolupadora de videojocs indie</h2>
     <div class="hero-actions" aria-label="Accions principals">
       <a class="primary-cta" href="https://pacomonkey.netlify.app/" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-gamepad"></i>
@@ -18,6 +22,29 @@
 
 <div class="content">
   <app-home-navbar></app-home-navbar>
+  <section id="games" class="section">
+    <h2>Jocs</h2>
+    <div class="game-feature">
+      <div class="game-copy">
+        <span class="eyebrow">Disponible per jugar online</span>
+        <h3>PacoMonkey</h3>
+        <p>
+          Un joc de plataformes 2D amb art pixelat on controles en Pacomonkey, un mandril valent embarcat en una missió de venjança. Explora biomes plens de perills, derrota enemics i desbloqueja noves habilitats.
+        </p>
+        <div class="game-actions">
+          <a class="primary-cta" href="https://pacomonkey.netlify.app/" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-play"></i>
+            Juga ara
+          </a>
+          <a class="secondary-cta" routerLink="/game/pacomonkey">Més detalls</a>
+        </div>
+      </div>
+      <a class="game-art" href="https://pacomonkey.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Juga a PacoMonkey">
+        <img src="assets/paco.png" alt="PacoMonkey" />
+      </a>
+    </div>
+  </section>
+
   <section id="about" class="section">
     <h2>Qui som</h2>
     <div class="card-element">
@@ -51,29 +78,6 @@
           <h3>Aniol Serrano</h3>
           <p>Programador de<br>{{ appName }}</p>
       </div>
-    </div>
-  </section>
-
-  <section id="games" class="section">
-    <h2>Jocs</h2>
-    <div class="game-feature">
-      <div class="game-copy">
-        <span class="eyebrow">Disponible per jugar online</span>
-        <h3>PacoMonkey</h3>
-        <p>
-          Un joc de plataformes 2D amb art pixelat on controles en Pacomonkey, un mandril valent embarcat en una missió de venjança. Explora biomes plens de perills, derrota enemics i desbloqueja noves habilitats.
-        </p>
-        <div class="game-actions">
-          <a class="primary-cta" href="https://pacomonkey.netlify.app/" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-play"></i>
-            Juga ara
-          </a>
-          <a class="secondary-cta" routerLink="/game/pacomonkey">Més detalls</a>
-        </div>
-      </div>
-      <a class="game-art" href="https://pacomonkey.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Juga a PacoMonkey">
-        <img src="assets/paco.png" alt="PacoMonkey" />
-      </a>
     </div>
   </section>
 
