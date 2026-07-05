@@ -3,7 +3,8 @@ footer {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 25px 25px;
+  gap: 18px;
+  padding: 28px 20px;
   background-color: var(--primary-bg-color);
   letter-spacing: 1px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.8);
@@ -14,13 +15,15 @@ footer {
 }
 
 footer label {
-  margin-right: 20px;
+  margin-right: 0;
 }
 
 .socials-container {
   display: flex;
-  gap: 15px;
-  min-width: 250px;
+  justify-content: center;
+  gap: 12px;
+  min-width: 0;
+  flex-wrap: wrap;
 }
 
 .icon-link {
@@ -30,12 +33,31 @@ footer label {
   display: grid;
   place-items: center;
   position: relative;
+  text-decoration: none;
   transition: transform var(--icon-transition-duration) ease;
+}
+
+.icon-link:hover,
+.icon-link:focus {
+  text-decoration: none;
+}
+
+.icon-link i {
+  align-items: center;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  font-size: 22px;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
 }
 
 .icon-link img {
   height: 100%;
   width: 100%;
+  object-fit: contain;
   transition: transform var(--icon-transition-duration) ease;
 }
 
@@ -82,4 +104,22 @@ footer label {
 .icon-link:hover::after {
   transform: translateY(-42px) rotate(0);
   opacity: 1;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 620px) {
+  footer {
+    padding-bottom: 92px;
+  }
 }

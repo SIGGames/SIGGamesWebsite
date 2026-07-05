@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { ContactFormComponent, FormMode } from '../contact-form/contact-form.component';
 import { HeaderComponent } from "../header/header.component";
 
@@ -14,8 +16,10 @@ export class SubscribeUnsubscribeComponent implements OnInit {
   public title : string = '';
   public description : string = '';
 
+  constructor(private location: Location, private router: Router) {}
+
   ngOnInit(): void {
-    this.mode = window.location.pathname === '/unsubscribe' ? FormMode.UNSUBSCRIBE : FormMode.SUBSCRIBE;
+    this.mode = typeof window !== 'undefined' && window.location.pathname === '/unsubscribe' ? FormMode.UNSUBSCRIBE : FormMode.SUBSCRIBE;
     this.title = this.getTitle();
     this.description = this.getDescription();
   }
@@ -38,5 +42,14 @@ export class SubscribeUnsubscribeComponent implements OnInit {
     } else {
       return '';
     }
+  }
+
+  goBack(): void {
+    if (typeof window !== 'undefined' && window.history.length > 1) {
+      this.location.back();
+      return;
+    }
+
+    this.router.navigate(['/']);
   }
 }

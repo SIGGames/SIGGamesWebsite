@@ -11,36 +11,42 @@ html {
 }
 
 .paco-container {
-  padding: 100px;
+  padding: clamp(28px, 6vw, 100px);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   max-width: 1200px;
-  margin: 6% auto 2% auto;
+  margin: 120px auto 32px auto;
+  width: min(100% - 32px, 1200px);
 }
 
 .paco-title {
-  font-size: 4rem;
+  font-size: clamp(2.6rem, 8vw, 4rem);
+  line-height: 1;
   color: #684B9F;
-  margin-bottom: 40px;
-  margin-top: -20px;
+  margin-bottom: clamp(24px, 5vw, 40px);
+  margin-top: 0;
+  max-width: none;
+  text-align: center;
 }
 
 .paco-subtitle {
-  font-size: 2.8rem;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
   color: #684B9F;
   margin-top: 40px;
   margin-bottom: 20px;
 }
 
 .paco-description {
-  font-size: 1.8rem;
+  font-size: clamp(1.05rem, 2.5vw, 1.8rem);
+  line-height: 1.6;
   margin-top: 20px;
   color: #333;
 }
 
 .paco-list {
-  font-size: 1.6rem;
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  line-height: 1.55;
   margin-top: 10px;
   padding-left: 20px;
 }
@@ -61,6 +67,13 @@ html {
   height: auto;
   border-radius: 5px;
   object-fit: cover;
+}
+
+@media (max-width: 700px) {
+  .paco-container {
+    margin-top: 112px;
+    width: min(100% - 24px, 1200px);
+  }
 }
 
 .paco-image {

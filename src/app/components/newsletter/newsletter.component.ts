@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ElementRef, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { HeaderComponent } from '../header/header.component';
 
 @Component({
@@ -14,6 +15,7 @@ export class NewsletterComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private location: Location,
     private el: ElementRef,
     private renderer: Renderer2
   ) {}
@@ -30,6 +32,10 @@ export class NewsletterComponent implements OnInit {
   }
 
   loadNewsletterContent(newsletterId: string): void {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     const newsletterFile = `/assets/newsletter/${newsletterId}_newsletter-devteam.html`;
 
     fetch(newsletterFile)
@@ -49,6 +55,10 @@ export class NewsletterComponent implements OnInit {
   }
 
   loadCompilationNewsletter(): void {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     const compilationFile = `/assets/newsletter/00_newsletter-devteam-compilation.html`;
 
     fetch(compilationFile)
@@ -92,5 +102,14 @@ export class NewsletterComponent implements OnInit {
 
   redirectNotFound(): void {
     this.router.navigate(['/not-found']);
+  }
+
+  goBack(): void {
+    if (typeof window !== 'undefined' && window.history.length > 1) {
+      this.location.back();
+      return;
+    }
+
+    this.router.navigate(['/']);
   }
 }

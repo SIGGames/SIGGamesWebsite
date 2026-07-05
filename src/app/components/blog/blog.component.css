@@ -15,7 +15,8 @@ html {
 }
 
 #blog-container {
-  margin: 100px;
+  margin: 120px auto 48px;
+  width: min(100% - 40px, 1000px);
 }
 
 h1 {
@@ -130,7 +131,7 @@ code {
 
 .responsive-iframe {
   height: 420px;
-  width: 750px;
+  width: 100%;
   max-width: 1000px;
   max-height: 800px;
   border: none;
@@ -158,6 +159,10 @@ code {
 }
 
 @media (max-width: 768px) {
+  #blog-container {
+    width: min(100% - 28px, 1000px);
+  }
+
   h1 {
     font-size: 2.2rem;
   }
@@ -172,6 +177,10 @@ code {
 }
 
 @media (max-width: 480px) {
+  #blog-container {
+    margin-top: 112px;
+  }
+
   h1 {
     font-size: 1.8rem;
   }

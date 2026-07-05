@@ -1,11 +1,10 @@
 .contact-section {
-  max-width: 600px;
+  max-width: none;
   width: 100%;
   background-color: #fff;
-  padding: 40px;
-  padding-top: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: clamp(28px, 4vw, 52px);
+  border-radius: 8px;
+  box-shadow: var(--surface-shadow);
 }
 
 .contact-section h2 {
@@ -63,7 +62,7 @@ textarea:focus {
 
 textarea {
   resize: none;
-  min-height: 150px;
+  min-height: 180px;
 }
 
 button[type="submit"] {

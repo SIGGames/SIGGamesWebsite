@@ -14,19 +14,38 @@ export class HomeNavbarComponent implements OnInit {
   sections: string[] = [];
 
   ngOnInit(): void {
+    if (typeof document === 'undefined') {
+      return;
+    }
+
     this.loadSections();
     this.getActiveSection();
   }
 
   scrollToSection(sectionId: string) {
+    if (typeof document === 'undefined') {
+      return;
+    }
+
     const section = document.querySelector(sectionId);
     if (section) {
+      this.activeSection = sectionId;
       section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      if (typeof window !== 'undefined') {
+        window.setTimeout(() => {
+          this.activeSection = sectionId;
+        }, 450);
+      }
     }
   }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
+    if (typeof document === 'undefined' || typeof window === 'undefined') {
+      return;
+    }
+
     const footer = document.querySelector('footer');
     if (footer) {
       const footerRect = footer.getBoundingClientRect();
@@ -36,26 +55,37 @@ export class HomeNavbarComponent implements OnInit {
   }
 
   loadSections() {
+    if (typeof document === 'undefined') {
+      return;
+    }
+
     const sectionElements = document.querySelectorAll('section[id]');
     this.sections = Array.from(sectionElements).map(section => `#${section.id}`);
   }
 
   getActiveSection() {
-    const visiblePercentage = 0.5;
+    if (typeof document === 'undefined' || typeof window === 'undefined') {
+      return;
+    }
+
+    const viewportAnchor = window.innerHeight * 0.45;
+
     for (let sectionId of this.sections) {
       const section = document.querySelector(sectionId);
       if (section) {
         const rect = section.getBoundingClientRect();
-        if (rect.top >= 0 && rect.top <= window.innerHeight * visiblePercentage) {
+        if (rect.top <= viewportAnchor && rect.bottom >= viewportAnchor) {
           this.activeSection = sectionId;
           break;
         }
       }
     }
 
-    // HACK: If the user scrolls up to the top, the active section is the home section
+    // If the user scrolls up to the top, the active section is the home section.
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    if (scrollTop === 0) {
+    const home = document.querySelector('#home');
+    const homeBottom = home?.getBoundingClientRect().bottom ?? 0;
+    if (scrollTop === 0 && homeBottom > viewportAnchor) {
       this.activeSection = '#home';
     }
   }

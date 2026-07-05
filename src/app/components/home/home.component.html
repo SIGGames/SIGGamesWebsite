@@ -2,10 +2,13 @@
   <section>
     <h1>{{ appName }}</h1>
     <h2>Desenvolupadora de videojocs indie.</h2>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <div class="hero-actions" aria-label="Accions principals">
+      <a class="primary-cta" href="https://pacomonkey.netlify.app/" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-gamepad"></i>
+        Juga a PacoMonkey
+      </a>
+      <a class="secondary-cta" routerLink="/game/pacomonkey">Veure el joc</a>
+    </div>
     <i
       class="fas fa-chevron-down down-arrow"
       (click)="scrollToNextSection()"
@@ -53,51 +56,65 @@
 
   <section id="games" class="section">
     <h2>Jocs</h2>
-    <a href="/game/pacomonkey">
-      <div class="card-element">
-        <div class="card-content">
-          <h3>PacoMonkey</h3>
-          <img src="assets/paco.png" alt="PacoMonkey" />
-          <p>
-            Un joc de plataformes 2D amb art pixelat on controles en Pacomonkey, un mandril valent embarcat en una missió de venjança. Explora biomes plens de perills, derrota altres micos enemics, recull plàtans per recuperar forces i desbloqueja noves habilitats a mesura que avances en la seva història plena d'acció i descobriments.
-          </p>
+    <div class="game-feature">
+      <div class="game-copy">
+        <span class="eyebrow">Disponible per jugar online</span>
+        <h3>PacoMonkey</h3>
+        <p>
+          Un joc de plataformes 2D amb art pixelat on controles en Pacomonkey, un mandril valent embarcat en una missió de venjança. Explora biomes plens de perills, derrota enemics i desbloqueja noves habilitats.
+        </p>
+        <div class="game-actions">
+          <a class="primary-cta" href="https://pacomonkey.netlify.app/" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-play"></i>
+            Juga ara
+          </a>
+          <a class="secondary-cta" routerLink="/game/pacomonkey">Més detalls</a>
         </div>
       </div>
-    </a>
+      <a class="game-art" href="https://pacomonkey.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Juga a PacoMonkey">
+        <img src="assets/paco.png" alt="PacoMonkey" />
+      </a>
+    </div>
   </section>
 
   <section id="blog" class="section">
     <h2>Blog</h2>
 
-    <a href="/blog/1">
+    <a routerLink="/blog/1">
       <div class="blog-card">
-        <div class="card-content">
+        <div class="blog-card-media blog-card-media-heart">
+          <img src="assets/img/heart.png" alt="Sistema de vida">
+        </div>
+        <div class="blog-card-copy">
+          <span>Desembre 2024</span>
           <h3>Implementació del sistema de vida</h3>
-          <p>
-            Descobreix s'ha implementat el sistema de vida a PacoMonkey, tant per al jugador com per als enemics.
-          </p>
+          <p>Descobreix s'ha implementat el sistema de vida a PacoMonkey, tant per al jugador com per als enemics.</p>
         </div>
       </div>
     </a>
 
-    <a href="/blog/2">
+    <a routerLink="/blog/2">
       <div class="blog-card">
-        <div class="card-content">
+        <div class="blog-card-media blog-card-media-paco">
+          <img src="assets/paco.png" alt="PacoMonkey">
+        </div>
+        <div class="blog-card-copy">
+          <span>Tutorial</span>
           <h3>Com implementar el moviment del personatge principal a PacoMonkey</h3>
-          <p>
-            Un tutorial detallat sobre com hem implementat el moviment del personatge principal, amb codi d'exemple i bones pràctiques.
-          </p>
+          <p>Un tutorial detallat sobre com hem implementat el moviment del personatge principal, amb codi d'exemple i bones pràctiques.</p>
         </div>
       </div>
     </a>
 
-    <a href="/blog/3">
+    <a routerLink="/blog/3">
       <div class="blog-card">
-        <div class="card-content">
+        <div class="blog-card-media blog-card-media-banner">
+          <img src="assets/banner.png" alt="Disseny de nivells">
+        </div>
+        <div class="blog-card-copy">
+          <span>Game design</span>
           <h3>Disseny de nivells a PacoMonkey: Consells i bones pràctiques</h3>
-          <p>
-            Guia de disseny de nivells amb consells per crear nivells atractius i equilibrats per al teu joc 2D.
-          </p>
+          <p>Guia de disseny de nivells amb consells per crear nivells atractius i equilibrats per al teu joc 2D.</p>
         </div>
       </div>
     </a>
@@ -107,10 +124,10 @@
     <h2>Newsletters</h2>
 
     <div id="newsletter-link">
-      <a href="subscribe"><h3>Subscriu-te</h3></a>
+      <a routerLink="/subscribe"><h3>Subscriu-te</h3></a>
     </div>
     <div *ngFor="let newsletter of newsletters" class="card-element">
-      <a [href]="'/newsletter/' + newsletter.id">
+      <a [routerLink]="['/newsletter', newsletter.id]">
         <div class="card-content">
           <div class="newsletter-text-container">
             <div class="newsletter-title-container">
@@ -122,13 +139,13 @@
             </div>
           </div>
           <div class="newsletter-img-container">
-            <img *ngIf="newsletter.img" [src]="newsletter.img" alt="{{ newsletter.title }}" class="newsletter-img">
+            <img *ngIf="newsletter.img" [src]="newsletter.img" alt="{{ newsletter.title }}" class="newsletter-img" loading="lazy" (error)="handleNewsletterImageError($event)">
           </div>
         </div>
       </a>
     </div>
     <div id="newsletter-link">
-      <a href="/newsletter/0"><h3>Veure'n més...</h3></a>
+      <a routerLink="/newsletter/0"><h3>Veure'n més...</h3></a>
     </div>
   </section>
 

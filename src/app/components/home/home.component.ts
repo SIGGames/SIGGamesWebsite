@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from '../../app.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { ContactFormComponent } from '../contact-form/contact-form.component';
 import { HomeNavbarComponent } from "../home-navbar/home-navbar.component";
 
@@ -10,7 +11,7 @@ import { HomeNavbarComponent } from "../home-navbar/home-navbar.component";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css', './newsletter.home.component.css'],
   standalone: true,
-  imports: [HttpClientModule, CommonModule, ContactFormComponent, HomeNavbarComponent]
+  imports: [HttpClientModule, CommonModule, RouterModule, ContactFormComponent, HomeNavbarComponent]
 })
 export class HomeComponent implements OnInit {
   appName: string = '';
@@ -26,6 +27,10 @@ export class HomeComponent implements OnInit {
   }
 
   loadNewsletters() {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     const path: string = 'assets/newsletter/recent-newsletters.json';
     this.http.get<any>(path).subscribe((data) => {
       let newsletters = data.newsletters;
@@ -39,16 +44,16 @@ export class HomeComponent implements OnInit {
   }
 
   scrollToNextSection() {
-    const nextSection = document.querySelector('.section');
-    if (nextSection) {
-      const offset = 180;
-      const elementPosition = nextSection.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+    if (typeof document === 'undefined') {
+      return;
     }
+
+    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  handleNewsletterImageError(event: Event): void {
+    const image = event.target as HTMLImageElement;
+    image.src = 'assets/transparent-banner.png';
+    image.classList.add('newsletter-img-fallback');
   }
 }
