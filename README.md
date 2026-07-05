@@ -1,6 +1,16 @@
 # SIG Games Official Website
 
-![SIG Games Banner](https://raw.githubusercontent.com/SIGGames/SIGGames/refs/heads/main/img/Banner_Wite_BG.jpg)
+<p align="center">
+  <a href="https://siggames.vercel.app/">
+    <img src="https://raw.githubusercontent.com/SIGGames/SIGGames/refs/heads/main/img/Banner_Wite_BG.jpg" alt="SIG Games Banner">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://siggames.vercel.app/">
+    <img src="https://img.shields.io/badge/Visit%20Website-siggames.vercel.app-684B9F?style=for-the-badge&logo=vercel&logoColor=white" alt="Visit SIG Games website">
+  </a>
+</p>
 
 Welcome to the official website repository of **SIG Games**! We are a group of students from the University of Lleida (UdL) passionate about game development. This website serves as our primary platform to showcase our projects, share updates, and engage with the community.
 
@@ -105,6 +115,6 @@ You can find the full license text in the following files:
 
 ## Contact
 
-For any questions or inquiries, feel free to contact us at [contact@siggames.cat](mailto:contact@siggames.cat).
+For any questions or inquiries, feel free to contact us at [siggames.official@gmail.com](mailto:siggames.official@gmail.com).
 
-Visit our official website: [SIG Games](https://siggames.cat)
+Visit our official website: [SIG Games](https://siggames.vercel.app/)
